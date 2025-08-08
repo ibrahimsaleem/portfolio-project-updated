@@ -1,0 +1,261 @@
+/* Experiences.css */
+.experience-section {
+    position: relative;
+    padding-top: 120px; /* Adequate space for navbar */
+    padding-bottom: 80px;
+    min-height: 100vh;
+  }
+  
+  .section-heading {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  
+  .experience-heading {
+    font-size: 2.5rem;
+    font-weight: 600;
+    padding-bottom: 20px;
+  }
+  
+  .section-description {
+    color: white;
+    font-size: 1.2rem;
+  }
+  
+  .purple {
+    color: #c770f0;
+  }
+  
+  /* Parallel Timeline styling */
+  .parallel-timeline-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .timeline-column {
+    flex: 1;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  .education-column {
+    text-align: right;
+  }
+  
+  .experience-column {
+    text-align: left;
+  }
+  
+  .column-title {
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  
+  .education-color {
+    color: #4cc9f0;
+    border-bottom: 3px solid #4cc9f0;
+    padding-bottom: 5px;
+  }
+  
+  .experience-color {
+    color: #c770f0;
+    border-bottom: 3px solid #c770f0;
+    padding-bottom: 5px;
+  }
+  
+  .timeline-center-line {
+    position: absolute;
+    width: 6px;
+    background-color: #6e6e6e;
+    top: 60px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 5px;
+  }
+  
+  .timeline-item-parallel {
+    position: relative;
+    margin-bottom: 40px;
+    max-width: 95%;
+  }
+  
+  .education-column .timeline-item-parallel {
+    margin-left: auto;
+  }
+  
+  .timeline-marker {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 4px solid #23283e;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  .timeline-marker.education {
+    background-color: #4cc9f0; /* Blue color for education */
+    right: -33px;
+    top: 20px;
+  }
+  
+  .timeline-marker.experience {
+    background-color: #c770f0; /* Purple color for experience */
+    left: -33px;
+    top: 20px;
+  }
+  
+  /* Card styling */
+  .experience-card-view {
+  background: linear-gradient(145deg, rgba(0, 3, 12, 0.8), rgba(3, 0, 20, 0.85)) !important;
+  border: 1px solid rgba(0, 212, 255, 0.2) !important;
+  color: white !important;
+  border-radius: 20px !important;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(0, 212, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(15px) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+  
+  .education-card {
+    border: 1px solid rgba(76, 201, 240, 0.6) !important; /* Blue border for education */
+  }
+  
+  .experience-card {
+    border: 1px solid rgba(148, 87, 235, 0.6) !important; /* Purple border for experience */
+  }
+  
+  .experience-card-view::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+  transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.experience-card-view:hover::before {
+  left: 100%;
+}
+
+.experience-card-view:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(0, 212, 255, 0.4) !important;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(0, 212, 255, 0.3) !important;
+}
+
+.experience-card-view .card-body {
+  position: relative;
+  z-index: 1;
+}
+  
+  .card-icon {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .education-card .card-icon {
+    color: #4cc9f0; /* Blue color for education icon */
+  }
+  
+  .experience-card .card-icon {
+    color: #c770f0; /* Purple color for experience icon */
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .education-card .card-title {
+    color: #4cc9f0; /* Blue color for education title */
+  }
+  
+  .experience-card .card-title {
+    color: #c770f0; /* Purple color for experience title */
+  }
+  
+  .card-subtitle {
+    font-size: 1.1rem;
+    color: #8a8fa3 !important;
+  }
+  
+  .card-date {
+    font-size: 0.9rem;
+    color: #8a8fa3 !important;
+    font-style: italic;
+  }
+  
+  .card-description {
+    text-align: justify;
+    margin-top: 15px;
+    font-size: 1rem;
+  }
+  
+  .experience-card-view .btn {
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    border: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .experience-card-view .btn:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-color-dark);
+  }
+  
+  .experience-card-view .btn svg {
+    margin-right: 5px;
+  }
+  
+  /* Media query for tablet and mobile devices */
+  @media screen and (max-width: 992px) {
+    .parallel-timeline-container {
+      flex-direction: column;
+    }
+  
+    .timeline-column {
+      width: 100%;
+      padding: 0;
+      text-align: left;
+    }
+  
+    .education-column .timeline-item-parallel {
+      margin-left: 0;
+      max-width: 100%;
+    }
+  
+    .timeline-center-line {
+      left: 13px;
+      margin-left: 0;
+    }
+  
+    .timeline-marker.education,
+    .timeline-marker.experience {
+      left: 0;
+      right: auto;
+    }
+  
+    .timeline-item-parallel {
+      padding-left: 40px;
+      max-width: 100%;
+    }
+  
+    .column-title {
+      padding-left: 40px;
+      text-align: left;
+    }
+  }
