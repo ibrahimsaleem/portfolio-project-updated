@@ -55,25 +55,28 @@
   }
   
   .education-color {
-    color: #4cc9f0;
-    border-bottom: 3px solid #4cc9f0;
+    color: #00D4FF;
+    border-bottom: 2px solid #00D4FF;
     padding-bottom: 5px;
+    text-shadow: 0 0 10px rgba(0,212,255,0.5);
   }
-  
+
   .experience-color {
-    color: #c770f0;
-    border-bottom: 3px solid #c770f0;
+    color: #00FF41;
+    border-bottom: 2px solid #00FF41;
     padding-bottom: 5px;
+    text-shadow: 0 0 10px rgba(0,255,65,0.5);
   }
   
   .timeline-center-line {
     position: absolute;
-    width: 6px;
-    background-color: #6e6e6e;
+    width: 3px;
+    background: linear-gradient(180deg, #00FF41, #00D4FF, #C770F0);
+    box-shadow: 0 0 10px rgba(0,212,255,0.4);
     top: 60px;
     bottom: 0;
     left: 50%;
-    margin-left: -3px;
+    margin-left: -1.5px;
     border-radius: 5px;
   }
   
@@ -89,23 +92,25 @@
   
   .timeline-marker {
     position: absolute;
-    width: 25px;
-    height: 25px;
-    border: 4px solid #23283e;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(6,6,17,0.9);
     border-radius: 50%;
     z-index: 1;
   }
-  
+
   .timeline-marker.education {
-    background-color: #4cc9f0; /* Blue color for education */
-    right: -33px;
-    top: 20px;
+    background-color: #00D4FF;
+    box-shadow: 0 0 10px rgba(0,212,255,0.7), 0 0 20px rgba(0,212,255,0.3);
+    right: -30px;
+    top: 22px;
   }
-  
+
   .timeline-marker.experience {
-    background-color: #c770f0; /* Purple color for experience */
-    left: -33px;
-    top: 20px;
+    background-color: #00FF41;
+    box-shadow: 0 0 10px rgba(0,255,65,0.7), 0 0 20px rgba(0,255,65,0.3);
+    left: -30px;
+    top: 22px;
   }
   
   /* Card styling */
@@ -126,11 +131,11 @@
 }
   
   .education-card {
-    border: 1px solid rgba(76, 201, 240, 0.6) !important; /* Blue border for education */
+    border: 1px solid rgba(0, 212, 255, 0.35) !important;
   }
-  
+
   .experience-card {
-    border: 1px solid rgba(148, 87, 235, 0.6) !important; /* Purple border for experience */
+    border: 1px solid rgba(0, 255, 65, 0.35) !important;
   }
   
   .experience-card-view::before {
@@ -168,11 +173,13 @@
   }
   
   .education-card .card-icon {
-    color: #4cc9f0; /* Blue color for education icon */
+    color: #00D4FF;
+    filter: drop-shadow(0 0 6px rgba(0,212,255,0.5));
   }
-  
+
   .experience-card .card-icon {
-    color: #c770f0; /* Purple color for experience icon */
+    color: #00FF41;
+    filter: drop-shadow(0 0 6px rgba(0,255,65,0.5));
   }
   
   .card-title {
@@ -181,11 +188,13 @@
   }
   
   .education-card .card-title {
-    color: #4cc9f0; /* Blue color for education title */
+    color: #00D4FF;
+    text-shadow: 0 0 8px rgba(0,212,255,0.3);
   }
-  
+
   .experience-card .card-title {
-    color: #c770f0; /* Purple color for experience title */
+    color: #00FF41;
+    text-shadow: 0 0 8px rgba(0,255,65,0.3);
   }
   
   .card-subtitle {
@@ -257,5 +266,40 @@
     .column-title {
       padding-left: 40px;
       text-align: left;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    .experience-section {
+      padding-top: 80px;
+    }
+    .experience-heading {
+      font-size: 1.8rem;
+    }
+    .section-heading {
+      margin-bottom: 30px;
+    }
+    .column-title {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .experience-section {
+      padding-top: 70px;
+      padding-bottom: 40px;
+    }
+    .card-title {
+      font-size: 1.2rem;
+    }
+    .card-subtitle {
+      font-size: 0.95rem;
+    }
+    .card-description {
+      font-size: 0.9rem;
+      text-align: left;
+    }
+    .experience-card-view {
+      border-radius: 14px !important;
     }
   }

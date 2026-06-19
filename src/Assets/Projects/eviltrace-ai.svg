@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#060611"/>
+      <stop offset="100%" style="stop-color:#0a1628"/>
+    </linearGradient>
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#001a0a"/>
+      <stop offset="100%" style="stop-color:#003015"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.06" stroke="#00FF41" stroke-width="0.5">
+    <line x1="0" y1="50" x2="800" y2="50"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="350" x2="800" y2="350"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="450" x2="800" y2="450"/>
+    <line x1="50" y1="0" x2="50" y2="500"/>
+    <line x1="150" y1="0" x2="150" y2="500"/>
+    <line x1="250" y1="0" x2="250" y2="500"/>
+    <line x1="350" y1="0" x2="350" y2="500"/>
+    <line x1="450" y1="0" x2="450" y2="500"/>
+    <line x1="550" y1="0" x2="550" y2="500"/>
+    <line x1="650" y1="0" x2="650" y2="500"/>
+    <line x1="750" y1="0" x2="750" y2="500"/>
+  </g>
+
+  <!-- Header bar -->
+  <rect x="0" y="0" width="800" height="44" fill="rgba(0,255,65,0.06)" stroke="rgba(0,255,65,0.2)" stroke-width="1"/>
+  <circle cx="18" cy="22" r="6" fill="#FF5F57"/>
+  <circle cx="36" cy="22" r="6" fill="#FEBC2E"/>
+  <circle cx="54" cy="22" r="6" fill="#28C840"/>
+  <text x="75" y="27" font-family="'Courier New', monospace" font-size="12" fill="rgba(0,255,65,0.7)">EvilTrace AI — DFIR Multi-Agent Engine</text>
+  <text x="680" y="27" font-family="'Courier New', monospace" font-size="11" fill="rgba(0,255,65,0.5)">v2.4.1 LIVE</text>
+  <circle cx="770" cy="22" r="5" fill="#00FF41" filter="url(#glow)"/>
+
+  <!-- Agent pipeline - horizontal flow -->
+  <!-- Agent 1: Evidence Collection -->
+  <rect x="20" y="75" width="110" height="70" rx="8" fill="url(#nodeGrad)" stroke="#00FF41" stroke-width="1.5" filter="url(#glow)"/>
+  <text x="75" y="100" font-family="'Courier New', monospace" font-size="8" fill="#00FF41" text-anchor="middle">EVIDENCE</text>
+  <text x="75" y="113" font-family="'Courier New', monospace" font-size="8" fill="#00FF41" text-anchor="middle">COLLECTION</text>
+  <text x="75" y="130" font-family="'Courier New', monospace" font-size="7" fill="rgba(0,212,255,0.7)" text-anchor="middle">Agent #1</text>
+
+  <!-- Arrow -->
+  <line x1="130" y1="110" x2="155" y2="110" stroke="#00FF41" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#00FF41"/></marker></defs>
+
+  <!-- Agent 2: Timeline Analysis -->
+  <rect x="155" y="75" width="110" height="70" rx="8" fill="url(#nodeGrad)" stroke="#00D4FF" stroke-width="1.5"/>
+  <text x="210" y="100" font-family="'Courier New', monospace" font-size="8" fill="#00D4FF" text-anchor="middle">TIMELINE</text>
+  <text x="210" y="113" font-family="'Courier New', monospace" font-size="8" fill="#00D4FF" text-anchor="middle">ANALYSIS</text>
+  <text x="210" y="130" font-family="'Courier New', monospace" font-size="7" fill="rgba(0,212,255,0.7)" text-anchor="middle">Agent #2</text>
+
+  <!-- Arrow -->
+  <line x1="265" y1="110" x2="290" y2="110" stroke="#00D4FF" stroke-width="1.5" marker-end="url(#arrow2)"/>
+  <defs><marker id="arrow2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#00D4FF"/></marker></defs>
+
+  <!-- Agent 3: Threat Intel -->
+  <rect x="290" y="75" width="110" height="70" rx="8" fill="url(#nodeGrad)" stroke="#C770F0" stroke-width="1.5"/>
+  <text x="345" y="100" font-family="'Courier New', monospace" font-size="8" fill="#C770F0" text-anchor="middle">THREAT INTEL</text>
+  <text x="345" y="113" font-family="'Courier New', monospace" font-size="8" fill="#C770F0" text-anchor="middle">ENRICHMENT</text>
+  <text x="345" y="130" font-family="'Courier New', monospace" font-size="7" fill="rgba(199,112,240,0.7)" text-anchor="middle">Agent #3</text>
+
+  <!-- Arrow -->
+  <line x1="400" y1="110" x2="425" y2="110" stroke="#C770F0" stroke-width="1.5" marker-end="url(#arrow3)"/>
+  <defs><marker id="arrow3" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#C770F0"/></marker></defs>
+
+  <!-- Agent 4: Hallucination Gate -->
+  <rect x="425" y="60" width="120" height="100" rx="8" fill="rgba(255,0,60,0.08)" stroke="#FF003C" stroke-width="2" filter="url(#glow)"/>
+  <text x="485" y="90" font-family="'Courier New', monospace" font-size="8" fill="#FF4444" text-anchor="middle">ZERO-HALLUCINATION</text>
+  <text x="485" y="103" font-family="'Courier New', monospace" font-size="8" fill="#FF4444" text-anchor="middle">GATE</text>
+  <text x="485" y="122" font-family="'Courier New', monospace" font-size="8" fill="rgba(255,68,68,0.7)" text-anchor="middle">Verifies against</text>
+  <text x="485" y="135" font-family="'Courier New', monospace" font-size="8" fill="rgba(255,68,68,0.7)" text-anchor="middle">actual log artifacts</text>
+  <text x="485" y="150" font-family="'Courier New', monospace" font-size="7" fill="rgba(255,100,100,0.6)" text-anchor="middle">Agent #4 ⚡</text>
+
+  <!-- Arrow -->
+  <line x1="545" y1="110" x2="570" y2="110" stroke="#FF003C" stroke-width="1.5" marker-end="url(#arrow4)"/>
+  <defs><marker id="arrow4" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#FF003C"/></marker></defs>
+
+  <!-- Agent 5: Self Correction -->
+  <rect x="570" y="75" width="110" height="70" rx="8" fill="url(#nodeGrad)" stroke="#FEBC2E" stroke-width="1.5"/>
+  <text x="625" y="100" font-family="'Courier New', monospace" font-size="8" fill="#FEBC2E" text-anchor="middle">SELF-CORRECTION</text>
+  <text x="625" y="113" font-family="'Courier New', monospace" font-size="8" fill="#FEBC2E" text-anchor="middle">LOOP</text>
+  <text x="625" y="130" font-family="'Courier New', monospace" font-size="7" fill="rgba(254,188,46,0.7)" text-anchor="middle">Agent #5</text>
+
+  <!-- Arrow -->
+  <line x1="680" y1="110" x2="705" y2="110" stroke="#FEBC2E" stroke-width="1.5" marker-end="url(#arrow5)"/>
+  <defs><marker id="arrow5" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#FEBC2E"/></marker></defs>
+
+  <!-- Agent 6: Report -->
+  <rect x="705" y="75" width="80" height="70" rx="8" fill="url(#nodeGrad)" stroke="#00FF41" stroke-width="2" filter="url(#strongGlow)"/>
+  <text x="745" y="105" font-family="'Courier New', monospace" font-size="8" fill="#00FF41" text-anchor="middle">REPORT</text>
+  <text x="745" y="118" font-family="'Courier New', monospace" font-size="8" fill="#00FF41" text-anchor="middle">WRITE</text>
+  <text x="745" y="133" font-family="'Courier New', monospace" font-size="7" fill="rgba(0,255,65,0.7)" text-anchor="middle">Agent #6</text>
+
+  <!-- Log output panel -->
+  <rect x="20" y="170" width="380" height="220" rx="6" fill="rgba(0,5,15,0.9)" stroke="rgba(0,212,255,0.2)" stroke-width="1"/>
+  <rect x="20" y="170" width="380" height="22" rx="6" fill="rgba(0,212,255,0.08)" stroke="rgba(0,212,255,0.15)" stroke-width="1"/>
+  <text x="30" y="185" font-family="'Courier New', monospace" font-size="9" fill="rgba(0,212,255,0.6)">forensic_logs.jsonl — Evidence Audit Trail</text>
+
+  <text x="30" y="210" font-family="'Courier New', monospace" font-size="8.5" fill="#00FF41">[✓] Log artifact verified: auth.log:4821 → SSH brute-force detected</text>
+  <text x="30" y="228" font-family="'Courier New', monospace" font-size="8.5" fill="#00FF41">[✓] IOC confirmed: 192.168.4.21 → AbuseIPDB score: 97/100</text>
+  <text x="30" y="246" font-family="'Courier New', monospace" font-size="8.5" fill="rgba(255,68,68,0.9)">[✗] Hypothesis rejected: no log evidence for lateral movement</text>
+  <text x="30" y="264" font-family="'Courier New', monospace" font-size="8.5" fill="#00D4FF">[~] Enriching via Exa Search API... threat intel loaded</text>
+  <text x="30" y="282" font-family="'Courier New', monospace" font-size="8.5" fill="#00FF41">[✓] CVE-2024-3094 pattern matched in process tree</text>
+  <text x="30" y="300" font-family="'Courier New', monospace" font-size="8.5" fill="rgba(255,68,68,0.9)">[✗] Unsupported claim demoted: "persistence via registry" — no artifact</text>
+  <text x="30" y="318" font-family="'Courier New', monospace" font-size="8.5" fill="#00FF41">[✓] Timeline reconstructed: T+00:00 → T+04:23 (12 events)</text>
+  <text x="30" y="336" font-family="'Courier New', monospace" font-size="8.5" fill="#FEBC2E">[⚡] Self-correction applied: severity downgraded CRIT→HIGH</text>
+  <text x="30" y="354" font-family="'Courier New', monospace" font-size="8.5" fill="#00FF41">[✓] Report generated: eviltrace_report_2026.pdf</text>
+  <text x="30" y="372" font-family="'Courier New', monospace" font-size="8.5" fill="rgba(0,212,255,0.5)">_▮</text>
+
+  <!-- Stats panel -->
+  <rect x="420" y="170" width="365" height="220" rx="6" fill="rgba(0,5,15,0.9)" stroke="rgba(0,255,65,0.2)" stroke-width="1"/>
+  <rect x="420" y="170" width="365" height="22" rx="6" fill="rgba(0,255,65,0.08)" stroke="rgba(0,255,65,0.15)" stroke-width="1"/>
+  <text x="430" y="185" font-family="'Courier New', monospace" font-size="9" fill="rgba(0,255,65,0.6)">Investigation Summary</text>
+
+  <!-- Stats -->
+  <text x="430" y="215" font-family="'Courier New', monospace" font-size="11" fill="#00FF41">0 HALLUCINATIONS</text>
+  <text x="430" y="230" font-family="'Courier New', monospace" font-size="8" fill="rgba(0,255,65,0.5)">Zero-Hallucination Gate enforced</text>
+
+  <line x1="430" y1="240" x2="770" y2="240" stroke="rgba(0,255,65,0.1)" stroke-width="1"/>
+
+  <text x="430" y="258" font-family="'Courier New', monospace" font-size="10" fill="#00D4FF">Agents Active</text>
+  <text x="700" y="258" font-family="'Courier New', monospace" font-size="10" fill="#00D4FF" text-anchor="end">7 / 7</text>
+
+  <text x="430" y="278" font-family="'Courier New', monospace" font-size="10" fill="#C770F0">IOCs Enriched</text>
+  <text x="700" y="278" font-family="'Courier New', monospace" font-size="10" fill="#C770F0" text-anchor="end">24</text>
+
+  <text x="430" y="298" font-family="'Courier New', monospace" font-size="10" fill="#FEBC2E">Claims Self-Corrected</text>
+  <text x="700" y="298" font-family="'Courier New', monospace" font-size="10" fill="#FEBC2E" text-anchor="end">6</text>
+
+  <text x="430" y="318" font-family="'Courier New', monospace" font-size="10" fill="#00FF41">Evidence Events</text>
+  <text x="700" y="318" font-family="'Courier New', monospace" font-size="10" fill="#00FF41" text-anchor="end">48</text>
+
+  <text x="430" y="338" font-family="'Courier New', monospace" font-size="10" fill="rgba(255,68,68,0.9)">Hypotheses Rejected</text>
+  <text x="700" y="338" font-family="'Courier New', monospace" font-size="10" fill="rgba(255,68,68,0.9)" text-anchor="end">3</text>
+
+  <text x="430" y="358" font-family="'Courier New', monospace" font-size="10" fill="#00D4FF">Report Status</text>
+  <text x="700" y="358" font-family="'Courier New', monospace" font-size="10" fill="#00D4FF" text-anchor="end">VERIFIED ✓</text>
+
+  <!-- Footer -->
+  <rect x="0" y="456" width="800" height="44" fill="rgba(0,0,0,0.5)" stroke="rgba(0,255,65,0.1)" stroke-width="1"/>
+  <text x="20" y="474" font-family="'Courier New', monospace" font-size="9" fill="rgba(0,255,65,0.5)">🏆 FIND EVIL Hackathon | Multi-Agent DFIR | Zero-Hallucination AI Forensics</text>
+  <text x="20" y="490" font-family="'Courier New', monospace" font-size="9" fill="rgba(0,212,255,0.4)">github.com/ibrahimsaleem/EvilTraceAI</text>
+  <text x="720" y="482" font-family="'Courier New', monospace" font-size="9" fill="rgba(0,255,65,0.4)" text-anchor="end">EvilTrace AI v2.4</text>
+</svg>

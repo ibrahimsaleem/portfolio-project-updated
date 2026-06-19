@@ -1,0 +1,377 @@
+/* ── Floating trigger button ─────────────────────────────────── */
+.cb-trigger {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #00FF41;
+  background: #060611;
+  color: #00FF41;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(0,255,65,0.5), 0 0 40px rgba(0,255,65,0.2);
+  transition: all 0.25s ease;
+  padding: 0;
+  outline: none;
+}
+
+.cb-trigger:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 28px rgba(0,255,65,0.75), 0 0 60px rgba(0,255,65,0.3);
+  background: rgba(0,255,65,0.08);
+}
+
+.cb-trigger--open {
+  border-color: #00D4FF;
+  color: #00D4FF;
+  box-shadow: 0 0 18px rgba(0,212,255,0.5), 0 0 40px rgba(0,212,255,0.2);
+}
+
+.cb-trigger-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.cb-trigger-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: linear-gradient(135deg, #00FF41, #00D4FF);
+  color: #060611;
+  font-size: 8px;
+  font-weight: 900;
+  font-family: "Courier New", monospace;
+  padding: 2px 5px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.95); }
+}
+
+/* ── Chat window ─────────────────────────────────────────────── */
+.cb-window {
+  position: fixed;
+  bottom: 100px;
+  right: 28px;
+  z-index: 9998;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  height: 500px;
+  max-height: calc(100vh - 130px);
+  display: flex;
+  flex-direction: column;
+  background: rgba(6, 6, 17, 0.97);
+  border: 1px solid rgba(0,255,65,0.35);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(0,255,65,0.08),
+    0 20px 60px rgba(0,0,0,0.8),
+    0 0 40px rgba(0,255,65,0.1);
+  transform: translateY(20px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  backdrop-filter: blur(20px);
+}
+
+.cb-window--open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.cb-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: rgba(0,255,65,0.05);
+  border-bottom: 1px solid rgba(0,255,65,0.2);
+  flex-shrink: 0;
+}
+
+.cb-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cb-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00FF41;
+  box-shadow: 0 0 8px #00FF41;
+  flex-shrink: 0;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { box-shadow: 0 0 8px #00FF41; }
+  50% { box-shadow: 0 0 16px #00FF41, 0 0 24px rgba(0,255,65,0.4); }
+}
+
+.cb-header-name {
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: #00FF41;
+  letter-spacing: 0.5px;
+}
+
+.cb-header-sub {
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+  color: rgba(0,212,255,0.6);
+  margin-top: 1px;
+}
+
+.cb-close {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+  line-height: 1;
+}
+
+.cb-close:hover {
+  color: #ff4444;
+  background: rgba(255,68,68,0.1);
+}
+
+/* ── Messages area ───────────────────────────────────────────── */
+.cb-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,255,65,0.3) transparent;
+}
+
+.cb-messages::-webkit-scrollbar {
+  width: 4px;
+}
+.cb-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+.cb-messages::-webkit-scrollbar-thumb {
+  background: rgba(0,255,65,0.3);
+  border-radius: 4px;
+}
+
+/* ── Individual message ──────────────────────────────────────── */
+.cb-message {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  max-width: 100%;
+}
+
+.cb-user {
+  flex-direction: row-reverse;
+}
+
+.cb-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00FF41, #00D4FF);
+  color: #060611;
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(0,255,65,0.4);
+}
+
+.cb-bubble {
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 13px;
+  line-height: 1.55;
+  max-width: calc(100% - 44px);
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.cb-bot .cb-bubble {
+  background: rgba(0,255,65,0.07);
+  border: 1px solid rgba(0,255,65,0.2);
+  color: rgba(255,255,255,0.9);
+  border-bottom-left-radius: 4px;
+}
+
+.cb-user .cb-bubble {
+  background: rgba(0,212,255,0.12);
+  border: 1px solid rgba(0,212,255,0.3);
+  color: rgba(255,255,255,0.95);
+  border-bottom-right-radius: 4px;
+  text-align: right;
+}
+
+/* ── Typing indicator ────────────────────────────────────────── */
+.cb-typing {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 14px;
+  background: rgba(0,255,65,0.07);
+  border: 1px solid rgba(0,255,65,0.2);
+  border-radius: 16px;
+  border-bottom-left-radius: 4px;
+}
+
+.cb-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00FF41;
+  opacity: 0.4;
+  animation: typingBounce 1.2s ease-in-out infinite;
+}
+
+.cb-typing span:nth-child(2) { animation-delay: 0.2s; }
+.cb-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* ── Input row ───────────────────────────────────────────────── */
+.cb-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-top: 1px solid rgba(0,255,65,0.15);
+  background: rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+
+.cb-input {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,255,65,0.25);
+  border-radius: 10px;
+  color: rgba(255,255,255,0.9);
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  padding: 9px 13px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cb-input:focus {
+  border-color: rgba(0,255,65,0.6);
+  box-shadow: 0 0 10px rgba(0,255,65,0.15);
+}
+
+.cb-input::placeholder {
+  color: rgba(255,255,255,0.25);
+}
+
+.cb-input:disabled {
+  opacity: 0.5;
+}
+
+.cb-send {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,255,65,0.4);
+  background: rgba(0,255,65,0.1);
+  color: #00FF41;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.cb-send:hover:not(:disabled) {
+  background: rgba(0,255,65,0.2);
+  border-color: #00FF41;
+  box-shadow: 0 0 12px rgba(0,255,65,0.3);
+  transform: scale(1.05);
+}
+
+.cb-send:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cb-trigger {
+    bottom: 18px;
+    right: 18px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .cb-window {
+    bottom: 82px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-width: 100%;
+    height: 65vh;
+    max-height: 520px;
+    border-radius: 14px;
+  }
+
+  .cb-bubble {
+    font-size: 14px;
+    padding: 9px 12px;
+  }
+
+  .cb-input {
+    font-size: 16px; /* prevent iOS auto-zoom on focus */
+  }
+
+  .cb-header-name {
+    font-size: 13px;
+  }
+
+  .cb-messages {
+    padding: 12px 10px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .cb-window {
+    height: 70vh;
+  }
+  .cb-trigger {
+    width: 48px;
+    height: 48px;
+  }
+}

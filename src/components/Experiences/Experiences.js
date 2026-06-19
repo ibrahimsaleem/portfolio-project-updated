@@ -11,11 +11,10 @@ function Experiences() {
       type: "education",
       title: "Master of Science in Cybersecurity",
       organization: "University of Houston, Houston, TX",
-      date: "Expected August 2026",
+      date: "Expected May 2026",
       description:
-        `GPA: 4.0/4.0; Courses: Cybersecurity, Network Security, Secure Enterprise Computing, 
-        Critical thinking in Info Sec, Cryptography, Data Science for Cybersecurity, Project Management`,
-      documentLink: "https://drive.google.com/your-msc-transcript-link"  // Add your link here
+        "GPA: 3.98/4.0 | Awarded $16,000 Scholarship. Coursework: Network Security, Secure Enterprise Computing, Cryptography, Data Analysis for Cybersecurity, Cybersecurity Risk Management, Secure Software Design.",
+      documentLink: "https://www.uh.edu/"
     },
     {
       type: "education",
@@ -23,8 +22,8 @@ function Experiences() {
       organization: "Rajiv Gandhi Proudyogiki Vishwavidyalaya",
       date: "July 2023",
       description:
-        "Courses: Python, Software Engineering, Data Structures & Algorithms, OOPS, DBMS, Cloud Computing, Operating Systems, Computer Networks, Cryptography, Machine Learning",
-      documentLink: "https://drive.google.com/your-btech-transcript-link"  // Add your link here
+        "Coursework: Python, Software Engineering, Data Structures & Algorithms, OOP, DBMS, Cloud Computing, Operating Systems, Computer Networks, Cryptography, Machine Learning.",
+      documentLink: "https://www.rgpv.ac.in/"
     },
   ];
 
@@ -32,21 +31,30 @@ function Experiences() {
   const experienceData = [
     {
       type: "experience",
-      title: "Applied AI Data Scientist",
-      organization: "NOV (National Oilwell Varco)",
-      date: "Jan 2025 – Present",
+      title: "AI Security & Governance Engineer",
+      organization: "AT&T — Plano, TX (Hybrid)",
+      date: "Jan 2026 – Present",
       description:
-        "Developing machine learning models and data science solutions for the energy sector. Building predictive analytics, AI-powered automation, and MLOps pipelines. Deploying LLM/RAG systems and creating data-driven insights to optimize operational efficiency and decision-making processes.",
+        "Designing and securing enterprise AI governance workflows for GenAI and agentic AI systems — reducing AI use-case review from 10–12 days to under 6 minutes through automated agentic security review pipelines. Developing privacy-preserving tokenization and masking frameworks for enterprise networking data. Performing adversarial testing, architecture security reviews, and behavioral risk assessments on enterprise LLMs prior to deployment. Creating enterprise AI security frameworks aligned with OWASP Top 10 for LLMs, NIST AI-RMF, ISO 42001, and zero-trust principles.",
+      documentLink: "https://www.att.com/"
+    },
+    {
+      type: "experience",
+      title: "GenAI & Data Science Intern",
+      organization: "NOV Inc. (National Oilwell Varco) — Houston, TX",
+      date: "June 2025 – Dec 2025",
+      description:
+        "Built Contact Us AI Automation system routing queries with 96% accuracy, processing 50+ emails daily (0 critical vulnerabilities, 100% OWASP compliance). Architected self-improving multi-agent GenAI system for MUD report parsing — 360x speed improvement (8 min vs 2 days), 89–100% accuracy, published at SPE 2025. Secured MCP server for Expression Language conversion, mitigating command injection, tool poisoning, and weak authentication. Consulted team on secure agentic coding practices and conducted AI security reviews.",
       documentLink: "https://www.nov.com/"
     },
     {
       type: "experience",
-      title: "Research Assistant (AI & IoT Security)",
+      title: "Research Assistant — AI & Cybersecurity",
       organization: "University of Houston, Houston, TX",
-      date: "Sep 2024 – Present",
+      date: "Sep 2024 – May 2025",
       description:
-        "Developing an AI-driven Automatic Pentesting security tool for automated code analysis and penetration testing using Bandit, Gemini AI, and Ollama (LLaMA). Designed a secure IoT pairing system leveraging automotive signal noise with cryptographic protocols and TLS/SSL encryption. Engineered a network security monitoring system integrating Python-based analytics and intrusion detection models, improving threat detection efficiency by 40%.",
-      documentLink: "https://drive.google.com/research-assistant-letter"  // Add your link here
+        "Led research on LIMA (first author) — LLM-driven penetration testing framework using MCP servers, achieving 95% success rate and reducing testing time from 8+ hours to 15 minutes. Published at IEEE FMLDS 2025. Built PentestThinkingMCP server integrating Nmap, Metasploit, and Burp Suite for vulnerability discovery across 50+ scenarios. Benchmarked Claude 3.5 against expert pentesters on 12/15 HTB boxes ($0.05/run, 95% cost reduction).",
+      documentLink: "https://www.uh.edu/"
     },
     {
       type: "experience",
@@ -54,17 +62,17 @@ function Experiences() {
       organization: "Nagarro Software Pvt. Ltd.",
       date: "March 2023 – February 2024",
       description:
-        "Designed and developed scalable backend solutions using C#, .NET Core, and SQL Server—optimizing queries by 30%. Built secure REST APIs with JWT authentication and role-based access control. Developed interactive Angular-based dashboards and automated data analytics pipelines using Python and Pandas.",
-      documentLink: "https://drive.google.com/file/d/1iCmJo79hqhu-ZX7JYsbArzW6FtDOv4cI/view"  // Add your link here
+        "Engineered scalable backend solutions using C#, .NET Core, and SQL Server with security controls, input validation, and SQL injection prevention — optimizing queries by 30% across 25+ APIs. Delivered secure REST APIs with JWT, RBAC, and OWASP compliance, handling 1000+ daily requests (99.9% uptime). Streamlined data analytics pipelines, reducing reporting time by 40%.",
+      documentLink: "https://drive.google.com/file/d/1iCmJo79hqhu-ZX7JYsbArzW6FtDOv4cI/view"
     },
     {
       type: "experience",
-      title: "Research & Cyber Security Intern",
+      title: "Research & Cybersecurity Intern",
       organization: "State Cyber Cell MP Police",
       date: "July 2022 – December 2022",
       description:
-        "Conducted security assessments on critical infrastructure systems to identify vulnerabilities in power grids and telecom networks. Researched emerging attack vectors using Python-based threat intelligence analytics and delivered cybersecurity awareness training to over 500 students and professionals.",
-      documentLink: "https://www.linkedin.com/posts/ibrahimsaleem91_cybersecurity-technology-internship-activity-6956594217557110784-LO4_/?utm_source=linkedin_share&utm_medium=member_desktop_web"  // Add your link here
+        "Conducted security assessments on critical infrastructure systems to identify vulnerabilities in power grids and telecom networks. Researched emerging attack vectors using Python-based threat intelligence analytics. Delivered cybersecurity awareness training to 500+ students and professionals.",
+      documentLink: "https://www.linkedin.com/posts/ibrahimsaleem91_cybersecurity-technology-internship-activity-6956594217557110784-LO4_/"
     },
     {
       type: "experience",
@@ -72,26 +80,17 @@ function Experiences() {
       organization: "Dolphinox Pvt Ltd",
       date: "June 2022 – September 2022",
       description:
-        "Enhanced project understanding and planning efficiency by creating Use-case, Database, Class, and Object diagrams during the design phase. Engineered robust back-end APIs utilizing Python and Django, paired with HTML, CSS, and JavaScript in the React Framework for front-end development, ensuring seamless web development process and enhanced user experience. Played a pivotal role in the development of a product sales and inventory management website.",
-      documentLink: "https://drive.google.com/file/d/1n5G5ldpu5OrVqQn53_0H37s-CmXflNLg/view"  // Add your link here
-    },
-    {
-      type: "experience",
-      title: "Campus Ambassador/Content Writer Intern",
-      organization: "World Cyber Security Forum",
-      date: "April 2022 – June 2022",
-      description:
-        "Leveraged strong writing and editing skills to create high-quality cybersecurity content, including technical tutorials, blogs, and news articles. Conducted in-depth research on various cybersecurity topics including testing techniques, cyber attacks, viruses, and cyber laws. Played a key role as Campus Ambassador in promoting cybersecurity awareness among college students through educational initiatives and workshops.",
-      documentLink: "https://www.worldcybersecurities.com/bangladesh-deals-with-undp-for-cybersecurity-awareness-campaign/"  // Add your link here
+        "Engineered backend APIs using Python and Django paired with React for front-end development. Built a product sales and inventory management website with full-stack integration.",
+      documentLink: "https://drive.google.com/file/d/1n5G5ldpu5OrVqQn53_0H37s-CmXflNLg/view"
     },
     {
       type: "experience",
       title: "Freelance Web Developer",
       organization: "Self-Employed",
-      date: "January 2017 - March 2023",
+      date: "January 2017 – March 2023",
       description:
-        "Provided website development services to diverse clients, including local businesses and remote clients, utilizing frameworks such as React JS, WordPress, and Joomla. Specialized in enhancing businesses' online presence by creating digital assets like landing pages, web pages, digital menus, and advertisements. Successfully delivered customized web solutions that improved clients' online visibility and user engagement.",
-      documentLink: "https://www.linkedin.com/in/ibrahimsaleem91/details/projects/"  // Add your link here
+        "Delivered customized web solutions for diverse clients using React JS, WordPress, and Joomla — including landing pages, digital menus, and e-commerce platforms — improving clients' online visibility and user engagement.",
+      documentLink: "https://www.linkedin.com/in/ibrahimsaleem91/details/projects/"
     },
   ];
 

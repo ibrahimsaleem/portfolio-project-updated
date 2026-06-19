@@ -34,26 +34,103 @@ import pentestMcpImg from "../../Assets/Projects/pentest-mcp.png";
 import localRagImg from "../../Assets/Projects/local-rag.png";
 import secureOfflineAiImg from "../../Assets/Projects/secure-offline-ai.png";
 
+// New generated project images
+import evilTraceImg from "../../Assets/Projects/eviltrace-ai.svg";
+import tokenlessImg from "../../Assets/Projects/tokenless.svg";
+import clawProtectImg from "../../Assets/Projects/clawprotect.svg";
+
 function Projects() {
   return (
     <Container fluid className="project-section">
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          Research <strong className="purple">Publications </strong> & Projects
         </h1>
         <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+          Here are my research publications, active projects, and recent works.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {/* New Highlights */}
+          {/* Research Publications */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath="https://images.unsplash.com/photo-1556075798-4825dfaaf498?q=80&w=800&h=600&fit=crop"
+              imgPath="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&h=600&fit=crop"
               isBlog={false}
-              title="AplyEase (YC Applicant)"
-              description="AI + human job search service: dedicated assistants, AI-tailored resumes, quality employers, visa-friendly filters, and transparent pricing (Basic $125, Best Value $350, Ultimate $599). Helping 100+ professionals land interviews."
-              link="https://aplyease.com/"
+              title="LIMA: LLM-MCP Penetration Testing (IEEE FMLDS 2025)"
+              description="🏆 PUBLISHED — First author. Autonomous penetration testing framework using LLMs and MCP servers for initial machine access. 95% success rate, reduced testing from 8+ hours to 15 minutes. Claude 3.5 outperformed expert pentesters on 12/15 HTB boxes at $0.05/run."
+              link="https://www.linkedin.com/in/ibrahimsaleem91/"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Self-Improving GenAI Agent for Report Parsing (SPE 2025)"
+              description="🏆 PUBLISHED — Second author. Autonomous 3-agent GenAI system (vendor detection, prompt optimization, extraction) using Azure OpenAI GPT-4o/5. 360x speed improvement (8 min vs 2 days), 89–100% accuracy, 0 security incidents. Applied OWASP LLM Top 10 & NIST AI-RMF."
+              link="https://www.linkedin.com/in/ibrahimsaleem91/"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="EncoderThinkingMCP (IEEE Southwest 2026)"
+              description="🔬 IN RESEARCH — AI-driven MCP server providing structured workflows, reasoning, and multi-framework support for encoder-decoder model development. Co-authored with Prof. Tania Banerjee. IEEE Southwest 2026 submission."
+              link="https://www.linkedin.com/in/ibrahimsaleem91/"
+            />
+          </Col>
+
+          {/* NEW: Latest Projects */}
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={evilTraceImg}
+              isBlog={false}
+              title="EvilTrace AI — Multi-Agent DFIR Engine"
+              description="🏆 HACKATHON — Built for the FIND EVIL Hackathon. Autonomous 7-agent DFIR engine that verifies security claims against actual log artifacts — zero hallucinations. Features a Zero-Hallucination Gate, Self-Correction Loop, Threat-Intel Enrichment via Exa Search API, and a Streamlit dashboard with chronological timelines. EvilTrace doesn't guess. It verifies."
+              link="https://github.com/ibrahimsaleem/EvilTraceAI"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={tokenlessImg}
+              isBlog={false}
+              title="TokenLess — AI Token Optimization Hub"
+              description="⚡ OPEN SOURCE — Token optimization hub with reusable AI skills that plug directly into Claude Code, Windsurf, MCP agents, Copilot, and other AI workflows. Includes token & cost tracking, context optimization, enterprise efficiency strategies, and training paths. Reduces token cost by up to 78% on real workflows."
+              link="https://github.com/ibrahimsaleem/TokenLess"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={clawProtectImg}
+              isBlog={false}
+              title="ClawProtect — AI Agent Security Gateway"
+              description="🛡️ RESEARCH — Defense-in-depth security stack for AI agent gateways. Features a content-aware security proxy (prompt injection, PII, secrets detection), eBPF-based kernel monitoring for syscall-level visibility, egress firewall for outbound policy enforcement, and a cross-layer adaptive event bus for Splunk/SIEM integration."
+              link="https://github.com/ibrahimsaleem/ClawProtect"
+            />
+          </Col>
+
+          {/* Featured AI Security Projects */}
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={pentestMcpImg}
+              isBlog={false}
+              title="PentestThinkingMCP — Autonomous Pentest Server"
+              description="🔴 MCP server enabling LLM-driven attack chains (Metasploit, Nmap, Burp Suite). Compromised HTB 'Lame' in 3 minutes ($0.03, 95% cost reduction). Modular AI agent framework with beam search & MCTS for reconnaissance, privilege escalation, and post-exploitation across 20+ scenarios."
+              link="https://github.com/ibrahimsaleem/PentestThinkingMCP"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Agentic Lean Embedding System for Vulnerability Discovery"
+              description="🔬 ACTIVE RESEARCH — Agentic pipeline combining lean embeddings for vulnerability discovery. Semantic indexing for OS system-wide analysis: 500+ secrets, 200+ insecure API patterns, 150+ risky settings detected. 90% faster discovery with cross-source correlation and human-in-the-loop triage."
+              link="https://www.linkedin.com/in/ibrahimsaleem91/"
             />
           </Col>
 
@@ -61,19 +138,9 @@ function Projects() {
             <ProjectCard
               imgPath="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&h=600&fit=crop"
               isBlog={false}
-              title="Research: Secure AI/IoT Systems"
-              description="Ongoing research paper on secure IoT pairing and AI-driven detection. Focus on practical threat models, cryptographic protocols, and ML-based anomaly detection."
+              title="Contact Us AI Automation — Threat Modeling Report"
+              description="Comprehensive threat modeling report applying OWASP Top 10 for LLMs across full AI lifecycle. Mapped LLM-01 (Prompt Injection), LLM-06 (Sensitive Data Disclosure), LLM-08 (Excessive Agency). 0 critical vulnerabilities, 100% compliance, 96% response accuracy processing 50+ emails daily."
               link="https://www.linkedin.com/in/ibrahimsaleem91/"
-            />
-          </Col>
-          {/* AI/ML Projects */}
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&h=600&fit=crop"
-              isBlog={false}
-              title="CyberPath AI"
-              description="Advanced AI-powered cybersecurity career guidance platform that creates personalized learning paths based on user skills and career goals. Leverages LLM technology to analyze industry trends and recommend targeted resources for skill development."
-              link="https://github.com/ibrahimsaleem/cyberpath-ai"
             />
           </Col>
 
@@ -81,9 +148,30 @@ function Projects() {
             <ProjectCard
               imgPath="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&h=600&fit=crop"
               isBlog={false}
-              title="PentestThinkingMCP"
-              description="Model Context Protocol (MCP) tool for penetration testing that enhances security assessments with AI-driven analysis. Integrates with security tools to provide contextual insights and automated vulnerability prioritization."
-              link="https://github.com/ibrahimsaleem/pentest-thinking-mcp"
+              title="Cybersecurity Awareness Platform"
+              description="Interactive platform with 30+ penetration testing tools (Metasploit, Burp Suite) serving 1,000+ learners. Integrated attack simulations, automated scoring, and progress tracking. Secure coding workshops teaching 200+ developers to remediate security flaws."
+              link="https://sctool.web.app/"
+            />
+          </Col>
+
+          {/* AI/ML Projects */}
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={localRagImg}
+              isBlog={false}
+              title="LocalRAGAgent"
+              description="Privacy-focused Retrieval Augmented Generation (RAG) system running entirely on local hardware. Enables secure document analysis and question answering without sending sensitive data to external APIs."
+              link="https://github.com/ibrahimsaleem/LocalRAGAgent"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={secureOfflineAiImg}
+              isBlog={false}
+              title="Secure Offline AI Assistant"
+              description="Air-gapped AI assistant for high-security environments. Local model deployment, zero external dependencies, and specialized security tooling integration for sensitive network operations."
+              link="https://github.com/ibrahimsaleem/secure-offline-ai"
             />
           </Col>
 

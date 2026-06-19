@@ -2,6 +2,126 @@
 
 const blogPosts = [
   {
+    id: "eviltrace-ai-dfir",
+    title: "Can AI Solve DFIR? I Built EvilTrace AI to Find Out",
+    date: "2026-06-13",
+    tags: ["DFIR", "Multi-Agent", "AI Security", "Hackathon"],
+    image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Typical LLMs hallucinate and speculate, making them untrustworthy for forensic investigations. So I built EvilTrace AI — an autonomous 7-agent DFIR engine with a Zero-Hallucination Gate that verifies every security claim against actual log artifacts before including it in a report.",
+    link: "/blog/eviltrace-ai-dfir",
+  },
+  {
+    id: "who-controls-ai-agents",
+    title: "Who Is Controlling the Agent Before It Acts?",
+    date: "2026-05-20",
+    tags: ["Agentic AI", "Runtime Security", "MCP", "AI Governance"],
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "AI agents now read files, run commands, call MCP servers, and touch cloud resources. The real question isn't what they can do — it's who is controlling them before they act. I explored a practical security pattern using policy gateways with allow/warn/block/audit actions.",
+    link: "/blog/who-controls-ai-agents",
+  },
+  {
+    id: "nsa-mcp-security",
+    title: "NSA on MCP Security: AI is Shifting from Model Security to Agent Security",
+    date: "2026-05-08",
+    tags: ["MCP", "NSA", "Agentic AI", "AI Security"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "NSA dropped a major paper on securing MCP (Model Context Protocol) AI systems. The clear signal: AI security is shifting from 'model security' to 'agent security.' MCP is the backbone of agentic AI — giving LLMs tool access changes the threat model completely.",
+    link: "/blog/nsa-mcp-security",
+  },
+  {
+    id: "tokenless-token-optimization",
+    title: "Most AI Teams Optimize Prompts — But Forget the Agent Itself",
+    date: "2026-05-15",
+    tags: ["TokenLess", "AI Efficiency", "Claude Code", "MCP"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "I built TokenLess, an open-source token optimization hub with reusable AI skills you can plug directly into Claude Code, Windsurf, MCP agents, and Copilot. Give these skills to Claude and make it automatically follow enterprise-ready token optimization practices.",
+    link: "/blog/tokenless-token-optimization",
+  },
+  {
+    id: "ai-red-team-hallucination",
+    title: "AI-Assisted Red Teaming: The Hallucination Problem Is Dangerous",
+    date: "2026-05-12",
+    tags: ["Red Team", "AI Security", "LLM", "AppSec"],
+    image: "https://images.unsplash.com/photo-1555435025-10a3f6a24f06?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "One of the biggest issues in AI-assisted security workflows is hallucinated vulnerability findings — fake CVEs, weak evidence, overstated severity, attack paths that sound real but fail during validation. AI doesn't replace security judgment — it amplifies people who know how to guide, verify, and control it.",
+    link: "/blog/ai-red-team-hallucination",
+  },
+  {
+    id: "claude-malware-attack-path",
+    title: "Trusted AI Chats as Attack Paths: The Claude Malware Campaign",
+    date: "2026-05-01",
+    tags: ["Malware", "AI Security", "Claude", "Social Engineering"],
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Attackers abused Google Ads and legitimate Claude shared chats to push Mac malware through fake install instructions — a real platform with a fake install guide delivering real malware. AI security is no longer only about model safety. It's also about user trust and how attackers abuse trusted AI ecosystems.",
+    link: "/blog/claude-malware-attack-path",
+  },
+  {
+    id: "vlm-prompt-injection",
+    title: "Hidden Instructions in Images: Prompt Injection in Vision-Language Models",
+    date: "2026-04-28",
+    tags: ["Prompt Injection", "VLM", "AI Security", "Cisco"],
+    image: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Cisco showed that hidden instructions can be placed inside images using tiny visual changes that humans miss, but vision-language models still read. Screenshots, PDFs, tickets, diagrams, and webpage previews can all become untrusted input for multimodal AI. If an AI system can 'see' it, attackers may hide instructions inside it.",
+    link: "/blog/vlm-prompt-injection",
+  },
+  {
+    id: "next-breach-ai-tool",
+    title: "Your Next Breach Won't Start with a Firewall — It'll Start with an AI Tool",
+    date: "2026-04-22",
+    tags: ["AI Security", "Data Breach", "Zero Trust", "Identity"],
+    image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Ameriprise, Kemper, Citizens Financial, and Vercel all hit in a single week with the same pattern: attackers not 'breaking in' but logging in — or getting your tools to do it for them. Over-permissioned AI tools and plugins, blind trust in vendors, and weak identity controls are the real culprits.",
+    link: "/blog/next-breach-ai-tool",
+  },
+  {
+    id: "self-evolving-agents-security",
+    title: "AI Agents Are Becoming Self-Evolving: A Security Wake-Up Call",
+    date: "2026-03-25",
+    tags: ["Agentic AI", "AI Governance", "Security", "Meta-Skills"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Concepts like meta-skills in Google ADK let agents read skill specifications, learn from examples, generate new capabilities, and persist them across sessions. Once agents can decide what they can become, security is no longer only about controlling outputs — it's about controlling evolution.",
+    link: "/blog/self-evolving-agents-security",
+  },
+  {
+    id: "ai-cheatsheets-engineering",
+    title: "GenAI Depth Comes From Understanding What Happens Beyond the Prompt",
+    date: "2026-04-10",
+    tags: ["AI Engineering", "Transformers", "Prompt Caching", "LLMOps"],
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Three visual revision cheat sheets covering AI Engineering Architecture, Transformer Internals, and Prompt Caching & LLM Cost Optimization — connecting directly to enterprise concerns: securing GenAI, reducing cost, improving latency, and making systems explainable.",
+    link: "/blog/ai-cheatsheets-engineering",
+  },
+  {
+    id: "2026-cybersecurity-ai-force-multiplier",
+    title: "2026 Cybersecurity: AI Is a Force Multiplier — Good and Bad",
+    date: "2026-03-15",
+    tags: ["AI Security", "2026 Predictions", "Agents", "Post-Quantum"],
+    image: "https://images.unsplash.com/photo-1488229297570-58520851e868?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Shadow AI is quietly increasing breach costs. Deepfakes have exploded. Prompt injection is still the #1 risk. But the real 2026 story is attacks ON AI agents — autonomous agents with excessive privileges can exfiltrate data at machine speed and automate entire attack chains without a single human click.",
+    link: "/blog/2026-cybersecurity-ai-force-multiplier",
+  },
+  {
+    id: "clawprotect-release",
+    title: "ClawProtect: Defense-in-Depth Security for AI Agent Gateways",
+    date: "2026-03-10",
+    tags: ["ClawProtect", "eBPF", "Prompt Injection", "AI Security"],
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "I built ClawProtect — a defense-in-depth security stack for AI agent gateways. It includes a content-aware security proxy, eBPF-based kernel monitoring for syscall-level behavioral visibility, egress firewall controls, and a cross-layer event bus for adaptive response.",
+    link: "/blog/clawprotect-release",
+  },
+  {
     id: "sharepoint-zero-day-gtig",
     title: "Active SharePoint Zero‑Day (CVE‑2025‑53770): What To Do Now",
     date: "2025-07-24",

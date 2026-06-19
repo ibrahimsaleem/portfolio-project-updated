@@ -25,23 +25,27 @@ function BlogPost() {
     <Container fluid className="project-section">
       <Container>
         <Row>
-          <Col md={12}>
-            <img src={heroImage} alt={title} style={{ width: "100%", borderRadius: 12, marginBottom: 20 }} />
-            <h1 className="project-heading" style={{ marginTop: 10 }}>{title}</h1>
-            <div style={{ color: "#9aa2b1", marginBottom: 10 }}>{date}</div>
+          <Col xs={12}>
+            <img
+              src={heroImage}
+              alt={title}
+              style={{ width: "100%", borderRadius: 12, marginBottom: 20, maxHeight: 340, objectFit: "cover" }}
+            />
+            <h1 className="project-heading" style={{ marginTop: 10, textAlign: "left" }}>{title}</h1>
+            <div style={{ color: "#9aa2b1", marginBottom: 10, fontFamily: "'Share Tech Mono', monospace", fontSize: "0.9rem" }}>{date}</div>
             <div style={{ marginBottom: 20 }}>
               {tags.map((t) => (
-                <Badge bg="secondary" key={t} style={{ marginRight: 6 }}>{t}</Badge>
+                <Badge bg="secondary" key={t} style={{ marginRight: 6, marginBottom: 4 }}>{t}</Badge>
               ))}
             </div>
           </Col>
         </Row>
         <Row>
-          <Col md={12}>
-            <div style={{ color: "white", lineHeight: 1.8, fontSize: "1.05rem" }}>
+          <Col xs={12} md={10} lg={8}>
+            <div style={{ color: "rgba(210,225,245,0.92)", lineHeight: 1.85, fontSize: "1.02rem" }}>
               <Content />
             </div>
-            <div style={{ marginTop: 30 }}>
+            <div style={{ marginTop: 36, marginBottom: 20 }}>
               <Link to="/blog" className="btn btn-primary">← Back to Blog</Link>
             </div>
           </Col>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Preloader from "./components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
+import HomeDetailed from "./components/Home/HomeDetailed";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
@@ -20,6 +21,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Certificates from "./components/Certificates/Certificates";
 import Blog from "./components/Blog/Blog";
 import BlogPost from "./components/Blog/BlogPost";
+import ChatBot from "./components/ChatBot/ChatBot";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -40,6 +42,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/detailed" element={<HomeDetailed />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/resume" element={<Resume />} />
@@ -51,6 +54,7 @@ function App() {
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
         <Footer />
+        <ChatBot />
       </div>
     </Router>
   );
