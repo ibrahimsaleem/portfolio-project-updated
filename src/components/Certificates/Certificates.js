@@ -140,6 +140,56 @@ function Certificates() {
               link="#" // Replace "#" with the actual link to the certificate
             />
           </Col>
+
+          {/* Certificate: OWASP Top 10 for LLMs */}
+          <Col md={4} className="project-card">
+            <CertificateCard
+              isBlog={false}
+              title="OWASP Top 10 for LLMs"
+              description="AI/LLM security risks and mitigations: prompt injection, sensitive data disclosure, excessive agency."
+              link="#"
+            />
+          </Col>
+
+          {/* Certificate: Azure AI-900 */}
+          <Col md={4} className="project-card">
+            <CertificateCard
+              isBlog={false}
+              title="Microsoft Azure AI Fundamentals (AI-900)"
+              description="Core AI/ML concepts and Azure AI services."
+              link="#"
+            />
+          </Col>
+
+          {/* Certificate: ISC2 CC */}
+          <Col md={4} className="project-card">
+            <CertificateCard
+              isBlog={false}
+              title="ISC2 Certified in Cybersecurity (CC)"
+              description="Security principles, network security, incident response, and access control fundamentals."
+              link="#"
+            />
+          </Col>
+
+          {/* Certificate: Security+ (In Progress) */}
+          <Col md={4} className="project-card">
+            <CertificateCard
+              isBlog={false}
+              title="CompTIA Security+ (In Progress)"
+              description="Threats, attacks, and vulnerabilities; architecture and design; operations and incident response."
+              link="#"
+            />
+          </Col>
+
+          {/* Certificate: NSE 3 Network Security Associate */}
+          <Col md={4} className="project-card">
+            <CertificateCard
+              isBlog={false}
+              title="NSE 3 Network Security Associate"
+              description="Fortinet Network Security Associate — NSE 1-3 track."
+              link="#"
+            />
+          </Col>
         </Row>
       </Container>
     </Container>

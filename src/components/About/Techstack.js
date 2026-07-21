@@ -9,14 +9,14 @@ import {
   DiPython,
   DiGit,
 } from "react-icons/di";
-import { 
-  SiMysql, 
-  SiApachenetbeanside, 
+import {
+  SiMysql,
+  SiApachenetbeanside,
   SiFirebase,
   SiJava,
-  SiCanva, 
-  SiDotnet, 
-  SiAngular, 
+  SiCanva,
+  SiDotnet,
+  SiAngular,
   SiMicrosoftsqlserver,
   SiPytorch,
   SiTensorflow,
@@ -28,8 +28,10 @@ import {
   SiApacheairflow,
   SiPowerbi,
   SiTableau,
-  SiKubernetes
+  SiKubernetes,
+  SiSplunk
 } from "react-icons/si";
+import { FaChartLine, FaRobot, FaUserShield, FaSearch } from "react-icons/fa";
 
 function Techstack() {
   return (
@@ -121,6 +123,28 @@ function Techstack() {
       <Col xs={4} md={2} className="tech-icons">
         <SiKubernetes />
         <h5>Kubernetes</h5>
+      </Col>
+
+      {/* Security Operations & Detection */}
+      <Col xs={4} md={2} className="tech-icons">
+        <SiSplunk />
+        <h5>Splunk / SPL</h5>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <FaRobot />
+        <h5>SOAR / Cortex XSOAR</h5>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <FaChartLine />
+        <h5>SIEM / EDR</h5>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <FaSearch />
+        <h5>Sigma / KQL</h5>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <FaUserShield />
+        <h5>IAM / Zero Trust</h5>
       </Col>
     </Row>
   );

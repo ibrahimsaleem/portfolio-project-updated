@@ -550,7 +550,7 @@ function Home() {
                       </Button>
                     </div>
                     <Button
-                      href="mailto:ibrahimsaleem401@gmail.com"
+                      href="mailto:ibrahimsaleem244@gmail.com"
                       style={{
                         background: "transparent",
                         border: "1px solid rgba(199,112,240,0.4)",

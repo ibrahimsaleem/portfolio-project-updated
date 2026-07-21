@@ -156,6 +156,16 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Tax Application Threat Modeling"
+              description="Threat modeling for a tax application, identifying and mitigating vulnerabilities across architecture, data flow, and trust boundaries. Mapped findings to OWASP Top 10 categories and documented attack trees and security controls."
+              link="https://www.linkedin.com/in/ibrahimsaleem91/"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
               imgPath="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&h=600&fit=crop"
               isBlog={false}
               title="Cybersecurity Awareness Platform"

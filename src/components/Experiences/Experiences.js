@@ -35,7 +35,7 @@ function Experiences() {
       organization: "AT&T — Plano, TX (Hybrid)",
       date: "Jan 2026 – Present",
       description:
-        "Designing and securing enterprise AI governance workflows for GenAI and agentic AI systems — reducing AI use-case review from 10–12 days to under 6 minutes through automated agentic security review pipelines. Developing privacy-preserving tokenization and masking frameworks for enterprise networking data. Performing adversarial testing, architecture security reviews, and behavioral risk assessments on enterprise LLMs prior to deployment. Creating enterprise AI security frameworks aligned with OWASP Top 10 for LLMs, NIST AI-RMF, ISO 42001, and zero-trust principles.",
+        "Designing and securing enterprise AI governance and SOC-style detection-response review workflows for GenAI and agentic AI systems — reducing AI use-case review and permit-to-operate approval from 10–12 days to under 6 minutes through automated agentic security review pipelines, escalation paths, and process controls. Built SLA tracking, control pass/fail, and remediation dashboards for security and governance stakeholders. Developed SOAR-style orchestration and API integrations — alert enrichment, analyst-style triage, evidence capture, ticket routing — using Python, REST APIs, Splunk/SPL-style queries, and Cortex XSOAR concepts. Performed adversarial testing and behavioral risk assessments on enterprise LLMs against OWASP Top 10 for LLMs and Agents, NIST AI-RMF, ISO 42001, and zero-trust principles, translating findings into remediation tasks and detection-response runbooks.",
       documentLink: "https://www.att.com/"
     },
     {
@@ -44,7 +44,7 @@ function Experiences() {
       organization: "NOV Inc. (National Oilwell Varco) — Houston, TX",
       date: "June 2025 – Dec 2025",
       description:
-        "Built Contact Us AI Automation system routing queries with 96% accuracy, processing 50+ emails daily (0 critical vulnerabilities, 100% OWASP compliance). Architected self-improving multi-agent GenAI system for MUD report parsing — 360x speed improvement (8 min vs 2 days), 89–100% accuracy, published at SPE 2025. Secured MCP server for Expression Language conversion, mitigating command injection, tool poisoning, and weak authentication. Consulted team on secure agentic coding practices and conducted AI security reviews.",
+        "Built an AI assistant and workflow automation system for Contact Us email routing — using company content, user intent, and location context — eliminating 20+ hours of weekly manual forwarding at 95% routing accuracy across 50+ emails daily, with threat modeling and secure architecture validation. Architected a self-improving multi-agent GenAI workflow for MUD report parsing (Azure OpenAI GPT-4o/5) — 360x speed improvement (8 min vs 2 days), 89–100% accuracy, 0 security incidents, accepted as a published paper. Secured an MCP server converting natural language to Expression Language, mitigating command injection (RCE), weak authentication, rate-limit, and tool-poisoning risks across 5+ internal tools. Supported data scientists by testing AI solutions and recommending workflow controls for prompt injection, jailbreak, sensitive data exposure, and unbounded-consumption risks.",
       documentLink: "https://www.nov.com/"
     },
     {
@@ -53,7 +53,7 @@ function Experiences() {
       organization: "University of Houston, Houston, TX",
       date: "Sep 2024 – May 2025",
       description:
-        "Led research on LIMA (first author) — LLM-driven penetration testing framework using MCP servers, achieving 95% success rate and reducing testing time from 8+ hours to 15 minutes. Published at IEEE FMLDS 2025. Built PentestThinkingMCP server integrating Nmap, Metasploit, and Burp Suite for vulnerability discovery across 50+ scenarios. Benchmarked Claude 3.5 against expert pentesters on 12/15 HTB boxes ($0.05/run, 95% cost reduction).",
+        "Pioneered LIMA (first author) — an LLM-driven penetration testing and security automation framework achieving 95% success rate and reducing testing time from 8+ hours to 15 minutes, published at IEEE FMLDS 2025. Engineered the PentestThinkingMCP server integrating reasoning agents with Nmap, Metasploit, and Burp Suite for analyst-style vulnerability discovery and triage across 50+ scenarios (90% accuracy), with prompt-injection defenses and input/output validation. Established a quantitative benchmark showing Claude 3.5 outperformed expert pentesters on 12/15 HTB boxes ($0.05/run, 95% cost reduction).",
       documentLink: "https://www.uh.edu/"
     },
     {
@@ -62,7 +62,7 @@ function Experiences() {
       organization: "Nagarro Software Pvt. Ltd.",
       date: "March 2023 – February 2024",
       description:
-        "Engineered scalable backend solutions using C#, .NET Core, and SQL Server with security controls, input validation, and SQL injection prevention — optimizing queries by 30% across 25+ APIs. Delivered secure REST APIs with JWT, RBAC, and OWASP compliance, handling 1000+ daily requests (99.9% uptime). Streamlined data analytics pipelines, reducing reporting time by 40%.",
+        "Engineered scalable backend and security automation solutions (C#, .NET Core, SQL Server) with secure coding controls, input validation, and SQL injection prevention across 25+ APIs, improving performance by 30%. Supported SOC-facing alert triage and incident-response workflows — security event logging, RBAC/JWT controls, API health checks, escalation paths, and runbook documentation — for 6+ applications serving 1,000+ daily requests. Built Splunk/SQL-style operational dashboards and KPI reports for incident trends, SLA status, and noisy-alert review, cutting weekly reporting effort from 20 to 12 hours (40%). Mapped application and API threats to Sigma/KQL-style detection logic and documented analyst handoff steps for repeatable detection-response workflows.",
       documentLink: "https://drive.google.com/file/d/1iCmJo79hqhu-ZX7JYsbArzW6FtDOv4cI/view"
     },
     {

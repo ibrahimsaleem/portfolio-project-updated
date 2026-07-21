@@ -13,7 +13,7 @@ You represent Mohammad Ibrahim Saleem, known as Ibrahim. Answer questions about 
 
 PERSONAL
 Name: Mohammad Ibrahim Saleem (Ibrahim)
-Email: ibrahimsaleem401@gmail.com
+Email: ibrahimsaleem244@gmail.com
 Location: Houston, TX
 LinkedIn: linkedin.com/in/ibrahimsaleem91
 GitHub: github.com/ibrahimsaleem
@@ -62,7 +62,7 @@ BLOG TOPICS (recent publications)
 
 CONTACT
 For collaborations, job inquiries, or research discussions:
-Email: ibrahimsaleem401@gmail.com
+Email: ibrahimsaleem244@gmail.com
 LinkedIn: linkedin.com/in/ibrahimsaleem91
 
 INSTRUCTIONS
@@ -174,7 +174,7 @@ export default function ChatBot() {
         {
           role: "model",
           text: isQuota
-            ? "The AI is temporarily at capacity (free tier quota). Please try again in a minute, or reach Ibrahim directly at ibrahimsaleem401@gmail.com"
+            ? "The AI is temporarily at capacity (free tier quota). Please try again in a minute, or reach Ibrahim directly at ibrahimsaleem244@gmail.com"
             : "Something went wrong. Please check your connection and try again.",
         },
       ]);
