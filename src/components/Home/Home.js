@@ -160,7 +160,8 @@ function Home() {
         <Container>
           <Row style={{ textAlign: "center" }}>
             {[
-              { value: "4+", label: "Years Experience", color: "#C770F0" },
+              { value: "6+", label: "Years Experience", color: "#C770F0" },
+              { value: "10+", label: "Years Coding", color: "#00D4FF" },
               { value: "2", label: "Published Papers", color: "#00FF41" },
               { value: "AT&T", label: "Current Employer", color: "#00D4FF" },
               { value: "95%", label: "Pentest Success Rate", color: "#C770F0" },
