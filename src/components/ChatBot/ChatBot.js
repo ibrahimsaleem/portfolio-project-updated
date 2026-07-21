@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./ChatBot.css";
 
-const GEMINI_KEY = "AIzaSyBuPgS9KJh0gBauqQiIiRZN9QQ6Rnj1PRw";
+const GEMINI_KEY = process.env.REACT_APP_GEMINI_KEY;
 const API_URL =
   "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
 
