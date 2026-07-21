@@ -160,12 +160,13 @@ function Home() {
         <Container>
           <Row style={{ textAlign: "center" }}>
             {[
+              { value: "4+", label: "Years Experience", color: "#C770F0" },
               { value: "2", label: "Published Papers", color: "#00FF41" },
               { value: "AT&T", label: "Current Employer", color: "#00D4FF" },
               { value: "95%", label: "Pentest Success Rate", color: "#C770F0" },
               { value: "3.98", label: "M.S. GPA / 4.0", color: "#00FF41" },
             ].map((stat, i) => (
-              <Col xs={6} md={3} key={i} style={{ marginBottom: "10px" }}>
+              <Col xs={6} md key={i} style={{ marginBottom: "10px" }}>
                 <div
                   style={{
                     fontFamily: "'Share Tech Mono', monospace",

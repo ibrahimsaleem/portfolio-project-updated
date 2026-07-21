@@ -1,0 +1,316 @@
+/* ===== Case Studies grid ===== */
+.case-study-card-view {
+  background: rgba(10, 14, 26, 0.75) !important;
+  border: 1px solid rgba(0, 212, 255, 0.25) !important;
+  border-radius: 14px !important;
+  backdrop-filter: blur(6px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  height: 100%;
+}
+
+.case-study-card-view:hover {
+  transform: translateY(-6px);
+  border-color: var(--cyber-cyan) !important;
+  box-shadow: var(--glow-cyan);
+}
+
+.case-study-tag {
+  display: inline-block;
+  font-family: "Share Tech Mono", "Courier New", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  color: var(--matrix-green);
+  border: 1px solid rgba(0, 255, 65, 0.4);
+  border-radius: 20px;
+  padding: 2px 10px;
+  margin: 0 6px 6px 0;
+}
+
+.case-study-meta {
+  font-family: "Share Tech Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  color: var(--cyber-cyan);
+  margin-bottom: 6px;
+}
+
+/* ===== Detail page ===== */
+.case-study-hero {
+  border-bottom: 1px solid rgba(0, 212, 255, 0.25);
+  padding-bottom: 24px;
+  margin-bottom: 30px;
+}
+
+.case-study-section-title {
+  color: var(--matrix-green);
+  text-shadow: var(--glow-green);
+  font-family: "Share Tech Mono", "Courier New", monospace;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+  margin-top: 44px;
+  margin-bottom: 18px;
+  border-left: 3px solid var(--matrix-green);
+  padding-left: 12px;
+}
+
+.case-study-role-list {
+  color: rgba(210, 225, 245, 0.92);
+  line-height: 1.8;
+  padding-left: 20px;
+}
+
+.case-study-role-list li {
+  margin-bottom: 6px;
+}
+
+.case-study-references {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.case-study-reference-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--electric-purple);
+  color: var(--electric-purple) !important;
+  background: rgba(199, 112, 240, 0.08);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  text-decoration: none !important;
+  transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.case-study-reference-link:hover {
+  box-shadow: var(--glow-purple);
+  background: rgba(199, 112, 240, 0.16);
+}
+
+/* ===== Flow strip (horizontal box-and-arrow diagram) ===== */
+.flow-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 34px;
+  padding: 20px;
+  border: 1px solid rgba(0, 255, 65, 0.25);
+  border-radius: 12px;
+  background: rgba(0, 255, 65, 0.03);
+}
+
+.flow-strip-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--matrix-green);
+  background: rgba(0, 255, 65, 0.08);
+  border-radius: 8px;
+  padding: 8px 14px;
+  box-shadow: 0 0 6px rgba(0, 255, 65, 0.25);
+}
+
+.flow-strip-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--matrix-green);
+  color: #060611;
+  font-family: "Share Tech Mono", "Courier New", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.flow-strip-title {
+  color: var(--cyber-cyan);
+  font-family: "Share Tech Mono", "Courier New", monospace;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.flow-strip-arrow {
+  color: var(--matrix-green);
+  font-size: 1.2rem;
+  text-shadow: var(--glow-green);
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .flow-strip {
+    padding: 14px;
+  }
+
+  .flow-strip-title {
+    white-space: normal;
+    font-size: 0.78rem;
+  }
+}
+
+/* ===== Flow diagram (numbered vertical workflow, detailed) ===== */
+.flow-diagram {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 10px;
+}
+
+.flow-step {
+  display: flex;
+  gap: 18px;
+}
+
+.flow-step-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.flow-step-number {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--matrix-green);
+  color: var(--matrix-green);
+  box-shadow: var(--glow-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Share Tech Mono", "Courier New", monospace;
+  font-weight: 700;
+  background: rgba(0, 255, 65, 0.06);
+  flex-shrink: 0;
+}
+
+.flow-step-connector {
+  flex: 1;
+  width: 2px;
+  min-height: 26px;
+  background: linear-gradient(180deg, var(--matrix-green), rgba(0, 255, 65, 0.1));
+  margin: 4px 0;
+}
+
+.flow-step-body {
+  padding-bottom: 26px;
+}
+
+.flow-step-title {
+  color: var(--cyber-cyan);
+  text-shadow: var(--glow-cyan);
+  font-size: 1.02rem;
+  margin-bottom: 6px;
+  font-family: "Share Tech Mono", "Courier New", monospace;
+}
+
+.flow-step-description {
+  color: rgba(210, 225, 245, 0.85);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* ===== Block diagram (component / control grid) ===== */
+.block-diagram {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 20px 0 10px;
+}
+
+.block-node {
+  border: 1px solid rgba(199, 112, 240, 0.4);
+  background: rgba(199, 112, 240, 0.06);
+  border-radius: 10px;
+  padding: 14px 16px;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.block-node:hover {
+  border-color: var(--electric-purple);
+  box-shadow: var(--glow-purple);
+}
+
+.block-node-title {
+  color: var(--electric-purple);
+  font-family: "Share Tech Mono", "Courier New", monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.block-node-description {
+  color: rgba(210, 225, 245, 0.85);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+/* Pipeline variant: horizontal boxes with arrows, wraps on mobile */
+.block-diagram-pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  grid-template-columns: unset;
+}
+
+.block-diagram-pipeline .block-node {
+  flex: 1 1 180px;
+}
+
+.block-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyber-cyan);
+  font-size: 1.4rem;
+  text-shadow: var(--glow-cyan);
+  flex: 0 0 auto;
+  padding: 0 4px;
+}
+
+/* ===== Stat row ===== */
+.case-stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin: 20px 0 10px;
+}
+
+.case-stat-tile {
+  text-align: center;
+  border: 1px solid rgba(0, 255, 65, 0.35);
+  border-radius: 10px;
+  padding: 16px 10px;
+  background: rgba(0, 255, 65, 0.05);
+}
+
+.case-stat-value {
+  font-family: "Share Tech Mono", "Courier New", monospace;
+  color: var(--matrix-green);
+  text-shadow: var(--glow-green);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.case-stat-label {
+  color: rgba(210, 225, 245, 0.75);
+  font-size: 0.78rem;
+  letter-spacing: 0.3px;
+  margin-top: 4px;
+}
+
+@media (max-width: 767px) {
+  .case-study-section-title {
+    margin-top: 32px;
+    font-size: 1.1rem;
+  }
+
+  .flow-step-title {
+    font-size: 0.95rem;
+  }
+}

@@ -21,6 +21,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Certificates from "./components/Certificates/Certificates";
 import Blog from "./components/Blog/Blog";
 import BlogPost from "./components/Blog/BlogPost";
+import CaseStudies from "./components/CaseStudies/CaseStudies";
+import CaseStudyDetail from "./components/CaseStudies/CaseStudyDetail";
 import ChatBot from "./components/ChatBot/ChatBot";
 
 function App() {
@@ -49,6 +51,8 @@ function App() {
           <Route path="/certificates" element={<Certificates />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
           <Route path="/experience" element={<Expriences />} />
 
           <Route path="*" element={<Navigate to="/"/>} />

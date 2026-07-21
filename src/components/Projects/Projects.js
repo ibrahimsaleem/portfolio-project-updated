@@ -32,7 +32,6 @@ import aiPentestingImg from "../../Assets/Projects/Ai-pen.png";
 import cyberpathAiImg from "../../Assets/Projects/cyberpath-ai.png";
 import pentestMcpImg from "../../Assets/Projects/pentest-mcp.png";
 import localRagImg from "../../Assets/Projects/local-rag.png";
-import secureOfflineAiImg from "../../Assets/Projects/secure-offline-ai.png";
 
 // New generated project images
 import evilTraceImg from "../../Assets/Projects/eviltrace-ai.svg";
@@ -51,6 +50,17 @@ function Projects() {
           Here are my research publications, active projects, and recent works.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          {/* Enterprise AI Security */}
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Agentic AI Security Review Workflow (AT&T)"
+              description="🛡️ ENTERPRISE — Multi-agent workflow that reduced enterprise AI use-case security review from 10–12 days to under 6 minutes, with adversarial testing, evidence grounding, and human approval retained for every high-risk decision."
+              link="/case-studies/att-agentic-security-review"
+            />
+          </Col>
+
           {/* Research Publications */}
           <Col md={4} className="project-card">
             <ProjectCard
@@ -58,7 +68,7 @@ function Projects() {
               isBlog={false}
               title="LIMA: LLM-MCP Penetration Testing (IEEE FMLDS 2025)"
               description="🏆 PUBLISHED — First author. Autonomous penetration testing framework using LLMs and MCP servers for initial machine access. 95% success rate, reduced testing from 8+ hours to 15 minutes. Claude 3.5 outperformed expert pentesters on 12/15 HTB boxes at $0.05/run."
-              link="https://www.linkedin.com/in/ibrahimsaleem91/"
+              link="/case-studies/lima-pentestthinkingmcp"
             />
           </Col>
 
@@ -68,7 +78,7 @@ function Projects() {
               isBlog={false}
               title="Self-Improving GenAI Agent for Report Parsing (SPE 2025)"
               description="🏆 PUBLISHED — Second author. Autonomous 3-agent GenAI system (vendor detection, prompt optimization, extraction) using Azure OpenAI GPT-4o/5. 360x speed improvement (8 min vs 2 days), 89–100% accuracy, 0 security incidents. Applied OWASP LLM Top 10 & NIST AI-RMF."
-              link="https://www.linkedin.com/in/ibrahimsaleem91/"
+              link="/case-studies/nov-mud-report-automation"
             />
           </Col>
 
@@ -89,7 +99,7 @@ function Projects() {
               isBlog={false}
               title="EvilTrace AI — Multi-Agent DFIR Engine"
               description="🏆 HACKATHON — Built for the FIND EVIL Hackathon. Autonomous 7-agent DFIR engine that verifies security claims against actual log artifacts — zero hallucinations. Features a Zero-Hallucination Gate, Self-Correction Loop, Threat-Intel Enrichment via Exa Search API, and a Streamlit dashboard with chronological timelines. EvilTrace doesn't guess. It verifies."
-              link="https://github.com/ibrahimsaleem/EvilTraceAI"
+              link="https://github.com/ibrahimsaleem/Evil-Trace"
             />
           </Col>
 
@@ -120,7 +130,7 @@ function Projects() {
               isBlog={false}
               title="PentestThinkingMCP — Autonomous Pentest Server"
               description="🔴 MCP server enabling LLM-driven attack chains (Metasploit, Nmap, Burp Suite). Compromised HTB 'Lame' in 3 minutes ($0.03, 95% cost reduction). Modular AI agent framework with beam search & MCTS for reconnaissance, privilege escalation, and post-exploitation across 20+ scenarios."
-              link="https://github.com/ibrahimsaleem/PentestThinkingMCP"
+              link="/case-studies/lima-pentestthinkingmcp"
             />
           </Col>
 
@@ -140,7 +150,7 @@ function Projects() {
               isBlog={false}
               title="Contact Us AI Automation — Threat Modeling Report"
               description="Comprehensive threat modeling report applying OWASP Top 10 for LLMs across full AI lifecycle. Mapped LLM-01 (Prompt Injection), LLM-06 (Sensitive Data Disclosure), LLM-08 (Excessive Agency). 0 critical vulnerabilities, 100% compliance, 96% response accuracy processing 50+ emails daily."
-              link="https://www.linkedin.com/in/ibrahimsaleem91/"
+              link="/case-studies/nov-email-routing-automation"
             />
           </Col>
 
@@ -167,36 +177,6 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={secureOfflineAiImg}
-              isBlog={false}
-              title="Secure Offline AI Assistant"
-              description="Air-gapped AI assistant for high-security environments. Local model deployment, zero external dependencies, and specialized security tooling integration for sensitive network operations."
-              link="https://github.com/ibrahimsaleem/secure-offline-ai"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&h=600&fit=crop"
-              isBlog={false}
-              title="LocalRAGAgent"
-              description="Privacy-focused Retrieval Augmented Generation (RAG) system that runs entirely on local hardware. Enables secure document analysis and question answering without sending sensitive data to external APIs."
-              link="https://github.com/ibrahimsaleem/local-rag-agent"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&h=600&fit=crop"
-              isBlog={false}
-              title="Secure Offline AI Assistant"
-              description="Air-gapped AI assistant designed for high-security environments. Features local model deployment, zero external dependencies, and specialized security tooling integration for sensitive operations."
-              link="https://github.com/ibrahimsaleem/secure-offline-ai"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
               imgPath={aiPentestingImg}
               isBlog={false}
               title="AI Pentesting Tool"
@@ -211,7 +191,7 @@ function Projects() {
               isBlog={false}
               title="AI Resume Maker"
               description="AI-powered tool that automates resume formatting by converting plain text resumes into LaTeX code. Enhances ATS compatibility through job description-based tailoring using Python, REST APIs, and Google Gemini AI."
-              link="https://airesumemaker.onrender.com/"
+              link="https://github.com/ibrahimsaleem/AI-ResumeMaker"
             />
           </Col>
 
