@@ -11,7 +11,7 @@ function Experiences() {
       type: "education",
       title: "Master of Science in Cybersecurity",
       organization: "University of Houston, Houston, TX",
-      date: "Expected May 2026",
+      date: "May 2026",
       description:
         "GPA: 3.98/4.0 | Awarded $16,000 Scholarship. Coursework: Network Security, Secure Enterprise Computing, Cryptography, Data Analysis for Cybersecurity, Cybersecurity Risk Management, Secure Software Design.",
       documentLink: "https://www.uh.edu/"

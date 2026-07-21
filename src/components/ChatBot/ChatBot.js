@@ -24,8 +24,9 @@ AI Security Engineer at AT&T, Houston TX
 Working at the intersection of artificial intelligence and cybersecurity — the two most critical technologies of our time.
 
 EDUCATION
-B.S. Computer Science — University of Houston-Downtown
-GPA: 3.98 / 4.0
+M.S. Cybersecurity — University of Houston, Houston TX (Graduated May 2026)
+GPA: 3.98 / 4.0 | Awarded $16,000 scholarship
+B.Tech Computer Science Engineering — Rajiv Gandhi Proudyogiki Vishwavidyalaya (July 2023)
 
 RESEARCH
 2 Published Academic Papers in AI and/or Cybersecurity

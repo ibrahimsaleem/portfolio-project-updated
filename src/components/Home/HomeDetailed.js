@@ -252,7 +252,7 @@ function HomeDetailed() {
                       <div style={{ color: "white", fontSize: "1.1em", marginBottom: "20px" }}>
                         <strong>M.S. Cybersecurity</strong><br/>
                         University of Houston, Houston TX<br/>
-                        GPA: 3.98/4.0 — Expected May 2026<br/>
+                        GPA: 3.98/4.0 — Graduated May 2026<br/>
                         <span style={{ color: "#c770f0", fontSize: "0.9em" }}>Awarded $16,000 Scholarship</span>
                       </div>
                     </Col>

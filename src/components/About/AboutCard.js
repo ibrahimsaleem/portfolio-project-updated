@@ -8,7 +8,7 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            I'm <span className="purple">Mohammad Ibrahim Saleem</span> — an <b className="purple">AI Security & Governance Engineer</b> at <b className="purple">AT&T</b>, based in Houston, TX. I specialize in securing enterprise LLM and agentic AI systems through AI threat modeling, adversarial testing, governance workflows, and runtime controls. I'm pursuing an M.S. in Cybersecurity at the University of Houston (GPA: 3.98/4.0, $16K scholarship) and have <b className="purple">2 published research papers</b> at IEEE FMLDS 2025 and SPE 2025. My work spans OWASP Top 10 for LLMs, NIST AI-RMF, ISO 42001, MCP server security, secure RAG, and AI red teaming.
+            I'm <span className="purple">Mohammad Ibrahim Saleem</span> — an <b className="purple">AI Security & Governance Engineer</b> at <b className="purple">AT&T</b>, based in Houston, TX. I specialize in securing enterprise LLM and agentic AI systems through AI threat modeling, adversarial testing, governance workflows, and runtime controls. I hold an M.S. in Cybersecurity from the University of Houston (GPA: 3.98/4.0, $16K scholarship) and have <b className="purple">2 published research papers</b> at IEEE FMLDS 2025 and SPE 2025. My work spans OWASP Top 10 for LLMs, NIST AI-RMF, ISO 42001, MCP server security, secure RAG, and AI red teaming.
           </p>
           <ul>
             <li className="about-activity"><ImPointRight /> AI governance & secure AI SDLC for enterprise GenAI systems</li>
