@@ -34,10 +34,34 @@
 }
 
 /* ===== Detail page ===== */
+.case-study-content {
+  text-align: left;
+}
+
 .case-study-hero {
   border-bottom: 1px solid rgba(0, 212, 255, 0.25);
   padding-bottom: 24px;
   margin-bottom: 30px;
+}
+
+.case-study-tldr {
+  text-align: left;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #fff;
+  font-weight: 600;
+  border-left: 3px solid var(--cyber-cyan);
+  background: rgba(0, 212, 255, 0.06);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 24px;
+}
+
+.case-study-body-text {
+  text-align: left;
+  color: rgba(210, 225, 245, 0.92);
+  line-height: 1.85;
+  font-size: 1.02rem;
 }
 
 .case-study-section-title {
@@ -53,13 +77,26 @@
 }
 
 .case-study-role-list {
+  text-align: left;
   color: rgba(210, 225, 245, 0.92);
-  line-height: 1.8;
-  padding-left: 20px;
+  line-height: 1.7;
+  list-style: none;
+  padding-left: 0;
 }
 
 .case-study-role-list li {
-  margin-bottom: 6px;
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 22px;
+}
+
+.case-study-role-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--matrix-green);
+  text-shadow: var(--glow-green);
+  font-weight: 700;
 }
 
 .case-study-references {

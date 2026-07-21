@@ -4,14 +4,16 @@ const caseStudiesContent = {
     org: "AT&T — AI Security & Governance Engineering",
     date: "Jan 2026 – Present",
     tags: ["Agentic AI", "AI Governance", "Security Review", "Enterprise"],
+    tldr:
+      "A multi-agent workflow that cut enterprise AI security review from 10–12 days to under 6 minutes — without giving the AI unchecked authority.",
     overview:
-      "The enterprise AI use-case review and permit-to-build/operate process depended on multiple manual security and governance reviewers gathering evidence and handing cases off between teams. The process could take approximately 10 to 12 days, creating inconsistent reviews, limited visibility into bottlenecks, and delays in responsible AI deployment.",
+      "The enterprise AI use-case review process depended on manual security and governance reviewers gathering evidence and handing cases off between teams, taking 10–12 days and creating inconsistent, low-visibility reviews.",
     myRoleHeading: "My Role",
     myRole: [
-      "Helped design a multi-agent workflow that collects use-case information, performs specialized security and governance analysis, routes exceptions, and produces review evidence.",
-      "Defined security controls so the agents could assist reviewers without receiving unrestricted authority.",
-      "Built operational metrics, escalation logic, and audit evidence suitable for enterprise stakeholders.",
-      "Performed adversarial testing and translated failures into requirements, detections, and remediation actions.",
+      "Designed the multi-agent review workflow — intake, analysis, routing, evidence.",
+      "Set the security guardrails so agents assist, never decide.",
+      "Built the metrics and audit trail reviewers actually use.",
+      "Ran adversarial tests and turned failures into fixes.",
     ],
     flowHeading: "Architecture & Workflow",
     flowSteps: [
@@ -42,10 +44,10 @@ const caseStudiesContent = {
     ],
     resultsHeading: "Results",
     results: [
-      "Reduced the review cycle from approximately 10–12 days to under six minutes for automated workflow execution.",
-      "Improved consistency through standardized checks and structured evidence capture.",
-      "Increased visibility through SLA, risk-exception, queue-aging, control-status, and remediation reporting.",
-      "Preserved human authority for approval and high-risk exceptions rather than treating AI output as final truth.",
+      "10–12 days → under 6 minutes per review.",
+      "Standardized checks replaced ad-hoc, inconsistent reviews.",
+      "Full SLA, exception, and remediation visibility for stakeholders.",
+      "Humans still approve every high-risk decision.",
     ],
     references: [],
   },
@@ -55,14 +57,16 @@ const caseStudiesContent = {
     org: "University of Houston — First Author, IEEE FMLDS 2025",
     date: "Sep 2024 – May 2025",
     tags: ["Attack Simulation", "MCP", "Purple Team", "Published Research"],
+    tldr:
+      "First-author research benchmarking how far an LLM can get in a real penetration test — solved 12 of 15 HackTheBox machines autonomously for about $0.05 each.",
     overview:
-      "Security teams lacked a rigorous, quantitative way to determine how far an off-the-shelf LLM could autonomously progress from reconnaissance to initial access. Existing work often demonstrated isolated tasks or depended heavily on manual guidance. LIMA was designed to separate the model's reasoning from execution mechanics, connect the model to approved security tools, evaluate it against human testers under controlled conditions, and document both capability and failure modes.",
+      "Security teams lacked a rigorous, quantitative way to measure how far an off-the-shelf LLM could autonomously progress from reconnaissance to initial access. LIMA separates the model's reasoning from execution, connects it to real security tools, and benchmarks it against human testers under controlled conditions.",
     myRoleHeading: "My Role",
     myRole: [
-      "Led the research as first author and designed the custom PentestThinkingMCP reasoning server used in the LIMA architecture.",
-      "Designed a modular MCP architecture connecting the LLM to a Linux testing VM, Nmap, Metasploit, FilesystemMCP, BrowserMCP, WebSearchMCP, and controlled target systems.",
-      "Implemented context-aware attack planning using port/service mappings, CVE knowledge, Beam Search for efficient planning, MCTS for exploration, structured outputs, and feedback loops from tool execution.",
-      "Designed the evaluation protocol comparing Claude 3.5, GPT-4o, an expert tester, a beginner tester, and a beginner assisted by LIMA across four HackTheBox machines and one custom VM.",
+      "First author — designed the PentestThinkingMCP reasoning server.",
+      "Connected the LLM to Nmap, Metasploit, and Burp Suite via MCP.",
+      "Built attack planning with beam search, MCTS, and live feedback.",
+      "Designed the human-vs-AI evaluation across five targets.",
     ],
     flowHeading: "Attack-Simulation Workflow",
     flowSteps: [
@@ -93,10 +97,10 @@ const caseStudiesContent = {
     ],
     resultsHeading: "Evaluation Results",
     results: [
-      "Evaluated five controlled targets — LAME, TwoMillion, Support, PC, and a custom Exam Box — covering remote code execution, command injection, credential disclosure, SQL injection, enumeration, and SSH access.",
-      "Compared model-only, human-only, and human-plus-LLM conditions; LIMA-assisted beginner testing averaged under five minutes and outpaced the expert tester on two targets.",
-      "Model-only runs performed strongly on straightforward, knowledge-retrieval-heavy targets, with full autonomous runs costing no more than roughly $0.05.",
-      "Documented four recurring error classes: local-optimum retry loops, modality gaps (GUI/CAPTCHA barriers), environment-coupling faults, and brittleness under non-standard configurations.",
+      "5 targets, 6 vulnerability classes — from RCE to SQL injection.",
+      "LIMA-assisted beginners beat the expert tester on 2 of 5 targets.",
+      "Full autonomous runs cost as little as $0.05.",
+      "4 recurring failure modes documented for the next version.",
     ],
     references: [
       { label: "Download LIMA Paper (PDF)", url: "/lima-paper.pdf" },
@@ -109,15 +113,16 @@ const caseStudiesContent = {
     org: "NOV Inc. — IADC/SPE 230772, featured in Drilling Contractor",
     date: "June 2025 – Dec 2025",
     tags: ["Agentic AI", "GenAI", "Evaluation", "Published Research"],
+    tldr:
+      "Turned a static-prompt PDF parser into a self-improving system — cutting prompt-development time from 960 minutes to 8.8.",
     overview:
-      "Daily mud reports contain critical drilling and fluid data, but arrive as multi-page PDFs with complex tables, unstructured text, images, vendor-specific terminology, and layouts that vary across vendors, wells, and dates. The original system was a basic static-prompt workflow: it could parse known formats, but had no centralized ground-truth evaluation database, no automated accuracy-assessment module, and no controlled self-improvement mechanism for new or changing templates.",
+      "Daily mud reports arrive as multi-page PDFs with complex tables and layouts that vary across vendors and wells. The original system used static prompts — it worked on known formats, but had no way to measure accuracy or adapt to new templates.",
     myRoleHeading: "My Role",
     myRole: [
-      "Contributing designer of the core agentic logic that turned the static workflow into a self-improving system.",
-      "Designed the vendor-identification path that determined whether a report matched a known template or required adaptation.",
-      "Designed the automatic prompt-generation and optimization agents, the dynamic prompt registry, and the feedback loop used to improve vendor-specific extraction prompts.",
-      "Introduced the ground-truth evaluation database and accuracy-assessment logic so model output could be measured against human-verified records instead of judged subjectively.",
-      "Helped define human-in-the-loop calibration, exception handling, and validation procedures for onboarding new vendors and detecting outliers.",
+      "Designed the core self-improvement logic and vendor-detection path.",
+      "Built the prompt-generation, optimization, and dynamic prompt registry.",
+      "Introduced the ground-truth evaluation database and accuracy scoring.",
+      "Defined human review for new vendors and outliers.",
     ],
     flowHeading: "End-to-End Workflow",
     flowSteps: [
@@ -134,7 +139,7 @@ const caseStudiesContent = {
     ],
     insightHeading: "Why the Evaluation Database Mattered",
     insightText:
-      "Without a ground-truth database, self-improvement would be unsafe and unmeasurable — a model could change a prompt and appear more confident while silently reducing data quality. The evaluation database created an objective baseline: every candidate prompt was tested against human-verified records, compared with the current production prompt, and rejected if it caused regression in critical fields or overall accuracy. The production prompt was never overwritten simply because an agent proposed a change — the change had to demonstrate measurable improvement, and prompt versions, test results, and rollback information were retained for traceability.",
+      "Without it, self-improvement would be unsafe to trust — a model could change a prompt and quietly reduce accuracy. Every candidate prompt had to beat the production prompt on human-verified records before it could replace it, with full rollback history.",
     controlsHeading: "Risks Considered & Controls",
     controlsPipeline: false,
     controls: [
@@ -153,10 +158,10 @@ const caseStudiesContent = {
     ],
     resultsHeading: "Results & External Validation",
     results: [
-      "Manual prompt creation took approximately 960 minutes per report; the AI agents produced prompts of equivalent quality in an average of 8.8 minutes.",
-      "AI-generated prompts improved average parsing accuracy by approximately 2–8% compared with manual prompts in the reported test.",
-      "In the self-improvement test, the agents achieved an average parsing-accuracy improvement of approximately 6% across the evaluated vendors.",
-      "The work was accepted as IADC/SPE 230772 and featured in the July/August 2026 issue of Drilling Contractor.",
+      "960 min → 8.8 min average prompt-development time.",
+      "2–8% accuracy gain from AI-generated vs. manual prompts.",
+      "~6% average gain from the self-improvement loop.",
+      "Published as IADC/SPE 230772, featured in Drilling Contractor.",
     ],
     references: [
       { label: "Read the Drilling Contractor Article", url: "https://drillingcontractor.org/generative-ai-agents-reduce-manual-labor-in-extraction-digitalization-of-mud-report-data-78857" },
@@ -169,14 +174,16 @@ const caseStudiesContent = {
     org: "NOV Inc.",
     date: "June 2025 – Dec 2025",
     tags: ["Workflow Automation", "Threat Modeling", "OWASP LLM Top 10"],
+    tldr:
+      "Automated 50+ daily inbound inquiries at ~95% routing accuracy — without giving the model free rein over recipients.",
     overview:
-      "NOV received more than 50 \"Contact Us\" inquiries per day that required employees to manually interpret each request and forward it to the correct person or team. This consumed more than 20 staff hours each week and created delays, inconsistent routing, and the risk of sending sensitive or malicious content into downstream workflows.",
+      "NOV received 50+ \"Contact Us\" inquiries per day that employees had to manually read and forward to the right team, costing 20+ hours a week and risking inconsistent or unsafe routing.",
     myRoleHeading: "My Role",
     myRole: [
-      "Designed an AI assistant and automation workflow that used user intent, message content, location, and approved company context to select the correct routing destination.",
-      "Defined validation logic and exception handling for low-confidence, ambiguous, or unsupported requests.",
-      "Threat-modeled direct and indirect prompt injection, sensitive-data exposure, excessive agency, and malicious attachments/content.",
-      "Measured routing accuracy and reviewed failure categories to improve prompts and workflow rules.",
+      "Designed the intent-based routing workflow and confidence thresholds.",
+      "Threat-modeled prompt injection and sensitive-data exposure.",
+      "Built destination allowlists so the model can't freelance.",
+      "Measured accuracy and tuned prompts from real failures.",
     ],
     flowHeading: "Implementation Workflow",
     flowSteps: [
@@ -205,10 +212,10 @@ const caseStudiesContent = {
     ],
     resultsHeading: "Results",
     results: [
-      "Achieved approximately 95% routing accuracy across inquiry categories.",
-      "Eliminated more than 20 hours of weekly manual forwarding effort.",
-      "Handled more than 50 messages daily through a controlled AI-assisted workflow.",
-      "Demonstrated that business automation can improve throughput without giving the model unrestricted access to recipients or internal information.",
+      "~95% routing accuracy across inquiry categories.",
+      "20+ hours of weekly manual effort eliminated.",
+      "50+ inquiries handled daily, fully automated.",
+      "Model never granted direct access to recipients.",
     ],
     references: [],
   },

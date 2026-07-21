@@ -30,7 +30,7 @@ function CaseStudyDetail() {
       <Particle />
       <Container>
         <Row className="justify-content-center">
-          <Col xs={12} md={11} lg={9} xl={8}>
+          <Col xs={12} md={11} lg={9} xl={8} className="case-study-content">
             <div className="case-study-hero">
               <h1 className="project-heading" style={{ textAlign: "left", marginBottom: 10 }}>
                 {study.title}
@@ -44,7 +44,15 @@ function CaseStudyDetail() {
               </div>
             </div>
 
-            <p style={{ color: "rgba(210,225,245,0.92)", lineHeight: 1.85, fontSize: "1.02rem" }}>
+            {study.tldr && (
+              <div className="case-study-tldr">{study.tldr}</div>
+            )}
+
+            {study.stats && study.stats.length > 0 && (
+              <StatRow stats={study.stats} />
+            )}
+
+            <p className="case-study-body-text">
               {study.overview}
             </p>
 
@@ -69,7 +77,7 @@ function CaseStudyDetail() {
             {study.insightText && (
               <>
                 <h2 className="case-study-section-title">{study.insightHeading}</h2>
-                <p style={{ color: "rgba(210,225,245,0.92)", lineHeight: 1.85, fontSize: "1.02rem" }}>
+                <p className="case-study-body-text">
                   {study.insightText}
                 </p>
               </>
@@ -80,10 +88,6 @@ function CaseStudyDetail() {
                 <h2 className="case-study-section-title">{study.controlsHeading}</h2>
                 <BlockDiagram blocks={study.controls} pipeline={study.controlsPipeline} />
               </>
-            )}
-
-            {study.stats && study.stats.length > 0 && (
-              <StatRow stats={study.stats} />
             )}
 
             {study.results && study.results.length > 0 && (
