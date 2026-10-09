@@ -10,7 +10,7 @@ function Blog() {
         <h1 className="project-heading">Latest <span className="purple">Insights</span></h1>
         <p style={{ color: "white" }}>Curated posts and updates from my work in AI, security, and data science.</p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {blogPosts.map((post) => (
+          {[...blogPosts].sort((a, b) => b.date.localeCompare(a.date)).map((post) => (
             <Col md={4} className="project-card" key={post.id}>
               <Card className="project-card-view">
                 <Card.Img variant="top" src={post.image} alt={post.title} />

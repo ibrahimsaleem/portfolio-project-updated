@@ -2,6 +2,26 @@
 
 const blogPosts = [
   {
+    id: "agent-harness-monitor-guard-factory",
+    title: "From Watching an Agent Harness to Building a Harness Factory",
+    date: "2026-10-09",
+    tags: ["Agent Harness", "AI Agent Security", "Observability", "Open Source"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "I started by building a dashboard to see what an open-source agent harness was doing, ended up adding a guard that blocks dangerous tool calls before they run, and then built a factory that turns a plain-language description into a working, verified agent.",
+    link: "/blog/agent-harness-monitor-guard-factory",
+  },
+  {
+    id: "laptop-ai-agent-from-phone",
+    title: "I Control My Laptop's AI Coding Agent From My Phone",
+    date: "2026-06-16",
+    tags: ["Developer Tools", "FastAPI", "WebSockets", "Build in Public"],
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Opening a laptop just to run one command is friction I didn't want. So I built a small server that puts my laptop's AI coding agent on my phone: a mobile chat UI, live streaming responses, token-protected, no cloud service.",
+    link: "/blog/laptop-ai-agent-from-phone",
+  },
+  {
     id: "openclaw-fleet-detection",
     title: "Finding AI Agents on Every Laptop in Your Fleet",
     date: "2026-10-09",

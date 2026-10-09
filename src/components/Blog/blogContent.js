@@ -7,6 +7,125 @@ const ExternalLink = ({ href, children }) => (
 );
 
 const blogContent = {
+  "agent-harness-monitor-guard-factory": {
+    title: "From Watching an Agent Harness to Building a Harness Factory",
+    date: "2026-10-09",
+    tags: ["Agent Harness", "AI Agent Security", "Observability", "Open Source"],
+    heroImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>
+          An agent harness is everything around the model: the tools it can call, the permissions it runs with, the
+          loop that keeps it working. DeepSeek Harness is an open-source one built on an "everything is a plugin"
+          architecture, and it will happily run with full system access and no approval prompts if you ask it to.
+          That's powerful. It's also exactly the kind of thing you want to watch closely. This is the path that
+          took me from watching it to building on top of it.
+        </p>
+
+        <h3>Step 1: DSH Monitor, observability from the outside</h3>
+        <p>
+          The harness shows one conversation at a time. I wanted the whole picture: every session, every tool call,
+          token use and cost, and anything that looked dangerous. So I built a standalone dashboard that needs no
+          plugin, no fork and no changes to the harness. It reads the files the harness already writes to disk.
+        </p>
+        <ul>
+          <li><strong>Live activity:</strong> what each running agent is doing right now, refreshed every few seconds.</li>
+          <li><strong>Cost and tokens:</strong> estimated cost per session based on the models it actually used, with trend charts.</li>
+          <li><strong>Security findings:</strong> a heuristic scanner over every prompt and tool call, flagging things like destructive file operations, pipe-to-shell installs, credential dumping and reverse shells.</li>
+          <li><strong>Permission timeline:</strong> every sandbox or approval change, highlighted when a session switches to full access.</li>
+          <li><strong>Remote harnesses too:</strong> an OpenTelemetry bridge for harnesses running on other machines.</li>
+        </ul>
+        <p>
+          The hardest part was the logs. Each session log is compressed, but not as one stream: every append is its
+          own compressed frame, and the frames are simply concatenated. Standard one-shot decompression only reads
+          the first one. The dashboard finds each frame by its magic bytes and decodes them separately.
+        </p>
+
+        <h3>Step 2: a kill switch, and being honest about it</h3>
+        <p>
+          The dashboard can arm a watchdog that kills an agent the moment a high-confidence malicious pattern shows
+          up, such as a fork bomb or a credential dump. But it's reactive: it can only act after the harness has
+          logged the call, and a fast destructive command may already have finished. So auto-kill is limited to a
+          short list of low-false-positive patterns, and common-but-risky commands are flagged rather than killed.
+        </p>
+
+        <h3>Step 3: a guard that blocks before execution</h3>
+        <p>
+          Real prevention has to happen inside the harness, before a tool call is dispatched. The harness turned out
+          to have exactly that hook. I built a guard plugin on it, and in my personalized fork, <strong>Saleem
+          Harness</strong>, that preventive tool-call guard is on by default.
+        </p>
+
+        <h3>Step 4: Meta Harness, describe an agent and get one that runs</h3>
+        <p>
+          Once the plumbing was solid, the interesting question became: what if building a specialized agent was
+          as easy as describing it? In <strong>Saleem Meta Harness</strong>, you click Create Harness, describe what
+          you want, and the model writes the agent's persona and methodology playbook on top of one of four starting
+          shapes: security review, code review, red team and model behaviour, or benchmarking.
+        </p>
+        <ul>
+          <li>Each harness splits work across parallel subagents, and its findings go through an adversarial judge before they're reported.</li>
+          <li>It comes with bounded "keep going until done" loops, background jobs, skills, goals and plan mode.</li>
+          <li><strong>A harness is loaded and verified before you're told it exists.</strong> If it can't load, it's rolled back, so "it built" and "it runs" are the same claim.</li>
+          <li>You can run it immediately or download it as a standalone app that needs only Node.</li>
+        </ul>
+
+        <h3>Takeaway</h3>
+        <p>
+          Agent safety and agent capability aren't opposites. Visibility came first, then honest reactive controls,
+          then prevention at the right layer, and only after that did it make sense to let people generate new agents
+          on demand. Saleem Harness and Meta Harness build on DeepSeek Harness, which is open source under the MIT
+          license.
+        </p>
+      </>
+    ),
+  },
+  "laptop-ai-agent-from-phone": {
+    title: "I Control My Laptop's AI Coding Agent From My Phone",
+    date: "2026-06-16",
+    tags: ["Developer Tools", "FastAPI", "WebSockets", "Build in Public"],
+    heroImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>
+          As a solo founder building AplyEase, I constantly need to run code, check files and fix bugs, but I'm not
+          always at my desk. Opening a laptop just to run one command is friction I didn't want. So over a weekend I
+          built <strong>Claude Portal</strong>: a personal AI dev assistant that runs on my laptop and talks to me from
+          my phone, with no cloud subscription and no third-party app.
+        </p>
+
+        <h3>How it works</h3>
+        <ul>
+          <li>A lightweight Python server (FastAPI) serves a mobile-friendly, dark chat interface.</li>
+          <li>A tunnel gives it a private HTTPS address I can open from my phone anywhere.</li>
+          <li>Messages from my phone go to the AI coding agent running on my laptop, and responses stream back live over WebSockets.</li>
+          <li>A secret token means only I can use it.</li>
+        </ul>
+
+        <h3>What I can do from my phone</h3>
+        <ul>
+          <li>Ask it to fix bugs in my codebase.</li>
+          <li>Generate and edit files on my laptop.</li>
+          <li>Run terminal commands and move between project folders.</li>
+          <li>Copy code from a response with one tap.</li>
+        </ul>
+
+        <h3>What came next</h3>
+        <p>
+          A tool this powerful deserves serious limits once anyone else touches it. When a teammate wanted to use one
+          of my workflows, I built a stripped-down, security-hardened version with one task, one folder and a short
+          command allowlist. I wrote about that in "Putting an AI Agent Behind a Web Form, Safely".
+        </p>
+
+        <h3>Takeaway</h3>
+        <p>
+          If you build solo and feel chained to your desk, a small local server plus a secure tunnel turns your
+          laptop into a remote AI workstation. Keep it locked to you: a strong token, and nothing exposed you
+          wouldn't want a stranger to run.
+        </p>
+      </>
+    ),
+  },
   "openclaw-fleet-detection": {
     title: "Finding AI Agents on Every Laptop in Your Fleet",
     date: "2026-10-09",
