@@ -2,6 +2,56 @@
 
 const blogPosts = [
   {
+    id: "openclaw-fleet-detection",
+    title: "Finding AI Agents on Every Laptop in Your Fleet",
+    date: "2026-10-09",
+    tags: ["AI Agent Security", "Endpoint Security", "MDM", "Open Source"],
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Self-hosted AI agents get installed long before security hears about them. OpenClaw Scanner gives MDM tools a clear yes or no on every device, and flags installed skills that match a list of 341 known-malicious ones.",
+    link: "/blog/openclaw-fleet-detection",
+  },
+  {
+    id: "vulnerability-priority-scoring",
+    title: "Prioritizing Vulnerabilities by Real Exploit Risk, Not Just Severity",
+    date: "2026-10-09",
+    tags: ["Vulnerability Management", "EPSS", "CISA KEV", "Security Engineering"],
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Thousands of CVEs land every month, and severity alone says little about which ones attackers will actually use. My vulnerability intelligence pipeline combines severity, exploit probability, known exploitation and public exploits into one explainable score.",
+    link: "/blog/vulnerability-priority-scoring",
+  },
+  {
+    id: "rag-chatbot-memory-langgraph",
+    title: "A RAG Chatbot That Remembers Without Blowing Its Context Window",
+    date: "2026-10-09",
+    tags: ["RAG", "LangGraph", "pgvector", "iOS"],
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Chatbots either forget or drown in their own history. I built a personal assistant, a SwiftUI iOS app on a LangGraph backend, that answers from your documents and compacts old conversation into a running summary.",
+    link: "/blog/rag-chatbot-memory-langgraph",
+  },
+  {
+    id: "hardening-ai-agent-web-portal",
+    title: "Putting an AI Agent Behind a Web Form, Safely",
+    date: "2026-10-09",
+    tags: ["AI Agent Security", "Least Privilege", "Prompt Injection", "Secure Design"],
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "I turned a general-purpose AI coding agent into a single-purpose resume-tailoring portal a teammate can use from a link. The safety comes from permissions the agent can't talk its way around, not from prompt wording.",
+    link: "/blog/hardening-ai-agent-web-portal",
+  },
+  {
+    id: "building-warmnode",
+    title: "Building WarmNode: The Warm-Intro Finder I Wanted",
+    date: "2026-10-09",
+    tags: ["Startups", "AI Product", "Networking", "Founder"],
+    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Referrals beat cold applications, but the person who could refer you is buried in your phone as “Mike Roommate College”. WarmNode turns messy contacts into answers to “who can help me with this?”, plus the message to send.",
+    link: "/blog/building-warmnode",
+  },
+  {
     id: "portfolio-voice-ai-assistant",
     title: "I Gave My Portfolio a Voice: An AI Assistant That Talks to Recruiters",
     date: "2026-10-09",
