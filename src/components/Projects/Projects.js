@@ -30,8 +30,6 @@ import jawaharImg from "../../Assets/Projects/Jawahar.png";
 // AI/ML Project images
 import aiPentestingImg from "../../Assets/Projects/Ai-pen.png";
 import cyberpathAiImg from "../../Assets/Projects/cyberpath-ai.png";
-import pentestMcpImg from "../../Assets/Projects/pentest-mcp.png";
-import localRagImg from "../../Assets/Projects/local-rag.png";
 
 // New generated project images
 import evilTraceImg from "../../Assets/Projects/eviltrace-ai.svg";
@@ -93,6 +91,66 @@ function Projects() {
           </Col>
 
           {/* NEW: Latest Projects */}
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Portfolio Voice AI Assistant (this site)"
+              description="🎙️ LIVE ON THIS SITE — Talk to it from the orb at the bottom left. Answers visitors out loud from my real work history: browser speech recognition, Gemini Flash-Lite with keyword retrieval over 115 chunks of site content (~3K tokens per question), Gemini text-to-speech with browser-voice fallback. Hands recruiters over from the job-fit check with their job description as context."
+              link="/blog/portfolio-voice-ai-assistant"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://opengraph.githubassets.com/1/ibrahimsaleem/llm-cost-aware-routing"
+              isBlog={false}
+              title="LLM Cost-Aware Routing — Measured, Not Claimed"
+              description="💸 RESEARCH — Budget-bounded validation of RouteLLM's matrix-factorization router against real strong/weak models with real token costs. Router cut cost 29.5% vs always-strong at an identical 15/15 pass rate, with the honest caveat documented: the test set was too easy to prove quality routing yet."
+              link="/blog/llm-routing-cost-measured"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://opengraph.githubassets.com/1/ibrahimsaleem/mdscanner"
+              isBlog={false}
+              title="MDScanner — Markdown Security Scanner for AI Agents"
+              description="🛡️ OPEN SOURCE — Scans README, SKILL and docs Markdown for prompt injection, XSS payloads, obfuscation, hidden HTML and leaked credentials before it's rendered or fed to an AI agent. Code-block-aware scoring keeps false positives out of the 0–100 risk score; CI-friendly exit codes."
+              link="/blog/mdscanner-markdown-prompt-injection"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://opengraph.githubassets.com/1/ibrahimsaleem/openclawscanner"
+              isBlog={false}
+              title="OpenClaw Scanner — Fleet Detection for AI Agent Installs"
+              description="🔍 SECURITY TOOLING — Cross-platform detection scripts (Bash + PowerShell) for OpenClaw and its earlier names Moltbot and Clawdbot, built for MDM/RMM rollout (Intune, Jamf, Workspace ONE…). Checks binaries, configs, services, ports and Docker, and can flag installed skills against a list of 341 known-malicious ones."
+              link="https://github.com/ibrahimsaleem/openclawscanner"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://opengraph.githubassets.com/1/ibrahimsaleem/ibrahim-chatbot-backend"
+              isBlog={false}
+              title="Personal RAG Chatbot — iOS App + LangGraph Backend"
+              description="📱 FULL STACK AI — SwiftUI iOS app talking to a FastAPI backend. A LangGraph pipeline retrieves from per-session uploaded documents (pgvector), compacts long histories into summaries, then answers with Gemini, falling back across API keys on rate limits. Sessions, history and documents persisted in Postgres."
+              link="https://github.com/ibrahimsaleem/ibrahim-chatbot-backend"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://opengraph.githubassets.com/1/ibrahimsaleem/Invoice-Management"
+              isBlog={false}
+              title="Power Clean Pro — Business Manager"
+              description="🧾 CLIENT PROJECT — Full-stack invoicing app for a pressure-washing business: customers, invoices and quotes with server-calculated totals, payments, outstanding balances and print-ready PDF invoices. React + Vite + shadcn/ui, Express 5, PostgreSQL with Drizzle, OpenAPI-generated React Query hooks and Zod schemas."
+              link="https://github.com/ibrahimsaleem/Invoice-Management"
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath={evilTraceImg}
@@ -227,7 +285,7 @@ function Projects() {
           {/* Featured AI Security Projects */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={pentestMcpImg}
+              imgPath="https://opengraph.githubassets.com/1/ibrahimsaleem/PentestThinkingMCP"
               isBlog={false}
               title="PentestThinkingMCP — Autonomous Pentest Server"
               description="🔴 MCP server enabling LLM-driven attack chains (Metasploit, Nmap, Burp Suite). Compromised HTB 'Lame' in 3 minutes ($0.03, 95% cost reduction). Modular AI agent framework with beam search & MCTS for reconnaissance, privilege escalation, and post-exploitation across 20+ scenarios."
@@ -278,7 +336,7 @@ function Projects() {
           {/* AI/ML Projects */}
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={localRagImg}
+              imgPath="https://opengraph.githubassets.com/1/ibrahimsaleem/LocalRAGAgent"
               isBlog={false}
               title="LocalRAGAgent"
               description="Privacy-focused Retrieval Augmented Generation (RAG) system running entirely on local hardware. Enables secure document analysis and question answering without sending sensitive data to external APIs."

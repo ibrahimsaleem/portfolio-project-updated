@@ -7,6 +7,186 @@ const ExternalLink = ({ href, children }) => (
 );
 
 const blogContent = {
+  "portfolio-voice-ai-assistant": {
+    title: "I Gave My Portfolio a Voice: An AI Assistant That Talks to Recruiters",
+    date: "2026-10-09",
+    tags: ["Voice AI", "RAG", "Gemini", "Product Engineering"],
+    heroImage: "https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>
+          A portfolio is a pile of pages, and recruiters have about a minute. So I gave mine a voice. Click the
+          glowing orb at the bottom left of this site and you can simply ask: what does he do at AT&amp;T, has he
+          published anything, is he a fit for this role. It answers out loud, from my real work history, in a couple
+          of seconds.
+        </p>
+
+        <h3>How it works</h3>
+        <ul>
+          <li><strong>Listening:</strong> the browser's built-in speech recognition turns the question into text. Nothing to install, no audio sent to my servers.</li>
+          <li><strong>Finding the right facts:</strong> every build turns the site's projects, experience, case studies, blog posts and CV into 115 small searchable chunks. Each question pulls in only the few chunks that match it, using plain keyword scoring (BM25) in the browser, with no extra API call.</li>
+          <li><strong>Answering:</strong> Gemini 2.5 Flash-Lite gets a short fact sheet plus those excerpts and streams a spoken-style answer. A typical question costs about 2,500 to 3,100 input tokens and under 110 output tokens.</li>
+          <li><strong>Speaking:</strong> Gemini text-to-speech voices the answer. The first sentence is voiced on its own so speech starts quickly, and the rest follows in one or two more requests. If the voice service is unavailable, it falls back to the browser's voice, so it never goes silent.</li>
+        </ul>
+
+        <h3>Guardrails I cared about</h3>
+        <ul>
+          <li>It introduces itself as an AI assistant, not as me.</li>
+          <li>It only uses facts it was given. If it doesn't know, it says so and gives my email instead of guessing.</li>
+          <li>It never commits me to anything: salary, start dates, visa questions and interview scheduling are for me to discuss directly.</li>
+          <li>When someone describes a role, it says which requirements I meet, with evidence, and names the ones I don't.</li>
+          <li>It ignores attempts to change its rules, and it stays on topic.</li>
+        </ul>
+
+        <h3>From fit score to conversation</h3>
+        <p>
+          The site already had a job-fit check: a recruiter pastes a job description and gets a scored breakdown.
+          Now that result hands straight over to the voice assistant, which opens already knowing the job
+          description and the score. A recruiter can ask "why that score?" or "which requirements does he miss?"
+          and get an answer about their role, not a generic pitch. The pasted job description is treated strictly
+          as information about the role, never as instructions.
+        </p>
+
+        <h3>What broke along the way</h3>
+        <ul>
+          <li><strong>The voice read its stage directions.</strong> I asked the speech model to "say this in a warm, friendly tone", and it read that sentence aloud before every answer. Now it gets only the words to speak.</li>
+          <li><strong>The free voice quota is tiny.</strong> The free tier allows about ten speech requests per model per day. The greeting is pre-recorded once, answers use about two requests each, and when one model's quota runs out it moves on to the next before falling back to the browser voice.</li>
+          <li><strong>Browsers won't play sound on page load.</strong> Audio only starts after a click or tap, so the assistant shows its greeting as text and speaks it on the visitor's first interaction.</li>
+          <li><strong>"AT&amp;T" was invisible to search.</strong> The tokenizer split it into "at" and "t", both thrown away as noise. Names with symbols now get normalized before indexing.</li>
+          <li><strong>Models are bad at date arithmetic.</strong> Asked about years of experience, it once added up a single job's dates and got it badly wrong. Now it quotes the stated figure instead of calculating one.</li>
+        </ul>
+
+        <h3>Takeaway</h3>
+        <p>
+          You don't need a big budget or a vector database to make a site conversational. Retrieval over your own
+          content, a small fast model, careful guardrails and honest fallbacks get you most of the way. Try it: ask
+          the orb anything about my work. If you ship a browser-side API key for something like this, restrict it
+          to your domain and set a budget cap, or put a small proxy in front of it.
+        </p>
+      </>
+    ),
+  },
+  "llm-routing-cost-measured": {
+    title: "Does LLM Routing Actually Save Money? I Measured It",
+    date: "2026-10-09",
+    tags: ["LLM Routing", "Cost Optimization", "RouteLLM", "Evaluation"],
+    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>
+          "Send each request to the cheapest model that can handle it" is one of the most repeated ideas in LLM
+          cost optimization. I wanted real numbers instead of vendor benchmarks, so I ran a small, budget-bounded
+          validation of <strong>RouteLLM</strong> (the open-source router from LMSYS and Anyscale) against real
+          models, with real token usage and real dollar costs.
+        </p>
+
+        <h3>The setup</h3>
+        <ul>
+          <li><strong>Two models:</strong> a strong reasoning model at $2 / $12 per million input/output tokens, and a weak one at $0.20 / $1.20.</li>
+          <li><strong>Router:</strong> RouteLLM's matrix-factorization ("mf") router, with its threshold calibrated on the public Chatbot Arena data to send about 30% of traffic to the strong model.</li>
+          <li><strong>Test set:</strong> 15 hand-built prompts, 5 easy, 5 medium and 5 hard, each with a known correct answer.</li>
+          <li><strong>Metric:</strong> cost per resolved task, compared with always using the strong model.</li>
+        </ul>
+
+        <h3>Results</h3>
+        <ul>
+          <li>Always weak: $0.000375 total, 15/15 correct.</li>
+          <li>Always strong: $0.003028 total, 15/15 correct.</li>
+          <li>Router: $0.002135 total, 15/15 correct.</li>
+        </ul>
+        <p>
+          The router was <strong>29.5% cheaper than always-strong at an identical pass rate</strong>. The whole
+          experiment, all three passes, cost about half a cent.
+        </p>
+
+        <h3>The caveat that matters more than the headline</h3>
+        <p>
+          The weak model alone also scored 15/15, and it would have been far cheaper than the router. This prompt
+          set was simply too easy to tell the two models apart, so it proves the router saves money versus
+          always-strong, but not yet that its decisions to escalate are earning their cost. The router also sent
+          10 of 15 prompts (67%) to the strong model, well above the 30% it was calibrated for, because aggregate
+          calibration doesn't transfer neatly to a small custom set.
+        </p>
+        <p>
+          A real quality test needs prompts where the weak model sometimes fails, such as a GSM8K or MMLU subset
+          with known per-item difficulty, compared against a random-routing baseline. That's the next step.
+        </p>
+
+        <h3>Practical lessons</h3>
+        <ul>
+          <li><strong>Reasoning models bill tokens you never see.</strong> Give them too small an output budget and the internal reasoning uses all of it: you get an empty answer and still pay for it. 400 completion tokens was comfortable headroom.</li>
+          <li><strong>The router has its own small costs.</strong> The mf router embeds every prompt; at this volume that was well under a tenth of a cent.</li>
+          <li><strong>Split heavy dependencies into separate processes.</strong> Loading the router's PyTorch stack ran out of memory on a constrained machine; running the plain model passes in a separate process from the router pass fixed it.</li>
+        </ul>
+
+        <h3>Takeaway</h3>
+        <p>
+          Routing can cut spend, but measure cost per resolved task on prompts that resemble your real traffic,
+          and always compare against the cheap model alone, not just the expensive one. The headline saving is
+          easy to get; proving the quality trade-off is the actual work.
+        </p>
+      </>
+    ),
+  },
+  "mdscanner-markdown-prompt-injection": {
+    title: "Your AI Agent Reads Markdown. Who Checks It First?",
+    date: "2026-10-09",
+    tags: ["Prompt Injection", "AI Security", "Open Source", "Supply Chain"],
+    heroImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>
+          Markdown used to be harmless documentation. Now READMEs, SKILL files and docs-as-code get rendered as
+          HTML, pasted into chats and loaded straight into AI agents as instructions. That makes every Markdown file
+          a possible way in. I built <strong>MDScanner</strong> to check Markdown before a browser renders it or an
+          agent obeys it.
+        </p>
+
+        <h3>What it looks for</h3>
+        <ul>
+          <li><strong>Code execution and injection:</strong> script tags, inline event handlers like onerror, javascript: links and executable data: URIs.</li>
+          <li><strong>Prompt injection:</strong> "ignore previous instructions" phrasing, persona reassignment, safety-bypass wording and instructions hidden in HTML comments.</li>
+          <li><strong>Obfuscation:</strong> eval-of-base64 patterns, large encoded blocks, HTML entity chains and zero-width Unicode characters.</li>
+          <li><strong>Credential exposure:</strong> AWS access key IDs, token- and password-like strings and private key blocks.</li>
+          <li><strong>Embedded HTML threats and suspicious links:</strong> iframes, forms, base tags, meta-refresh redirects, IP-address URLs and link shorteners.</li>
+        </ul>
+        <p>
+          It is deliberately conservative and passive: it flags patterns for review and never executes the Markdown,
+          runs JavaScript or fetches remote URLs.
+        </p>
+
+        <h3>How it scores risk</h3>
+        <p>
+          Each finding has a severity, weighted from critical (25) down to info (1). The risk score is the sum of
+          those weights, capped at 100, which maps to a verdict from Clean through Low, Moderate and High to
+          Critical. Exit codes make it easy to fail a CI job: 0 for clean or low, 1 for medium or high findings, 2
+          for anything critical.
+        </p>
+
+        <h3>Fewer false alarms</h3>
+        <p>
+          Security docs are full of example payloads, so a naive scanner screams at every tutorial. MDScanner detects
+          fenced code blocks and still reports matches inside them, but leaves them out of the risk score and lists
+          them separately. A README that explains an XSS payload in a code block doesn't look like one that ships
+          one.
+        </p>
+
+        <h3>Where to use it</h3>
+        <ul>
+          <li>Before installing an agent skill or plugin from someone else's repository.</li>
+          <li>In CI for documentation repos, so leaked keys and hidden instructions never merge.</li>
+          <li>As a gate in any pipeline that feeds third-party Markdown to an LLM.</li>
+        </ul>
+
+        <h3>Takeaway</h3>
+        <p>
+          The agent era turned documentation into an attack surface. Treat Markdown from outside your organization
+          like code from outside your organization: scan it before you trust it. MDScanner is open source on my
+          GitHub.
+        </p>
+      </>
+    ),
+  },
   "sharepoint-zero-day-gtig": {
     title: "Active SharePoint Zero‑Day (CVE‑2025‑53770): What To Do Now",
     date: "2025-07-24",
@@ -246,7 +426,7 @@ const blogContent = {
     date: "2025-07-18",
     tags: ["AI Security", "DFIR", "Google", "Vulnerability"],
     heroImage:
-      "https://images.unsplash.com/photo-1555435025-10a3f6a24f06?q=80&w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&h=800&fit=crop",
     Content: () => (
       <>
         <p>
@@ -795,7 +975,7 @@ const blogContent = {
     date: "2026-05-12",
     tags: ["Red Team", "AI Security", "LLM", "AppSec"],
     heroImage:
-      "https://images.unsplash.com/photo-1555435025-10a3f6a24f06?q=80&w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&h=800&fit=crop",
     Content: () => (
       <>
         <p>

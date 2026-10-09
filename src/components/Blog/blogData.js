@@ -2,6 +2,36 @@
 
 const blogPosts = [
   {
+    id: "portfolio-voice-ai-assistant",
+    title: "I Gave My Portfolio a Voice: An AI Assistant That Talks to Recruiters",
+    date: "2026-10-09",
+    tags: ["Voice AI", "RAG", "Gemini", "Product Engineering"],
+    image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Recruiters skim. So my portfolio now talks back: a voice assistant that answers from my real work history, hands off from the job-fit check with the job description as context, and runs on a few thousand tokens per question.",
+    link: "/blog/portfolio-voice-ai-assistant",
+  },
+  {
+    id: "llm-routing-cost-measured",
+    title: "Does LLM Routing Actually Save Money? I Measured It",
+    date: "2026-10-09",
+    tags: ["LLM Routing", "Cost Optimization", "RouteLLM", "Evaluation"],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Routing each request to the cheapest model that can handle it is a popular pitch. I ran RouteLLM against real models with real token costs: 29.5% cheaper than always-strong at the same pass rate, and one caveat that matters more than the headline.",
+    link: "/blog/llm-routing-cost-measured",
+  },
+  {
+    id: "mdscanner-markdown-prompt-injection",
+    title: "Your AI Agent Reads Markdown. Who Checks It First?",
+    date: "2026-10-09",
+    tags: ["Prompt Injection", "AI Security", "Open Source", "Supply Chain"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "READMEs, SKILL files and docs now get fed straight into AI agents. MDScanner flags prompt injection, XSS payloads, obfuscation and leaked secrets in Markdown before a browser renders it or an agent obeys it.",
+    link: "/blog/mdscanner-markdown-prompt-injection",
+  },
+  {
     id: "eviltrace-ai-dfir",
     title: "Can AI Solve DFIR? I Built EvilTrace AI to Find Out",
     date: "2026-06-13",
@@ -46,7 +76,7 @@ const blogPosts = [
     title: "AI-Assisted Red Teaming: The Hallucination Problem Is Dangerous",
     date: "2026-05-12",
     tags: ["Red Team", "AI Security", "LLM", "AppSec"],
-    image: "https://images.unsplash.com/photo-1555435025-10a3f6a24f06?q=80&w=1200&h=800&fit=crop",
+    image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&h=800&fit=crop",
     excerpt:
       "One of the biggest issues in AI-assisted security workflows is hallucinated vulnerability findings — fake CVEs, weak evidence, overstated severity, attack paths that sound real but fail during validation. AI doesn't replace security judgment — it amplifies people who know how to guide, verify, and control it.",
     link: "/blog/ai-red-team-hallucination",
@@ -171,7 +201,7 @@ const blogPosts = [
     date: "2025-07-18",
     tags: ["AI Security", "DFIR", "Google", "Vulnerability"],
     image:
-      "https://images.unsplash.com/photo-1555435025-10a3f6a24f06?q=80&w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&h=800&fit=crop",
     excerpt:
       "DeepMind’s agent identified and neutralized a hidden SQLite vulnerability in real time—what it means for proactive defense.",
     link: "/blog/big-sleep-stops-cve",

@@ -18,7 +18,7 @@ function ProjectCards(props) {
         </Card.Text>
         {isInternal ? (
           <Button as={Link} variant="primary" to={props.link}>
-            <FaSitemap /> &nbsp;View Case Study
+            <FaSitemap /> &nbsp;{props.link.startsWith("/blog/") ? "Read the Write-up" : "View Case Study"}
           </Button>
         ) : (
           <Button variant="primary" href={props.link} target="_blank">
