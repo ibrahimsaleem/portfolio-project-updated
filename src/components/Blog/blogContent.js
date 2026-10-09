@@ -313,7 +313,7 @@ const blogContent = {
           <li>Ollama for on‑device models</li>
         </ul>
         <p>
-          GitHub: <ExternalLink href="https://github.com/ibrahimsaleem/local-rag-agent">local-rag-agent</ExternalLink>
+          GitHub: <ExternalLink href="https://github.com/ibrahimsaleem/LocalRAGAgent">LocalRAGAgent</ExternalLink>
         </p>
       </>
     ),
@@ -338,7 +338,7 @@ const blogContent = {
           <li>Deploy phishing‑resistant MFA and outbound data controls.</li>
         </ul>
         <p>
-          Full report: <ExternalLink href="https://www.verizon.com/business/resources/dbir/">Verizon DBIR</ExternalLink>
+          Full report: <ExternalLink href="https://www.verizon.com/business/resources/reports/dbir/">Verizon DBIR</ExternalLink>
         </p>
       </>
     ),

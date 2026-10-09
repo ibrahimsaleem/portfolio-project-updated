@@ -123,6 +123,107 @@ function Projects() {
             />
           </Col>
 
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="SwitchLane — Cost-Aware LLM Request Routing"
+              description="⚡ ML INFRASTRUCTURE — Request routing engine using prompt-embedding classifiers to route each query to the optimal LLM in real time. Reduced inference cost by 40.5% at 100% pass rate, with no accuracy tradeoff. Built with Python, FastAPI, RouteLLM, and the OpenAI API for production-grade model deployment, evaluation, and cost optimization. GitHub: github.com/ibrahimsaleem/switchlane"
+              link="https://www.linkedin.com/posts/ibrahimsaleem91_aiengineering-llm-tokenoptimization-activity-7496113235692105728--8Eg"
+            />
+          </Col>
+
+          {/* Agentic AI Platform Engineering (latest builds) */}
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Saleem Harness — Personalized Coding Agent"
+              description="🤖 AGENTIC AI SYSTEM — A personalized coding-agent CLI + web UI, forked and extended from an open-source agent harness with a default-on preventive tool-call safety guard. Full agent lifecycle: RPC domains, UI plugins, and a real-time observability dashboard (DSH Dashboard) for monitoring agent runs."
+              link="https://github.com/ibrahimsaleem/saleem-coding-agent"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Saleem Meta Harness — Agent-Building Agent"
+              description="🧩 META-AGENTIC — Describe the AI agent you need, get one that runs. Builds coding-agent harnesses from proven templates, verifies each by actually mounting and running it, and exports them as standalone apps — turning agent creation itself into a repeatable, verifiable pipeline."
+              link="https://github.com/ibrahimsaleem/metaharnessfactory"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Compass — Internal AI Agent Platform"
+              description="🧭 AGENTIC AI + GUARDRAILS — Internal AI agent platform built around the Ward guardrail layer, enforcing policy and safety boundaries on autonomous agent actions before they execute — the same secure-by-design pattern used in production enterprise AI governance work."
+              link="https://github.com/ibrahimsaleem/compass"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="DSH Dashboard — Agent Observability Platform"
+              description="📊 ML INFRASTRUCTURE — Real-time observability dashboard for the DeepSeek Harness (dsh) coding agent — live activity feeds, run monitoring, and telemetry for autonomous agent sessions, mirroring the AI observability platforms built for production LLM systems at AT&T."
+              link="https://github.com/ibrahimsaleem/dsh-dashboard"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Claude Portal — Remote Agent Control"
+              description="📱 AGENT TOOLING — Control Claude Code from your phone: a real-time activity feed, file browser, and GitHub integration that lets an autonomous coding agent be supervised and directed remotely — a working example of human-in-the-loop control over agentic systems."
+              link="https://github.com/ibrahimsaleem/claude-portal"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1544256718-3bcf237f3974?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="MCP Security Lab"
+              description="🔬 RESEARCH — A hands-on lab environment for studying and testing Model Context Protocol (MCP) server security — attack surface, tool-poisoning, and authentication weaknesses in MCP-based agent tooling."
+              link="https://github.com/ibrahimsaleem/mcp-security-lab"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1516110833967-0b5716ca1387?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Network Exposure Reporter"
+              description="🌐 SECURITY TOOLING — Python tool for identifying and reporting network-facing exposure across systems, supporting proactive attack-surface reduction."
+              link="https://github.com/ibrahimsaleem/network-exposure-reporter"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Aisync — B2B Voice AI SaaS Platform"
+              description="🎙️ FULL-STACK AI PRODUCT — Production voice-AI SaaS platform: React + Vite frontend, Express + PostgreSQL backend, deployed live. Demonstrates end-to-end ownership of an AI product beyond security tooling — from customer-facing UI to backend infrastructure."
+              link="https://github.com/ibrahimsaleem/Asyncwebsite"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="AttackForecast AI — Predictive Attack-Path Modeling"
+              description="🔒 PRIVATE / ENTERPRISE R&D — Forecasts the attack paths most likely to hurt an AI-enabled enterprise before they become breaches. Predictive, proactive security modeling for AI systems — closed-source enterprise research, not a public repo."
+              link="https://www.linkedin.com/in/ibrahimsaleem91/"
+            />
+          </Col>
+
           {/* Featured AI Security Projects */}
           <Col md={4} className="project-card">
             <ProjectCard
@@ -315,7 +416,7 @@ function Projects() {
               isBlog={false}
               title="Jawahar Tent House"
               description="Developed a highly responsive website for a national event management company. Integrated chatbot and forms for lead capture and user data collection, maximizing client engagement through effective communication channels."
-              link="https://jawahartent.web.app"
+              link="https://jawahar-tent.web.app"
             />
           </Col>
 

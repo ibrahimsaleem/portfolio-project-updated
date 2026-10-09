@@ -29,9 +29,19 @@ import {
   SiPowerbi,
   SiTableau,
   SiKubernetes,
-  SiSplunk
+  SiSplunk,
+  SiGo,
+  SiTypescript
 } from "react-icons/si";
-import { FaChartLine, FaRobot, FaUserShield, FaSearch } from "react-icons/fa";
+import {
+  FaChartLine,
+  FaRobot,
+  FaUserShield,
+  FaSearch,
+  FaProjectDiagram,
+  FaDatabase,
+  FaNetworkWired,
+} from "react-icons/fa";
 
 function Techstack() {
   return (
@@ -100,9 +110,29 @@ function Techstack() {
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiOpenai />
-        <h5>OpenAI</h5>
+        <h5>OpenAI / Azure OpenAI</h5>
       </Col>
-      
+      <Col xs={4} md={2} className="tech-icons">
+        <FaProjectDiagram />
+        <h5>LangChain / LangGraph</h5>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <FaNetworkWired />
+        <h5>MCP (Model Context Protocol)</h5>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <FaDatabase />
+        <h5>Vector DBs (Chroma/FAISS)</h5>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiGo />
+        <h5>Go</h5>
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiTypescript />
+        <h5>TypeScript</h5>
+      </Col>
+
       {/* Data & Platform */}
       <Col xs={4} md={2} className="tech-icons">
         <SiDocker />

@@ -85,38 +85,41 @@ function Home2() {
                     >
                       Mohammad Ibrahim Saleem
                     </span>{" "}
-                    — an{" "}
+                    — I{" "}
                     <strong style={{ color: "#00D4FF" }}>
-                      AI Security &amp; Governance Engineer
-                    </strong>{" "}
-                    at{" "}
+                      build agentic AI systems, and I secure them
+                    </strong>
+                    , as an AI Security Engineer at{" "}
                     <strong style={{ color: "#00D4FF" }}>AT&amp;T</strong>,
                     based in Houston, TX.
                   </p>
 
                   <p>
-                    I specialize in{" "}
+                    At AT&amp;T I build and secure the{" "}
                     <strong style={{ color: "#00FF41" }}>
-                      securing enterprise LLM and agentic AI systems
+                      agentic platform behind enterprise AI governance
                     </strong>{" "}
-                    — from AI threat modeling and adversarial testing to
-                    governance workflows and runtime controls. I design
-                    AI security reviews aligned with{" "}
+                    — automated multi-agent review pipelines that cut AI
+                    use-case approval from 10–12 days to under 6 minutes, a
+                    provider-agnostic LLM red-team harness (415+ adversarial
+                    prompts, MITRE ATT&amp;CK-structured), and a 15-node{" "}
+                    <strong style={{ color: "#00D4FF" }}>LangGraph</strong>{" "}
+                    agentic workflow I audited and hardened — all aligned to{" "}
                     <strong style={{ color: "#00D4FF" }}>
                       OWASP Top 10 for LLMs, NIST AI-RMF, and ISO 42001
                     </strong>
-                    , and build privacy-preserving data pipelines for
-                    production GenAI systems.
+                    .
                   </p>
 
                   <p>
                     Previously at{" "}
-                    <strong style={{ color: "#C770F0" }}>NOV</strong> where
-                    I built and secured agentic AI systems including MCP
-                    servers, multi-agent pipelines, and AI governance
-                    frameworks — published at{" "}
+                    <strong style={{ color: "#C770F0" }}>NOV</strong>, I
+                    architected autonomous multi-agent GenAI systems in
+                    production — a 3-agent pipeline that cut document
+                    processing time 360x — published at{" "}
                     <strong style={{ color: "#00FF41" }}>SPE 2025</strong>.
-                    My research on autonomous penetration testing (
+                    My research on autonomous, MCTS/Beam-Search-driven
+                    agents (
                     <strong style={{ color: "#00FF41" }}>LIMA</strong>) was
                     published at{" "}
                     <strong style={{ color: "#00FF41" }}>
@@ -125,11 +128,22 @@ function Home2() {
                     .
                   </p>
 
+                  <p>
+                    Outside the day job, I'm the founder behind{" "}
+                    <strong style={{ color: "#C770F0" }}>WarmNodeAI</strong>{" "}
+                    and{" "}
+                    <strong style={{ color: "#C770F0" }}>HireEase</strong>{" "}
+                    (40,000+ applications processed, 300+ clients) — because
+                    I'd rather ship an AI system end-to-end than just talk
+                    about it.
+                  </p>
+
                   <p style={{ marginBottom: 0 }}>
                     Focus areas:{" "}
                     <strong style={{ color: "#00D4FF" }}>
-                      AI red teaming · MCP server security · prompt
-                      injection defense · autonomous penetration testing
+                      agentic AI systems · multi-agent orchestration (MCP,
+                      LangGraph) · AI red teaming · cloud security (Azure,
+                      Kubernetes, Terraform)
                     </strong>
                     .
                   </p>

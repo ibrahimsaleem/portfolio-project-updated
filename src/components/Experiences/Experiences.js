@@ -31,6 +31,15 @@ function Experiences() {
   const experienceData = [
     {
       type: "experience",
+      title: "Founder & AI Engineer",
+      organization: "WarmNodeAI (Stealth AI Startup) — Houston, TX (Part-time)",
+      date: "Apr 2026 – Present",
+      description:
+        "Building WarmNodeAI, a privacy-focused AI platform that helps users understand, organize, and activate their professional relationships. Leading product strategy, AI architecture, LLM integration, semantic search, backend development, security, and early-stage validation end-to-end as founder.",
+      documentLink: "https://warmnode.me"
+    },
+    {
+      type: "experience",
       title: "AI Security & Governance Engineer",
       organization: "AT&T — Plano, TX (Hybrid)",
       date: "Jan 2026 – Present",
@@ -46,6 +55,15 @@ function Experiences() {
       description:
         "Built an AI assistant and workflow automation system for Contact Us email routing — using company content, user intent, and location context — eliminating 20+ hours of weekly manual forwarding at 95% routing accuracy across 50+ emails daily, with threat modeling and secure architecture validation. Architected a self-improving multi-agent GenAI workflow for MUD report parsing (Azure OpenAI GPT-4o/5) — 360x speed improvement (8 min vs 2 days), 89–100% accuracy, 0 security incidents, accepted as a published paper. Secured an MCP server converting natural language to Expression Language, mitigating command injection (RCE), weak authentication, rate-limit, and tool-poisoning risks across 5+ internal tools. Supported data scientists by testing AI solutions and recommending workflow controls for prompt injection, jailbreak, sensitive data exposure, and unbounded-consumption risks.",
       documentLink: "https://www.nov.com/"
+    },
+    {
+      type: "experience",
+      title: "Founder & AI Product Engineer",
+      organization: "HireEase — Houston, TX (Part-time)",
+      date: "Nov 2024 – Present",
+      description:
+        "Founded and built HireEase, an AI-powered career platform combining intelligent automation with trained human specialists. Developed AI resume tailoring, ATS optimization, job matching, application tracking, and workflow automation tools. The platform has processed 40,000+ job applications and supported 300+ clients.",
+      documentLink: "https://github.com/ibrahimsaleem/hireeaseemployee"
     },
     {
       type: "experience",

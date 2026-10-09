@@ -20,34 +20,99 @@ GitHub: github.com/ibrahimsaleem
 Portfolio: ibrahimsaleem-portfolio.web.app
 
 CURRENT ROLE
-AI Security Engineer at AT&T, Houston TX
-Working at the intersection of artificial intelligence and cybersecurity — the two most critical technologies of our time.
+AI Security & Governance Engineer at AT&T, Plano TX (Hybrid) — Jan 2026 – Present
+Working at the intersection of artificial intelligence and cybersecurity, building agentic AI systems for enterprise security operations — the two most critical technologies of our time.
 
 EDUCATION
 M.S. Cybersecurity — University of Houston, Houston TX (Graduated May 2026)
 GPA: 3.98 / 4.0 | Awarded $16,000 scholarship
+Coursework: Network Security, Secure Enterprise Computing, Cryptography, Data Analysis for Cybersecurity, Cybersecurity Risk Management, Secure Software Design
 B.Tech Computer Science Engineering — Rajiv Gandhi Proudyogiki Vishwavidyalaya (July 2023)
+Coursework: Data Structures & Algorithms, OOP, DBMS, Cloud Computing, Operating Systems, Computer Networks, Machine Learning
 
-RESEARCH
-2 Published Academic Papers in AI and/or Cybersecurity
+WORK EXPERIENCE (full timeline, including founder roles)
+
+0. Founder & AI Engineer — WarmNodeAI (stealth AI startup), Houston TX (Part-time) | Apr 2026 – Present
+- Building WarmNodeAI, a privacy-focused AI platform that helps users understand, organize, and activate their professional relationships.
+- Owns product strategy, AI architecture, LLM integration, semantic search, backend development, and security end-to-end as founder.
+
+0. Founder & AI Product Engineer — HireEase, Houston TX (Part-time) | Nov 2024 – Present
+- Founded and built HireEase, an AI-powered career platform combining intelligent automation with trained human specialists.
+- Built AI resume tailoring, ATS optimization, job matching, application tracking, and workflow automation tools.
+- Platform has processed 40,000+ job applications and supported 300+ clients.
+
+1. AI Security & Governance Engineer — AT&T, Plano TX (Hybrid) | Jan 2026 – Present
+- Designed and secured enterprise AI governance and SOC-style detection-response review workflows for GenAI and agentic AI systems, reducing AI use-case review and permit-to-operate approval from 10-12 days to under 6 minutes via automated agentic security review pipelines.
+- Built SLA tracking, control pass/fail, and remediation dashboards for security/governance stakeholders.
+- Developed SOAR-style orchestration and API integrations (alert enrichment, analyst-style triage, evidence capture, ticket routing) using Python, REST APIs, Splunk/SPL-style queries, and Cortex XSOAR concepts.
+- Performed adversarial testing and behavioral risk assessments on enterprise LLMs against OWASP Top 10 for LLMs and Agents, NIST AI-RMF, ISO 42001, and zero-trust principles.
+
+2. GenAI & Data Science Intern — NOV Inc. (National Oilwell Varco), Houston TX (On-site) | June 2025 – Dec 2025
+- Architected an autonomous multi-agent system using Azure OpenAI (GPT-4o/5) that improved document-parsing throughput by 360x (8 minutes vs. 2 days) while maintaining 95%+ accuracy — published as a paper.
+- Integrated scalable vector databases with hybrid search (BM25 + dense embeddings) to reduce contextual hallucination in memory-intensive agentic workflows.
+- Automated email triage/routing via natural language intent recognition, reclaiming 20+ hours/week of manual work across 50+ emails daily at 95%+ accuracy.
+- Fine-tuned Code-Llama 8B for custom tool usage on an MCP Server, enabling natural language to Expression Language conversion across 5+ enterprise internal tools, while mitigating command injection (RCE), weak auth, rate-limit, and tool-poisoning risks.
+- Optimized local LLM inference pipelines via batching and quantization, cutting response latency by 42% for heavy document extraction.
+
+3. Research Assistant — AI Engineering & Cybersecurity — University of Houston, Houston TX (On-site) | Sep 2024 – May 2025
+- First author on LIMA — an LLM-driven autonomous penetration testing framework achieving a 95% success rate and reducing security testing time from 8+ hours to 15 minutes (published, IEEE FMLDS 2025).
+- Designed a multi-agent reasoning server (PentestThinkingMCP) using Beam Search and Monte Carlo Tree Search (MCTS) for autonomous decision-making and dynamic tool orchestration (Nmap, Metasploit, Burp Suite) across 50+ scenarios at 90% accuracy.
+- Engineered isolated, Dockerized execution environments for AI agents to safely interact with sensitive system tools during penetration-testing simulations.
+- Established a quantitative benchmark showing Claude 3.5 outperformed expert human pentesters on 12/15 HackTheBox machines, at $0.05/run (95% cost reduction vs. human execution).
+
+4. Associate Software Engineer — Nagarro Software Pvt. Ltd. | March 2023 – February 2024
+- Engineered C#/.NET Core backend solutions and SQL Server pipelines across 25+ distributed enterprise APIs, improving query execution speed by 30%.
+- Deployed highly available REST APIs handling 1,000+ daily requests at 99.9% uptime with JWT and RBAC security controls.
+- Built Splunk/SQL-style operational dashboards for incident trends and SLA status, cutting weekly reporting effort by 40%.
+
+Earlier: Research & Cybersecurity Intern, State Cyber Cell MP Police (2022) — critical-infrastructure security assessments; Python Developer Intern, Dolphinox (2022); Freelance Web Developer (2017-2023).
+
+RESEARCH & PUBLICATIONS (4 papers)
+1. "LIMA: Leveraging LLMs and MCP Servers for Initial Machine Access" — IEEE FMLDS 2025 (first author)
+2. "Self-Improving GenAI Agents for Automated Daily Mud Report Parsing" — IADC/SPE Conference 2026 (with NOV GenAI Team)
+3. "Agentic Lean Embedding System for Vulnerability Discovery" — Active Research (first author)
+4. "Auto ARC: AI-Powered Floor Plan Generation for Architectural Workflow Optimization" — IEEE SoutheastCon 2026 (with M. Raza)
 
 KEY PROJECTS
-1. EvilTrace AI — Multi-agent DFIR (Digital Forensics & Incident Response) engine built for a hackathon. Features a 6-agent pipeline with a Zero-Hallucination Gate to ensure every forensic finding is backed by verifiable evidence. Agents: Evidence Collection → Timeline Analysis → Threat Intel → Zero-Hallucination Gate → Self-Correction Loop → Report Writer.
+1. ClawProtect — AI Agent Security Gateway (Go, Python, eBPF, Prometheus). Enterprise-grade HTTP security proxy with a YAML policy engine detecting prompt injection, PII leakage, and command injection in real time, plus an eBPF kernel monitor for syscall-level anomaly detection and egress firewalling.
 
-2. TokenLess — Open-source token optimization hub for AI agents. Provides reusable skill packs that plug into Claude Code, Windsurf, MCP agents, and GitHub Copilot. Achieves up to 78% reduction in token costs. Available on GitHub.
+2. PentestThinkingMCP — Autonomous Agentic Orchestration (MCP, Beam Search, MCTS). MCP server giving LLMs structured, multi-step attack-path planning and autonomous tool execution. 10,000+ monthly tool calls at 99.99% reliability; top-rated agentic pentesting framework on Smithery.ai.
 
-3. ClawProtect — Defense-in-depth security stack for AI agent gateways. Features 5 security layers: Content-Aware Security Proxy, eBPF Kernel Monitor (syscall-level visibility), Egress Firewall, and a Cross-Layer Adaptive Event Bus. Academic paper published.
+3. SwitchLane — Cost-Aware LLM Request Routing (Python, FastAPI, RouteLLM). AI request-routing engine using prompt-embedding classifiers to send each query to the optimal model, cutting inference costs by 40.5% at 100% pass rate — a direct example of ML infrastructure: model deployment, evaluation, and cost optimization.
+
+4. EvilTrace AI — Multi-agent DFIR (Digital Forensics & Incident Response) engine built for the FIND EVIL Hackathon. 7-agent pipeline with a Zero-Hallucination Gate, Self-Correction Loop, and Threat-Intel Enrichment (Exa Search API) so every forensic finding is backed by verifiable log evidence.
+
+5. TokenLess — Open-source token optimization hub for AI agents. Reusable skill packs for Claude Code, Windsurf, MCP agents, and GitHub Copilot; up to 78% reduction in token cost on real workflows.
+
+6. LocalRAGAgent — Privacy-focused local RAG system for secure document Q&A with zero external API calls.
+
+AGENTIC AI PLATFORM ENGINEERING (latest work, most recent GitHub activity)
+7. Saleem Harness — A personalized coding-agent CLI + web UI, forked and extended from an open-source agent harness, with a default-on preventive tool-call safety guard.
+8. Saleem Meta Harness (metaharnessfactory) — An "agent that builds agents": describe the AI agent you need, get one that runs. Builds coding-agent harnesses from proven templates, verifies each by actually mounting/running it, and exports them as standalone apps.
+9. Compass — Internal AI agent platform built around the "Ward" guardrail layer, enforcing policy/safety boundaries on autonomous agent actions before they execute.
+10. DSH Dashboard — Real-time observability dashboard for the DeepSeek Harness (dsh) coding agent: live activity feeds and telemetry for autonomous agent sessions.
+11. Claude Portal — Lets you control Claude Code from your phone: real-time activity feed, file browser, GitHub integration — human-in-the-loop supervision of an agentic system.
+12. MCP Security Lab — Hands-on lab for studying MCP (Model Context Protocol) server security: attack surface, tool-poisoning, and auth weaknesses in MCP-based agent tooling.
+13. Network Exposure Reporter — Python tool for identifying and reporting network-facing exposure across systems.
+14. Aisync (Asyncwebsite) — Production B2B Voice AI SaaS platform: React + Vite frontend, Express + PostgreSQL backend, deployed live — full-stack ownership of an AI product beyond security tooling.
+15. AttackForecast AI — Private enterprise R&D project that forecasts the attack paths most likely to hurt an AI-enabled enterprise before they become breaches: predictive, proactive security modeling for AI systems. Closed-source, so no public repo link is shown.
+
+CERTIFICATIONS
+Microsoft Certified: Azure AI Engineer Associate (Apr 2026), Microsoft Azure AI Fundamentals (AI-900), Microsoft Azure Fundamentals (AZ-900), OWASP Top 10 for LLMs, ISC2 Certified in Cybersecurity (CC), CompTIA Security+ (in progress), Fortinet NSE 1-3 Network Security Associate.
 
 TECHNICAL SKILLS
-Security: Penetration testing, DFIR, Threat Intelligence, Incident Response, Prompt Injection Defense, AI Agent Security, eBPF, Zero Trust Architecture, Vulnerability Assessment, MITRE ATT&CK, MCP Security
-AI/ML: Large Language Models (LLMs), Multi-Agent Systems, RAG, Agentic AI, MCP (Model Context Protocol), AI Red Teaming, Transformer architecture, Prompt Engineering, Gemini, Claude, GPT
-Programming: Python, JavaScript, React, Node.js
-Tools: Splunk, Wireshark, Burp Suite, Metasploit, AWS, Firebase, Docker
-Frameworks: LangChain, Google ADK, Claude Code, Claude MCP
+AI & LLM Engineering: LangChain, LangGraph, MCP (Model Context Protocol), Function Calling, Llama/Ollama, Hugging Face, Azure OpenAI, RAG, Multi-Agent Systems, Fine-Tuning, Prompt Engineering, Vector Databases (Chroma, FAISS)
+Programming & Systems: Python, C#, C++, SQL, Go, Bash/PowerShell, JavaScript/TypeScript, RESTful APIs, Microservices, Distributed Systems
+ML Infrastructure & Security: Azure Cloud, Docker, Kubernetes, GitLab CI/CD, OWASP Top 10 for LLMs, eBPF, Prometheus, SSDLC, Anomaly Detection, Zero Trust, MITRE ATT&CK
+Security Operations: Splunk/SPL, SOAR/Cortex XSOAR concepts, SIEM/EDR, Sigma/KQL, IAM
+Tools: Wireshark, Burp Suite, Metasploit, Nmap, Firebase, AWS
+
+WHY HE'S A STRONG FIT FOR AGENTIC AI / CLOUD SECURITY ROLES (e.g. "Software Engineer, Agentic AI Systems, Cloud Security")
+Ibrahim has repeatedly built and shipped autonomous multi-agent systems in production and research settings — at AT&T (agentic security-review pipelines), at NOV (autonomous multi-agent document-parsing system, 360x throughput), and in research (MCTS/Beam-Search reasoning agents, MCP servers). He pairs that directly with deep security-domain expertise (OWASP LLM Top 10, NIST AI-RMF, ISO 42001, red teaming, eBPF-based runtime defense) — the exact combination of "proven agentic AI systems" + "security domain experience" that most AI engineers lack. He also has hands-on ML infrastructure experience (model deployment, evaluation, quantization/optimization, data pipelines) and distributed/cloud systems experience (99.9%-uptime APIs, Kubernetes, Docker).
 
 PROFESSIONAL PHILOSOPHY
 Ibrahim's personal brand: "AI needs Security. I know both."
-He bridges the gap between AI engineering and cybersecurity — building AI systems that are not just intelligent, but safe, auditable, and resilient.
+He bridges the gap between AI engineering and cybersecurity — building autonomous, agentic AI systems that are not just intelligent, but safe, auditable, and resilient enough for enterprise security operations.
 
 BLOG TOPICS (recent publications)
 - Can AI Solve DFIR? (EvilTrace AI deep-dive)

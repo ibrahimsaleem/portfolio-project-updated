@@ -161,6 +161,16 @@ function Certificates() {
             />
           </Col>
 
+          {/* Certificate: Azure AI Engineer Associate */}
+          <Col md={4} className="project-card">
+            <CertificateCard
+              isBlog={false}
+              title="Microsoft Certified: Azure AI Engineer Associate"
+              description="Issued Apr 2026. Designing and implementing AI solutions on Azure — NLP, LLMs, computer vision, and AI agents."
+              link="#"
+            />
+          </Col>
+
           {/* Certificate: ISC2 CC */}
           <Col md={4} className="project-card">
             <CertificateCard

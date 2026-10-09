@@ -24,6 +24,9 @@ import BlogPost from "./components/Blog/BlogPost";
 import CaseStudies from "./components/CaseStudies/CaseStudies";
 import CaseStudyDetail from "./components/CaseStudies/CaseStudyDetail";
 import ChatBot from "./components/ChatBot/ChatBot";
+import EB1O1Dossier from "./components/Immigration/EB1O1Dossier";
+import VisitorPopup from "./components/VisitorPopup/VisitorPopup";
+import AdminSubmissions from "./components/Admin/AdminSubmissions";
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -54,11 +57,14 @@ function App() {
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
           <Route path="/experience" element={<Expriences />} />
+          <Route path="/ibrahim-eb1-o1-dossier-private" element={<EB1O1Dossier />} />
+          <Route path="/admin-leads" element={<AdminSubmissions />} />
 
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
         <Footer />
         <ChatBot />
+        <VisitorPopup />
       </div>
     </Router>
   );
