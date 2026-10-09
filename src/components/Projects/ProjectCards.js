@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { BiLinkExternal } from "react-icons/bi";
-import { FaSitemap } from "react-icons/fa";
+import { FaSitemap, FaLock } from "react-icons/fa";
 
 function ProjectCards(props) {
   const isInternal = props.link && props.link.startsWith("/");
@@ -16,7 +16,23 @@ function ProjectCards(props) {
         <Card.Text style={{ textAlign: "justify" }}>
           {props.description}
         </Card.Text>
-        {isInternal ? (
+        {!props.link ? (
+          // Private repositories are described but not linked.
+          <span
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              padding: "6px 14px",
+              borderRadius: "6px",
+              border: "1px solid rgba(0, 212, 255, 0.4)",
+              color: "#00D4FF",
+              fontSize: "0.9em",
+            }}
+          >
+            <FaLock /> Private repository
+          </span>
+        ) : isInternal ? (
           <Button as={Link} variant="primary" to={props.link}>
             <FaSitemap /> &nbsp;{props.link.startsWith("/blog/") ? "Read the Write-up" : "View Case Study"}
           </Button>

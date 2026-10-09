@@ -35,6 +35,7 @@ import cyberpathAiImg from "../../Assets/Projects/cyberpath-ai.png";
 import evilTraceImg from "../../Assets/Projects/eviltrace-ai.svg";
 import tokenlessImg from "../../Assets/Projects/tokenless.svg";
 import clawProtectImg from "../../Assets/Projects/clawprotect.svg";
+import aplyeaseImg from "../../Assets/Projects/aplyease-logo.jpg";
 
 function Projects() {
   return (
@@ -148,6 +149,52 @@ function Projects() {
               title="Power Clean Pro — Business Manager"
               description="🧾 CLIENT PROJECT — Full-stack invoicing app for a pressure-washing business: customers, invoices and quotes with server-calculated totals, payments, outstanding balances and print-ready PDF invoices. React + Vite + shadcn/ui, Express 5, PostgreSQL with Drizzle, OpenAPI-generated React Query hooks and Zod schemas."
               link="https://github.com/ibrahimsaleem/Invoice-Management"
+            />
+          </Col>
+
+          {/* Private repositories: described, not linked */}
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="WarmNode — AI Relationship Assistant"
+              description="🚀 FOUNDER — Turns messy phone contacts into a searchable network: ask “who can get me a referral at Amazon?” and get the right person, why they can help, and a drafted message to send by WhatsApp, SMS or email in one tap. React + TypeScript PWA, Express, PostgreSQL with Drizzle, Gemini, plus an agent API and MCP server so AI assistants can query your network."
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={aplyeaseImg}
+              isBlog={false}
+              title="AplyEase (HireEase) — Done-for-You Job Applications"
+              description="🚀 FOUNDER — Clients buy application packages, the team applies to jobs on their behalf, and clients track every submission (company, status, resume used, recruiter replies) on a live dashboard. 40,000+ applications processed. Full-stack TypeScript: React, Express, PostgreSQL with Drizzle, and role-based access for admins, employees and clients."
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Resume Tailor Portal — Hardened AI Pipeline"
+              description="🔐 SECURITY-HARDENED — Single-purpose portal: a teammate pastes a job description and gets a tailored resume PDF minutes later. The AI agent CLI behind it runs with no permission bypass, confined to one folder with a small fixed toolset; auth tokens never appear in URL paths. FastAPI with WebSocket streaming."
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Pen-AI — AI-Assisted Code Pentesting"
+              description="🛡️ AI PENTESTING — Scans Python projects with Bandit, then uses Gemini or a local Llama model via Ollama to prioritize findings with exploitation paths, impact and recommended fixes. Flask web interface with live streaming results and a conversational mode."
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="AI & Cyber News Daily — Automated Digest"
+              description="📰 AUTOMATION — A daily digest for AI security engineers, refreshed automatically every night: new model releases, major announcements, agentic AI developments and security news in one place."
             />
           </Col>
 
