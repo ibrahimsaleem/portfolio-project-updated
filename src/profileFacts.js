@@ -2,6 +2,7 @@
 // can invent anything; update it here when the CV changes.
 export const PROFILE_FACTS = `
 CANDIDATE: Mohammad Ibrahim Saleem
+LINKEDIN: 5,386 followers (as of Oct 2026); posts on AI security, LLM routing and agentic AI.
 LOCATION: Houston, TX
 CONTACT: +1 (713) 853-7974 | ibrahimsaleem244@gmail.com | linkedin.com/in/ibrahimsaleem91 | github.com/ibrahimsaleem
 

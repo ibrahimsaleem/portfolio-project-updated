@@ -2,6 +2,86 @@
 
 const blogPosts = [
   {
+    id: "switchlane-router-benchmark-jev-laya",
+    title: "I Tested the New “AI Traffic Cops” on 100 Prompts: Here's the Honest Result",
+    date: "2026-10-02",
+    tags: ["LLM Routing", "Cost Optimization", "Benchmarking", "SwitchLane"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "A new kind of model makes fast, structured decisions instead of writing text. I plugged two of them, Jev and Laya, into SwitchLane and tested them against RouteLLM and GPT-5.6 Luna on 100 prompts labelled by three different AIs.",
+    link: "/blog/switchlane-router-benchmark-jev-laya",
+  },
+  {
+    id: "ai-threat-modeling-whole-system",
+    title: "AI Threat Modeling: Start With the Whole System, Not the Prompt",
+    date: "2026-09-18",
+    tags: ["Threat Modeling", "AI Security", "Prompt Injection", "LLM Security"],
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "When threat modeling an AI solution, don't start with the prompt. Start with the entire system around the model, and ask: if the model makes the wrong decision once, what can the surrounding system allow it to do?",
+    link: "/blog/ai-threat-modeling-whole-system",
+  },
+  {
+    id: "switchlane-launch-cost-aware-routing",
+    title: "SwitchLane: Stop Paying Flagship Prices for Every LLM Request",
+    date: "2026-09-10",
+    tags: ["LLM Routing", "Cost Optimization", "LLMOps", "SwitchLane"],
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Most LLM API bills waste money on prompts that never needed the expensive model. SwitchLane decides, request by request, whether a lightweight model is enough: 40.5% lower cost at a 100% pass rate on 1,500 prompts with real API pricing.",
+    link: "/blog/switchlane-launch-cost-aware-routing",
+  },
+  {
+    id: "career-journey-into-ai-security",
+    title: "AI Is Changing What Software Can Do. AI Security Decides What We Can Safely Let It Do.",
+    date: "2026-09-06",
+    tags: ["Career", "AI Security", "Agentic AI", "AI Observability"],
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Software engineering, then cybersecurity, then data science and AI, and finally the intersection I wanted to specialize in: AI security. What securing AI in a real enterprise actually involves, and why observability matters so much.",
+    link: "/blog/career-journey-into-ai-security",
+  },
+  {
+    id: "mud-report-paper-published-spe",
+    title: "Published: Self-Improving Generative AI Agents for Automated Daily Mud Report Parsing",
+    date: "2026-03-15",
+    tags: ["Research", "Agentic AI", "Energy AI", "Publication"],
+    image: "https://images.unsplash.com/photo-1578496479914-7ef3b0193be3?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Our paper was published and presented at the IADC/SPE International Drilling Conference & Exhibition. Self-improving multi-agent generative AI that digitizes drilling mud reports and adapts to templates it has never seen.",
+    link: "/blog/mud-report-paper-published-spe",
+  },
+  {
+    id: "presenting-lima-ieee-fmlds-2025",
+    title: "Presenting LIMA at IEEE FMLDS 2025 in Los Angeles",
+    date: "2025-11-10",
+    tags: ["Research", "IEEE", "AI Pentesting", "Conference"],
+    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "A busy week in Los Angeles presenting my paper “LIMA: Leverage Large Language Model for Initial Machine Access” at the 2025 IEEE International Conference on Future Machine Learning and Data Science.",
+    link: "/blog/presenting-lima-ieee-fmlds-2025",
+  },
+  {
+    id: "lima-accepted-pentestthinkingmcp-milestone",
+    title: "Paper Accepted at IEEE FMLDS 2025, and PentestThinkingMCP Hits ~10,000 Monthly Tool Calls",
+    date: "2025-08-15",
+    tags: ["Research", "MCP", "AI Pentesting", "Open Source"],
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Two milestones: LIMA was accepted as a full paper at IEEE FMLDS 2025, and PentestThinkingMCP, the MCP server behind it, reached about 10,000 monthly tool calls at 99.99% reliability on Smithery.",
+    link: "/blog/lima-accepted-pentestthinkingmcp-milestone",
+  },
+  {
+    id: "nov-genai-internship-wrap-up",
+    title: "Wrapping Up My Summer as a GenAI Data Scientist Intern at NOV",
+    date: "2025-08-29",
+    tags: ["Internship", "GenAI", "Data Science", "Agentic AI"],
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Two months as a GenAI Data Scientist Intern at NOV: adaptive agentic workflows, an AI accuracy framework, pipelines across AWS, Azure and Databricks, and the news that I'd be continuing through the fall.",
+    link: "/blog/nov-genai-internship-wrap-up",
+  },
+  {
     id: "agent-harness-monitor-guard-factory",
     title: "From Watching an Agent Harness to Building a Harness Factory",
     date: "2026-10-09",

@@ -7,6 +7,390 @@ const ExternalLink = ({ href, children }) => (
 );
 
 const blogContent = {
+  "switchlane-router-benchmark-jev-laya": {
+    title: "I Tested the New “AI Traffic Cops” on 100 Prompts: Here's the Honest Result",
+    date: "2026-10-02",
+    tags: ["LLM Routing", "Cost Optimization", "Benchmarking", "SwitchLane"],
+    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>
+          A few days ago I shared SwitchLane, a tool that sends easy questions to a cheap AI model and hard ones to
+          an expensive one, to save money. Since then, a new kind of AI model has appeared. Instead of writing text,
+          it makes quick, structured decisions like "pick A, B or C" or "score this 0 to 3". The idea is that these
+          models are a lot faster and cheaper than a chatbot at this job.
+        </p>
+        <p>Two of them:</p>
+        <ul>
+          <li><strong>Jev</strong>, from TypeSafe AI. You call it over an API, and it costs $0.042 per million input tokens. The output is free.</li>
+          <li><strong>Laya</strong>, open source from Convai Innovations. It's a small model you download and run on your own machine, for free.</li>
+        </ul>
+        <p>
+          I plugged both into SwitchLane and tested them against RouteLLM (already in SwitchLane) and GPT-5.6 Luna,
+          simply asked "how hard is this question?"
+        </p>
+
+        <h3>Getting the right answers was the hard part</h3>
+        <p>
+          My first test sets were unreliable. The same cheap model gave different results on the same question, and
+          my own labels were too generous about what counts as "hard".
+        </p>
+        <p>
+          So I had three different AI models (Opus, Sonnet and Fable) label every prompt independently, without
+          seeing my labels. When they didn't all agree it was clearly easy or clearly hard, I threw the prompt out
+          and wrote a new one.
+        </p>
+        <p>
+          The result: 100 prompts, 50 easy and 50 hard. No answers were generated. Each router just decided "easy"
+          or "hard".
+        </p>
+
+        <h3>How often did each one decide correctly?</h3>
+        <ul>
+          <li>🥇 GPT-5.6 Luna: about 95%</li>
+          <li>🥈 Jev: 92%</li>
+          <li>🥉 Laya: 79%</li>
+          <li>RouteLLM: 61%</li>
+        </ul>
+        <p>Guessing gets 50%. A simple "longer prompt means harder" rule gets about 77%.</p>
+
+        <h3>Speed and cost per decision</h3>
+        <ul>
+          <li>GPT-5.6 Luna: about 0.9 seconds, $0.00006</li>
+          <li>Jev: about 0.2 seconds, $0.000016</li>
+          <li>RouteLLM: about 0.2 seconds, almost $0</li>
+          <li>Laya: about 0.06 seconds, $0 (it runs on my laptop)</li>
+        </ul>
+        <p>
+          Luna and Jev are a statistical tie, so Jev looks like the better deal: about 4x faster and 4x cheaper for
+          about the same accuracy.
+        </p>
+
+        <h3>What I learned</h3>
+        <ul>
+          <li>Jev's accuracy is real, but the "hard" prompts in my set look different from the "easy" ones (longer, more technical), which flatters every router.</li>
+          <li>Laya was fast and free but decided worse, and its scores shifted a lot with the wording of the prompt.</li>
+          <li>RouteLLM was fine at ranking but sent most prompts to the expensive model at its default setting.</li>
+        </ul>
+        <p>
+          The full test is on video in my <a href="https://www.linkedin.com/in/ibrahimsaleem91/" target="_blank" rel="noopener noreferrer">LinkedIn post</a>. Have you tested routing between AI models?
+          I'd love to hear what you found.
+        </p>
+      </>
+    ),
+  },
+  "ai-threat-modeling-whole-system": {
+    title: "AI Threat Modeling: Start With the Whole System, Not the Prompt",
+    date: "2026-09-18",
+    tags: ["Threat Modeling", "AI Security", "Prompt Injection", "LLM Security"],
+    heroImage: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>
+          When threat modeling an AI solution, don't start with the prompt. Start with the entire system around the
+          model. A practical AI security review should answer a few simple questions.
+        </p>
+
+        <h3>Five questions for every AI security review</h3>
+        <ol>
+          <li><strong>Map the full workflow.</strong> Where does data enter? What does the model read? What systems act on its output?</li>
+          <li><strong>Understand what the AI can access.</strong> APIs, databases, files, internal data, email systems, tools or other agents.</li>
+          <li><strong>Identify every trust boundary.</strong> Customer input, uploaded files, websites, RAG sources, emails and third-party data should all be treated as potentially untrusted.</li>
+          <li><strong>Test the decision, not just the model.</strong> Try prompt injection, data exfiltration, encoded instructions, routing manipulation, malicious files and unexpected model outputs.</li>
+          <li><strong>Add controls around the LLM.</strong> Input validation, then prompt guardrails, then the model, then output validation, authorization and monitoring.</li>
+        </ol>
+
+        <h3>An example that made it clear</h3>
+        <p>
+          We tested an AI-powered customer email-routing system that used GPT-5 to read an incoming customer inquiry
+          and select the right internal employee to handle it. The AI wasn't just generating text: its decision
+          directly affected a business workflow.
+        </p>
+        <p>So the threat model became much bigger than "Can someone jailbreak GPT?" We had to ask:</p>
+        <ul>
+          <li>Can a customer place malicious instructions inside an email?</li>
+          <li>Can the model be tricked into revealing internal contact information?</li>
+          <li>Can someone manipulate the routing decision and send an inquiry to an unauthorized address?</li>
+          <li>Can Base64 or other obfuscation bypass security filters?</li>
+          <li>What happens if the model returns a malicious or unexpected output?</li>
+        </ul>
+        <p>
+          We tested scenarios including prompt injection, routing overrides, data-exfiltration attempts and
+          Base64-obfuscated instructions.
+        </p>
+
+        <h3>The defenses had to exist outside the model</h3>
+        <ul>
+          <li>Input filtering</li>
+          <li>Prompt guardrails</li>
+          <li>Output validation</li>
+          <li>Approved-domain checks</li>
+          <li>Sanitization</li>
+          <li>Security monitoring</li>
+        </ul>
+
+        <h3>The question every review should ask</h3>
+        <p>
+          <strong>"If the model makes the wrong decision once, what can the surrounding system allow it to do?"</strong>
+          That's where AI threat modeling becomes much more useful than simply testing prompts.
+        </p>
+      </>
+    ),
+  },
+  "switchlane-launch-cost-aware-routing": {
+    title: "SwitchLane: Stop Paying Flagship Prices for Every LLM Request",
+    date: "2026-09-10",
+    tags: ["LLM Routing", "Cost Optimization", "LLMOps", "SwitchLane"],
+    heroImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>
+          Most LLM API bills are wasting money on prompts that never needed the expensive model. A one-line rewrite,
+          a simple riddle and a complex reasoning task too often all get sent to the same flagship model. That isn't
+          really a scaling problem. It's a routing problem. So I built <strong>SwitchLane</strong>: a cost-aware LLM
+          router that decides, request by request, whether a lightweight model is enough or whether the prompt
+          actually needs the expensive one.
+        </p>
+
+        <h3>How it works</h3>
+        <p>
+          Before any LLM is called, a trained classifier looks at the prompt and asks one question: would the
+          expensive model meaningfully outperform the cheaper one on this request? The prompt is converted into an
+          embedding, compared against learned representations of each model's strengths, and given a probability
+          score. Then the decision is simple:
+        </p>
+        <ul>
+          <li>🟢 Below the threshold: the lightweight model.</li>
+          <li>🔴 Above the threshold: the top-tier model.</li>
+        </ul>
+        <p>
+          Only one model gets called. No calling both, no unnecessary flagship usage, no premium prices for simple
+          tasks.
+        </p>
+
+        <h3>Does it actually save money?</h3>
+        <p>
+          I tested it with a controlled benchmark: 3 configurations, the same 1,500 prompts, real token usage and
+          real API pricing. The result was <strong>40.5% lower cost at a 100% pass rate</strong>. In a separate live
+          chat session, SwitchLane reached <strong>74.6% cost savings</strong>.
+        </p>
+        <p>
+          These aren't vendor estimates or marketing numbers. They come directly from actual API usage and
+          token-cost calculations. I also documented the limitations, including where the benchmark was too easy
+          to strongly prove quality differences, and where the routing distribution differed from calibration
+          expectations. I'd rather show the real results than only the flattering ones.
+        </p>
+
+        <h3>A second tool for developers</h3>
+        <p>
+          You can describe an LLM call from your own application, paste in a real example prompt, and get a
+          recommendation for which model tier you should actually use, based on the classifier signal and real
+          per-token cost math.
+        </p>
+        <p>
+          In the walkthrough video on my <a href="https://www.linkedin.com/in/ibrahimsaleem91/" target="_blank" rel="noopener noreferrer">LinkedIn</a>, I throw rewrites, riddles and reasoning problems at
+          SwitchLane and watch it switch models live while the savings tracker updates in real time. Why are we
+          still paying flagship-model prices for every request?
+        </p>
+      </>
+    ),
+  },
+  "career-journey-into-ai-security": {
+    title: "AI Is Changing What Software Can Do. AI Security Decides What We Can Safely Let It Do.",
+    date: "2026-09-06",
+    tags: ["Career", "AI Security", "Agentic AI", "AI Observability"],
+    heroImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>
+          AI and cybersecurity are quickly becoming one of the most important intersections in technology, and I'm
+          grateful my career path led me here.
+        </p>
+        <p>
+          I started with software engineering, then pursued my master's in cybersecurity, worked in data science,
+          and went deeper into AI, LLMs, RAG and agentic AI. Eventually I found the intersection I wanted to
+          specialize in: <strong>AI security</strong>.
+        </p>
+
+        <h3>What securing AI really involves</h3>
+        <p>
+          Working as an AI Security Engineer at AT&amp;T, I get firsthand exposure to what securing AI in a real
+          enterprise environment looks like. It goes far beyond asking "is the model responding safely?" As AI
+          becomes more agentic, we have to think about:
+        </p>
+        <ul>
+          <li>Agent identity and tool permissions</li>
+          <li>Least privilege</li>
+          <li>Prompt injection and MCP security</li>
+          <li>Threat modeling and adversarial testing</li>
+          <li>Data protection and governance</li>
+        </ul>
+
+        <h3>Why observability matters</h3>
+        <p>
+          One area I find especially important is observability: understanding which agents and models are being
+          used across the enterprise, what they're doing, what they're interacting with, and whether their behavior
+          stays within the intended boundaries.
+        </p>
+
+        <h3>Looking back</h3>
+        <p>
+          Software Engineering → Cybersecurity → Data Science &amp; AI → AI Security. The path makes a lot more sense
+          now. I'm thankful I started moving toward this specialization early, and grateful that today I'm building,
+          testing and securing systems in a field the industry increasingly recognizes as critical. There's still a
+          lot to learn and build, and that's what makes this space so exciting.
+        </p>
+        <p>
+          <strong>AI is changing what software can do. AI security will determine what we can safely allow it to do.</strong>
+        </p>
+      </>
+    ),
+  },
+  "mud-report-paper-published-spe": {
+    title: "Published: Self-Improving Generative AI Agents for Automated Daily Mud Report Parsing",
+    date: "2026-03-15",
+    tags: ["Research", "Agentic AI", "Energy AI", "Publication"],
+    heroImage: "https://images.unsplash.com/photo-1578496479914-7ef3b0193be3?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>
+          I'm excited to share that our research paper, <strong>"Self-Improving Generative AI Agents for Automated
+          Daily Mud Report Parsing"</strong>, has been published and presented at the IADC/SPE International Drilling
+          Conference &amp; Exhibition (March 2026).
+        </p>
+        <p>
+          <a href="https://lnkd.in/g6K-_ybR" target="_blank" rel="noopener noreferrer">Read the paper</a>
+        </p>
+
+        <h3>What it shows</h3>
+        <p>
+          The work shows how self-improving, multi-agent generative AI can automatically digitize drilling mud
+          reports, adapt to templates it has never seen, and significantly reduce manual effort, enabling faster and
+          more reliable operational decisions.
+        </p>
+
+        <h3>Thank you</h3>
+        <p>
+          I'm grateful to have collaborated with an outstanding team at NOV, Junzhe Wang, Ph.D., Jay Yoon, Ali
+          Marzban, Ph.D., P.E., MBA, Meng Li, Ricky Castanos and Ian Holman, on advancing real-world industrial AI
+          systems.
+        </p>
+        <p>
+          I'm looking forward to more conversations with the global drilling and energy community on how agentic AI
+          is transforming operations, from data to decisions.
+        </p>
+      </>
+    ),
+  },
+  "presenting-lima-ieee-fmlds-2025": {
+    title: "Presenting LIMA at IEEE FMLDS 2025 in Los Angeles",
+    date: "2025-11-10",
+    tags: ["Research", "IEEE", "AI Pentesting", "Conference"],
+    heroImage: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>
+          It's been a busy week: I traveled to Los Angeles for the 2025 IEEE FMLDS International Conference on
+          Future Machine Learning and Data Science, where I presented my research paper, <strong>"LIMA: Leverage
+          Large Language Model for Initial Machine Access."</strong>
+        </p>
+        <p>
+          It was an incredible experience connecting with researchers, professors and innovators from around the
+          world: showcasing my work, exchanging ideas and attending thought-provoking sessions on AI, cybersecurity
+          and data science.
+        </p>
+        <p>
+          I'm truly grateful for the opportunity to represent the University of Houston and contribute to ongoing
+          discussions around AI-driven penetration testing and autonomous security systems. A special thanks to
+          Professor Tania Banerjee for her guidance and encouragement throughout this journey.
+        </p>
+        <p>
+          I also attended inspiring talks on machine learning and intelligent systems, and learned a lot that I'm
+          eager to apply in my research and work.
+        </p>
+      </>
+    ),
+  },
+  "lima-accepted-pentestthinkingmcp-milestone": {
+    title: "Paper Accepted at IEEE FMLDS 2025, and PentestThinkingMCP Hits ~10,000 Monthly Tool Calls",
+    date: "2025-08-15",
+    tags: ["Research", "MCP", "AI Pentesting", "Open Source"],
+    heroImage: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>A big milestone in AI and cybersecurity research, with two updates.</p>
+
+        <h3>1. LIMA accepted as a full paper at IEEE FMLDS 2025</h3>
+        <p>
+          Our paper, <strong>"LIMA: Leveraging Large Language Models and MCP Servers for Initial Machine
+          Access"</strong>, was accepted as a full paper at IEEE FMLDS 2025. It introduces a modular system that
+          combines LLMs and MCP servers to automate reconnaissance, enumeration and exploitation, setting a baseline
+          for AI-assisted penetration testing.
+        </p>
+
+        <h3>2. PentestThinkingMCP reaches a milestone</h3>
+        <p>
+          <a href="https://lnkd.in/dfMZppm5" target="_blank" rel="noopener noreferrer">PentestThinkingMCP</a>, the MCP
+          server implementation powering this research, reached a milestone on Smithery:
+        </p>
+        <ul>
+          <li>About 10,000 monthly tool calls</li>
+          <li>99.99% reliability</li>
+          <li>Integrated across popular clients like Claude, Cursor and VS Code</li>
+        </ul>
+        <p>
+          That puts PentestThinkingMCP among the most used pentesting MCP servers on the platform, helping red
+          teamers and researchers with multi-stage attack planning powered by Beam Search and Monte Carlo Tree Search
+          (MCTS).
+        </p>
+
+        <h3>Thank you</h3>
+        <p>
+          Huge thanks to Professor Tania Banerjee for her mentorship and support throughout this research, and to
+          Dr. Wm. Arthur (Art) Conklin, Dr. Kyuin Lee and Sohan Simha P for their collaboration and guidance. I'm
+          looking forward to presenting in Los Angeles later this year and pushing further at the intersection of AI,
+          security and agentic systems.
+        </p>
+      </>
+    ),
+  },
+  "nov-genai-internship-wrap-up": {
+    title: "Wrapping Up My Summer as a GenAI Data Scientist Intern at NOV",
+    date: "2025-08-29",
+    tags: ["Internship", "GenAI", "Data Science", "Agentic AI"],
+    heroImage: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>
+          I'm happy to share that I'll be continuing this fall as an AI &amp; Data Science Intern at NOV.
+        </p>
+        <p>
+          Two months flew by, and my summer internship as a GenAI Data Scientist Intern is officially wrapped. This
+          month levelled things up: I got to work on advanced, production-minded AI and automation.
+        </p>
+
+        <h3>What I worked on</h3>
+        <ul>
+          <li>Designed adaptive agentic solutions for dynamic, multi-step workflows.</li>
+          <li>Built an AI output accuracy framework to validate and improve model results.</li>
+          <li>Deployed AI pipelines across AWS, Azure and Databricks.</li>
+          <li>Collaborated in team data challenges and competitions, contributing solutions and learnings.</li>
+          <li>Got early access to next-generation LLMs, evaluated their capabilities, and saw their adoption in real projects up close.</li>
+        </ul>
+
+        <h3>The best part</h3>
+        <p>
+          How fast NOV moves from concept to implementation when an idea shows promise. The speed, openness and
+          collaboration make it an ideal place to build.
+        </p>
+        <p>
+          I'm grateful for the opportunity, and for the guidance and trust of my mentors and teammates: Ali Marzban,
+          Ph.D., P.E., MBA, Jay Yoon, Meng Li, Junzhe Wang, Ph.D., Zihan Wu, Ph.D., Sushant Menon and Ashish Darshi.
+          I'm excited to keep pushing the boundaries of applied AI at NOV this fall.
+        </p>
+      </>
+    ),
+  },
   "agent-harness-monitor-guard-factory": {
     title: "From Watching an Agent Harness to Building a Harness Factory",
     date: "2026-10-09",

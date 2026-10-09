@@ -164,6 +164,7 @@ function Home() {
               { value: "10+", label: "Years Coding", color: "#00D4FF" },
               { value: "2", label: "Published Papers", color: "#00FF41" },
               { value: "AT&T", label: "Current Employer", color: "#00D4FF" },
+              { value: "5.3K+", label: "LinkedIn Followers", color: "#00D4FF" },
               { value: "95%", label: "Pentest Success Rate", color: "#C770F0" },
               { value: "3.98", label: "M.S. GPA / 4.0", color: "#00FF41" },
             ].map((stat, i) => (
