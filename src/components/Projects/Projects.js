@@ -60,6 +60,15 @@ function Projects() {
             />
           </Col>
 
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Vulnerability Intake & Intelligence Services (AT&T)"
+              description="🏢 ENTERPRISE — Services that consolidate vulnerability disclosures from many sources into a single trusted record per vulnerability, then enrich each record with the context security teams need to prioritize. Built with strict input and output contracts, fully offline-testable pipelines and an HTTP interface. Internal details kept confidential."
+            />
+          </Col>
+
           {/* Research Publications */}
           <Col md={4} className="project-card">
             <ProjectCard
@@ -153,6 +162,15 @@ function Projects() {
           </Col>
 
           {/* Private repositories: described, not linked */}
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath="https://images.unsplash.com/photo-1496096265110-f83ad7f96608?q=80&w=800&h=600&fit=crop"
+              isBlog={false}
+              title="Vulnerability Intelligence Pipeline"
+              description="🛡️ SECURITY ENGINEERING — Answers two questions on a schedule: which vulnerabilities are new or changed, and what is known about them right now. Pulls public vulnerability data, enriches it with exploit likelihood (EPSS), known-exploited status (CISA KEV) and public proof-of-concept metadata (never executed), then scores and flags changes. Built on mature open-source tools, with a CLI, cron scheduling and Docker."
+            />
+          </Col>
+
           <Col md={4} className="project-card">
             <ProjectCard
               imgPath="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=800&h=600&fit=crop"
