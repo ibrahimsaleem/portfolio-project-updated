@@ -111,6 +111,13 @@ export default function VisitorPopup() {
     window.dispatchEvent(new Event("visitor-popup-closed")); // the voice assistant opens after this
   }
 
+  // Hand the visitor to the voice assistant, passing along any job description and fit result so it can discuss
+  // this specific role. Runs inside the click, which lets the assistant start speaking straight away.
+  function openVoice(detail) {
+    window.dispatchEvent(new CustomEvent("open-voice-assistant", { detail }));
+    setVisible(false);
+  }
+
   async function logSubmission(extra) {
     try {
       await addDoc(collection(db, "visitor_leads"), {
@@ -311,6 +318,10 @@ export default function VisitorPopup() {
                 Not now
               </button>
             </div>
+            <div className="vp-or"><span>or</span></div>
+            <button className="vp-btn vp-voice-btn" onClick={() => openVoice({})}>
+              <span className="vp-voice-orb" aria-hidden="true" /> Interview my AI assistant by voice
+            </button>
           </>
         )}
 
@@ -346,7 +357,10 @@ export default function VisitorPopup() {
               {" · "}
               <a href="mailto:ibrahimsaleem244@gmail.com">ibrahimsaleem244@gmail.com</a>
             </div>
-            <button className="vp-btn vp-btn-primary" onClick={close} style={{ width: "100%", marginTop: "14px" }}>
+            <button className="vp-btn vp-voice-btn" onClick={() => openVoice({ jobDescription: jobDescription.trim() })}>
+              <span className="vp-voice-orb" aria-hidden="true" /> Ask my AI assistant about this role
+            </button>
+            <button className="vp-btn vp-btn-secondary" onClick={close} style={{ width: "100%", marginTop: "10px" }}>
               Done
             </button>
           </div>
@@ -398,7 +412,10 @@ export default function VisitorPopup() {
               <a href="mailto:ibrahimsaleem244@gmail.com">ibrahimsaleem244@gmail.com</a>
             </div>
 
-            <button className="vp-btn vp-btn-primary" onClick={close} style={{ width: "100%", marginTop: "14px" }}>
+            <button className="vp-btn vp-voice-btn" onClick={() => openVoice({ jobDescription: jobDescription.trim(), evaluation })}>
+              <span className="vp-voice-orb" aria-hidden="true" /> Ask follow-up questions by voice
+            </button>
+            <button className="vp-btn vp-btn-secondary" onClick={close} style={{ width: "100%", marginTop: "10px" }}>
               Done
             </button>
           </div>

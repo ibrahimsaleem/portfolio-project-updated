@@ -200,3 +200,42 @@
 .vp-contact a:hover {
   text-decoration: underline;
 }
+
+/* Hand-off to the voice assistant: the most eye-catching button in the popup. */
+.vp-voice-btn {
+  width: 100%;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 1px solid rgba(0, 212, 255, 0.6);
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.16), rgba(123, 92, 255, 0.22));
+  color: #e6f7ff;
+  font-size: 0.95em;
+}
+.vp-voice-btn:hover {
+  box-shadow: 0 0 22px rgba(0, 212, 255, 0.45);
+  transform: translateY(-1px);
+}
+.vp-voice-orb {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #d9f8ff, #00d4ff 40%, #6a3df0 85%);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.8);
+  animation: vp-voice-breathe 2.6s ease-in-out infinite;
+}
+@keyframes vp-voice-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+.vp-or {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  color: rgba(180, 200, 230, 0.5);
+  font-size: 0.8em;
+}
+.vp-or::before, .vp-or::after { content: ""; flex: 1; height: 1px; background: rgba(0, 212, 255, 0.15); }
+@media (prefers-reduced-motion: reduce) { .vp-voice-orb { animation: none; } }

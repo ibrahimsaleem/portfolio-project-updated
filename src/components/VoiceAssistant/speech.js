@@ -3,7 +3,9 @@
 // Clips play strictly in order; each clip's audio is requested as soon as it's queued, so the next one is usually
 // ready by the time the current one ends.
 
-const TTS_MODEL = "gemini-3.8-flash-lite-tts";
+// The free tier allows only ~10 speech requests per model per day, but each model has its own allowance, so when one
+// runs out (HTTP 429) we move to the next. Same prebuilt voice on all of them. Turn on billing to lift the limit.
+const TTS_MODELS = ["gemini-3.8-flash-lite-tts", "gemini-3.8-flash-tts", "gemini-3.1-flash-tts-preview", "gemini-2.5-flash-preview-tts"];
 const TTS_VOICE = "Charon"; // Gemini prebuilt voice; others: Puck (upbeat), Kore (firm), Aoede (breezy)
 
 // Speech engines read symbols literally; strip what shouldn't be spoken.
@@ -53,9 +55,11 @@ export function createSpeaker({ apiKey, onSpeaking, onIdle }) {
   let pending = 0;
   let current = null;
   let ttsOff = !apiKey || !AudioCtx;
+  let modelIndex = 0;
 
   async function fetchTts(text) {
-    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${TTS_MODEL}:generateContent`, {
+    const model = TTS_MODELS[modelIndex];
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
       body: JSON.stringify({
@@ -64,8 +68,13 @@ export function createSpeaker({ apiKey, onSpeaking, onIdle }) {
       }),
     });
     if (!res.ok) {
-      // Out of quota or not allowed: stop asking for the rest of this visit and use the browser voice.
-      if (res.status === 429 || res.status === 403 || res.status === 404) ttsOff = true;
+      // This model is out of quota or unavailable: retry once on the next one. When every model is used up,
+      // use the browser voice for the rest of the visit.
+      if (res.status === 429 || res.status === 403 || res.status === 404) {
+        if (TTS_MODELS[modelIndex] === model) modelIndex++;
+        if (modelIndex < TTS_MODELS.length) return fetchTts(text);
+        ttsOff = true;
+      }
       throw new Error(`TTS ${res.status}`);
     }
     const part = (await res.json()).candidates?.[0]?.content?.parts?.find((p) => p.inlineData);
