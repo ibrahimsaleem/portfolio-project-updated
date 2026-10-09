@@ -5,7 +5,6 @@
 
 const TTS_MODEL = "gemini-3.8-flash-lite-tts";
 const TTS_VOICE = "Charon"; // Gemini prebuilt voice; others: Puck (upbeat), Kore (firm), Aoede (breezy)
-const TTS_STYLE = "Say in a warm, friendly, natural conversational tone: ";
 
 // Speech engines read symbols literally; strip what shouldn't be spoken.
 export const speakable = (t) =>
@@ -60,7 +59,7 @@ export function createSpeaker({ apiKey, onSpeaking, onIdle }) {
       method: "POST",
       headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
       body: JSON.stringify({
-        contents: [{ parts: [{ text: TTS_STYLE + text }] }],
+        contents: [{ parts: [{ text }] }], // send only the words: this model reads any style instruction aloud
         generationConfig: { responseModalities: ["AUDIO"], speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: TTS_VOICE } } } },
       }),
     });
