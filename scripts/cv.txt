@@ -1,0 +1,157 @@
+Mohammad Ibrahim Saleem
++1(713) 853 7974 | Houston, TX | Ibrahimsaleem244@gmail.com | Portfolio | LD:ibrahimsaleem91 | Github:ibrahimsaleem
+
+Professional Summary
+AI Security Engineer specializing in securing LLM and agentic AI systems across enterprise environments. Experienced
+in AI threat modeling, adversarial testing, AI governance, and Secure AI SDLC aligned with OWASP Top 10 for LLMs,
+NIST AI-RMF, and ISO 42001. Hands-on experience performing AI security reviews, building governance workflows,
+securing MCP-based platforms, and developing privacy-preserving AI data pipelines for production GenAI systems.
+Skilled in enterprise AI risk assessment, runtime controls, architecture assurance, and secure AI deployment practices.
+
+Education
+• University of Houston
+
+Houston, TX
+
+Master of Science in Cybersecurity
+Expected: May 2026
+– GPA: 3.98/4.0; (Awarded 16k USD in Scholarship) Coursework: Network Security, Secure Enterprise Computing, Cryptography,
+Data Analysis for Cybersecurity, Cybersecurity Risk Management, Secure Software Design
+
+• Rajiv Gandhi Proudyogiki Vishwavidyalaya
+Bachelor of Technology in Computer Science Engineering
+
+July 2023
+
+Experience
+
+• AI Security & Governance Engineer
+
+Jan 2026 – present
+
+AT&T
+Plano, TX (Hybrid)
+– Designed and secured enterprise AI governance workflows for GenAI and agentic AI systems, reducing AI use-case review and
+permit-to-operate approval time from 10–12 days to under 6 minutes through automated agentic security review pipelines
+– Developed privacy-preserving tokenization and masking frameworks for enterprise networking data, enabling sensitive attributes
+such as IP addresses, VLANs, and infrastructure metadata to be securely transformed while preserving semantic context for AI
+and LLM-based systems.
+– Performed adversarial testing, architecture security reviews, and behavioral risk assessments on enterprise LLM systems prior to
+deployment, validating resilience against prompt injection, excessive agency, insecure tool use, and sensitive data exposure risks
+– Created enterprise AI security review frameworks, governance checklists, and runtime control requirements to standardize secure
+AI deployment practices aligned with zero-trust principles, AI risk management, and secure AI SDLC standards.
+
+• GenAI & Data Science Intern
+
+June 2025 – Dec 2025
+
+NOV Inc (National Oilwell Varco)
+Houston, TX (On-site)
+– Contact Us AI Automation & Email Responder: Constructed complete automation system with AI engine that routes
+queries to appropriate personnel based on company content, website page context, user intent, and query location, eliminating
+manual forwarding and saving 20+ hours of manual work weekly. Formulated threat model and secure architecture for
+customer support automation system. Adhered to OWASP Top 10 standards, tracing risks throughout the AI Lifecycle phases,
+integrated OWASP Agentic AI Threat Modeling, defended against Prompt Injection (direct/indirect) and Jailbreak attacks.
+Achieved 0 critical vulnerabilities, 100% compliance, 96% response time processing 50+ emails daily (95% accuracy).
+– Self-Improving MUD Report AI Automation (Accepted Paper): Architected autonomous multi-agent GenAI system to
+accelerate PDF parsing (previously required 2 days per report). Orchestrated 3-agent system (vendor detection, prompt
+optimization, extraction) using Azure OpenAI (GPT-4o/5). Applied OWASP Top 10 for LLMs, identifying risks at all AI
+Lifecycle stages, executed OWASP Agentic AI Threat Modeling, defended against indirect Prompt Injection in pdf docs and
+Unbounded Consumption, applied NIST AI-RMF. Achieved 89-100% accuracy, 360x speed improvement (8 min vs 2 days), 0
+security incidents.
+– Secured an MCP Server for Expression Language Conversion: Created a secure MCP server converting natural
+language to Expression Language(EL). Identified and mitigated critical MCP server vulnerabilities including command injection
+(RCE), weak authentication, rate limit, and tool poisoning. The project involved fine-tuning a Code-llama 8B model, mapping
+risks across the AI Lifecycle, and enabling secure EL conversion for 5+ internal tools.
+– Supported other data scientists and automation engineers to keep systems secure by consulting them on secure agentic coding
+and AI systems. Conducted security testing of their AI solutions and provided feedback
+
+• Research Assistant – AI & Cybersecurity
+
+Sep 2024 – May 2025
+
+University of Houston
+Houston, TX (On-site)
+– Pioneered LIMA (first author) LLM-driven penetration testing framework (MCP-based), achieving 95% success rate, reducing
+testing time from 8+ hours to 15 minutes.
+– Engineered the PentestThinkingMCP server integrating reasoning agents with Nmap, Metasploit, and Burp Suite to enable
+vulnerability discovery across 50+ scenarios (90% accuracy). Applied OWASP Agentic AI Threat Modeling and secured the
+server with prompt-injection defenses, input/output validation, and rate-limiting controls. (Deployed Link: pentestthinkmcp)
+– Established quantitative benchmark: Claude 3.5 outperformed expert pentesters on 12/15 HTB boxes ($0.05/run, 95% cost
+reduction). Authored IEEE FMLDS 2025 paper on Secure AI Pentesting Frameworks
+
+• Associate Software Engineer
+
+March 2023 – February 2024
+
+Nagarro Software Pvt. Ltd.
+– Engineered scalable backend solutions (C#, .NET Core, SQL Server) with security controls, secure coding, input validation,
+SQL injection prevention, optimizing queries (30% improvement) across 25+ APIs.
+– Delivered secure REST APIs with JWT, RBAC, OWASP compliance, handling 1000+ daily requests (99.9% uptime), protecting
+against web vulnerabilities in 6+ applications.
+– Streamlined data analytics pipelines with security monitoring, reducing reporting by 40% (20 to 12 hours weekly).
+
+Skills & Certifications
+
+• Programming & Scripting: Python, C#, C++, SQL, Bash/Shell, PowerShell, JavaScript/TypeScript
+
+• Frameworks & Libraries: FastAPI, Flask, .NET Core, Angular, LangChain, Hugging Face, Llama/Ollama
+• Security Tools: Metasploit, Burp Suite, Nmap, Wireshark, Splunk, Cortex XSOAR, Docker, enum4linux, SAST/SCA Tools
+(Semgrep, GitLeaks, Trivy)
+• AI Security & Testing: Prompt Injection & Jailbreak Defense, Adversarial AI Testing, Secure RAG, Data Poisoning Mitigation,
+Model Monitoring, LLMOps Security Controls
+• AI & Security Frameworks: OWASP Top 10 for LLMs, Agentic AI Threat Modeling, AI Lifecycle Mapping, NIST AI-RMF,
+ISO 42001, Secure SDLC, AI Governance
+• Cloud & Infrastructure Security: Azure Cloud Security (Key Vault, Managed Identities, Private Endpoints, Defender for
+Cloud), Azure OpenAI, Kubernetes, GitLab CI/CD
+• Penetration Testing Expertise: Web App & Network Pentesting, Vulnerability Discovery, OWASP, Secure Code Review,
+Threat Modeling, AI Red Teaming
+• Certifications: OWASP Top 10 for LLMs, Security+ (in progress), Azure 900, Azure AI-900, ISC2 CC, Fortinet NSE 1-3
+
+Projects
+
+• PentestThinkingMCP - Autonomous Pen-Testing Server (IEEE Paper) | MCP, Red Team, AI Agent | Live Link
+– Engineered MCP server enabling LLM-driven attack chains (Metasploit, Nmap), compromising HTB ”Lame” in 3 minutes
+($0.03, 95% cost reduction), demonstrating autonomous exploitation across 20+ scenarios.
+– Conceptualized modular AI agent framework (beam search, MCTS) for autonomous reconnaissance, privilege escalation,
+post-exploitation, integrating Burp Suite, improving efficiency by 80% (8 to 1.6 hours).
+– Deployed automated vulnerability discovery workflows enabling comprehensive security assessments support.
+
+• Contact Us AI Automation Threat Modeling Report | AI Threat Modeling, OWASP Top 10 for LLMs | Report Link
+– Authored comprehensive threat modeling report applying OWASP Top 10 for LLMs framework, mapping risks (LLM-01:
+Prompt Injection, LLM-06: Sensitive Information Disclosure, LLM-08: Excessive Agency) across AI lifecycle phases.
+– Applied OWASP Agentic AI Threat Modeling to analyze agent risks. Documented threat models aligned with NIST AI-RMF
+and ISO/IEC 42001 compliance.
+– Analyzed Prompt Injection types (direct/indirect) and Jailbreak vulnerabilities, providing defense mechanisms and validation
+strategies for production deployment.
+
+• Agentic Lean Embedding System for Vulnerability Discovery | Python, LangChain, GitLeaks | Active Research Project
+– Developing agentic pipeline combining lean embeddings for vulnerability discovery.
+– Building semantic indexing system for software ecosystems, enabling OS system-wide vulnerability discovery 90% faster, and
+reduced false positives better efficiency.
+– Implementing cross-source correlation and provenance tracking, identifying 500+ secrets, 200+ insecure API patterns, 150+
+risky settings with human-in-the-loop triage.
+
+• Cybersecurity Awareness Platform | Python, JavaScript, Flask | sctool.web.app
+– Launched interactive platform with 30+ penetration testing tools (Metasploit, Burp Suite), serving 1,000+ learners.
+– Integrated attack simulations, automated scoring, and progress tracking, enabling 500+ users to learn secure practices.
+– Curated secure coding workshops and training modules (Python, C#), teaching 200+ developers to remediate security flaws.
+
+• Tax Application Threat Modeling | Secure Software Engineering, Threat Modeling, OWASP | Report Link
+– Conducted comprehensive threat modeling for tax application system, identifying and mitigating vulnerabilities across
+architecture, data flow, and trust boundaries.
+– Performed domain analysis and security pattern assessment, mapping threats to OWASP Top 10 categories with mitigations.
+– Applied secure software engineering principles, documenting threat models, attack trees, and security controls for comprehensive
+risk coverage.
+
+Research
+• Saleem, M. I. (First Author), et al. “LIMA: Leveraging Large Language Models and MCP Servers for Initial Machine
+Access.” IEEE FMLDS, 2025 (Published) Paper Link
+• NOV GenAI Team, Saleem, M. I. (Second Author). “Self-Improving GenAI Agent for Fully Automated Report Parsing
+in Enterprise Environments.” SPE, 2025 (Published) Paper Link
+• Saleem, M. I. (Lead Researcher). “Agentic Lean Embedding System for Vulnerability Discovery.” Active Research.
+• Saleem, M. I., Banerjee, Tania “EncoderThinkingMCP: Guided Encoder-Decoder Model Development via MCP.”
+AI-driven MCP server providing structured workflows, reasoning, and multi-framework support for encoder-decoder
+architectures. IEEE Southwest, 2026 (In experiment phase).
+
+

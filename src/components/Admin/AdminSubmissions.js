@@ -163,6 +163,20 @@ function LeadRow({ lead }) {
               HIRING MANAGER
             </span>
           )}
+          {lead.type === "voice_chat" && (
+            <span
+              style={{
+                marginLeft: "10px",
+                fontSize: "0.7em",
+                color: COLORS.cyan,
+                border: `1px solid ${COLORS.cyan}`,
+                padding: "2px 8px",
+                borderRadius: "4px",
+              }}
+            >
+              VOICE CHAT · {lead.transcript?.filter((m) => m.role === "user").length || 0} Q
+            </span>
+          )}
           {lead.evaluation && (
             <span
               style={{
@@ -189,6 +203,18 @@ function LeadRow({ lead }) {
             <p>
               <strong>Feedback:</strong> {lead.feedback}
             </p>
+          )}
+          {lead.transcript?.length > 0 && (
+            <div style={{ marginBottom: "10px" }}>
+              {lead.transcript.map((m, i) => (
+                <p key={i} style={{ margin: "0 0 6px" }}>
+                  <strong style={{ color: m.role === "user" ? COLORS.purple : COLORS.cyan }}>
+                    {m.role === "user" ? "Visitor" : "AI"}:
+                  </strong>{" "}
+                  {m.text}
+                </p>
+              ))}
+            </div>
           )}
           {lead.jobDescription && (
             <details style={{ marginBottom: "10px" }}>

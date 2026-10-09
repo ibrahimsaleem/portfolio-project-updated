@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense, lazy } from "react";
 import Preloader from "./components/Pre";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
@@ -27,6 +27,8 @@ import ChatBot from "./components/ChatBot/ChatBot";
 import EB1O1Dossier from "./components/Immigration/EB1O1Dossier";
 import VisitorPopup from "./components/VisitorPopup/VisitorPopup";
 import AdminSubmissions from "./components/Admin/AdminSubmissions";
+
+const VoiceAssistant = lazy(() => import("./components/VoiceAssistant/VoiceAssistant"));
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -65,6 +67,9 @@ function App() {
         <Footer />
         <ChatBot />
         <VisitorPopup />
+        <Suspense fallback={null}>
+          <VoiceAssistant />
+        </Suspense>
       </div>
     </Router>
   );
