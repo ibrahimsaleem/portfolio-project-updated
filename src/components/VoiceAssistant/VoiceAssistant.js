@@ -5,10 +5,11 @@ import { db } from "../../firebaseConfig";
 import { PROFILE_FACTS } from "../../profileFacts";
 import knowledge from "./knowledge.json";
 import { buildIndex, retrieve, formatExcerpts } from "./retrieve";
+import { createSpeaker } from "./speech";
 import "./VoiceAssistant.css";
 
-// Free path end to end: the browser does speech-to-text and text-to-speech; Gemini 2.5 Flash-Lite (free tier)
-// writes the answer. Each turn sends the fixed profile plus only the excerpts that match the question.
+// The browser does speech-to-text; Gemini 2.5 Flash-Lite writes the answer and Gemini TTS speaks it (browser voice
+// as fallback, see speech.js). Each turn sends the fixed profile plus only the excerpts that match the question.
 const GEMINI_KEY = process.env.REACT_APP_GEMINI_KEY;
 const MODEL = "gemini-2.5-flash-lite";
 const STREAM_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:streamGenerateContent?alt=sse`;
@@ -18,6 +19,7 @@ const HISTORY_TURNS = 6;
 const CONTACT_EMAIL = "ibrahimsaleem244@gmail.com";
 const HIDDEN_PATHS = ["/admin-leads", "/ibrahim-eb1-o1-dossier-private"];
 
+const GREETING_AUDIO = "/voice-greeting.m4a"; // GREETING pre-recorded in the same Gemini voice: no API call
 const GREETING =
   "Hi, I'm Ibrahim's AI assistant. I'm an AI, not Ibrahim himself, but I know his experience, projects and research. Ask me anything, or interview me about him.";
 
@@ -38,21 +40,6 @@ HOW TO ANSWER
 PROFILE
 ${PROFILE_FACTS}`;
 
-// Speech synthesis reads symbols literally; strip what shouldn't be spoken.
-const speakable = (t) =>
-  t.replace(/https?:\/\/\S+/g, "").replace(/[*_#`>|]/g, "").replace(/\s+/g, " ").trim();
-
-function pickVoice() {
-  const voices = window.speechSynthesis?.getVoices() || [];
-  const en = voices.filter((v) => /^en(-|_)/i.test(v.lang));
-  const prefer = [/natural|neural/i, /Google US English/i, /Samantha|Ava|Allison/i, /Google UK English Male|Daniel/i];
-  for (const re of prefer) {
-    const v = en.find((x) => re.test(x.name));
-    if (v) return v;
-  }
-  return en.find((v) => v.localService) || en[0] || null;
-}
-
 const SpeechRecognitionImpl = typeof window !== "undefined" && (window.SpeechRecognition || window.webkitSpeechRecognition);
 
 export default function VoiceAssistant() {
@@ -70,6 +57,15 @@ export default function VoiceAssistant() {
   const loggedCountRef = useRef(0);
   const scrollRef = useRef(null);
   messagesRef.current = messages;
+  const speakerRef = useRef(null);
+  if (!speakerRef.current) {
+    speakerRef.current = createSpeaker({
+      apiKey: GEMINI_KEY,
+      onSpeaking: () => setState("speaking"),
+      onIdle: () => setState((s) => (s === "speaking" ? "idle" : s)),
+    });
+  }
+  const speaker = speakerRef.current;
 
   const { pathname } = useLocation();
   const questionCount = messages.filter((m) => m.role === "user").length;
@@ -83,24 +79,10 @@ export default function VoiceAssistant() {
     window.speechSynthesis?.getVoices();
   }, []);
 
-  // ── Speech output: sentences are queued as they stream in, so speaking starts before the answer finishes.
-  function speak(text) {
-    const synth = window.speechSynthesis;
-    const clean = speakable(text);
-    if (!synth || !clean) return;
-    const u = new SpeechSynthesisUtterance(clean);
-    const voice = pickVoice();
-    if (voice) u.voice = voice;
-    u.rate = 1.03;
-    u.onstart = () => setState("speaking");
-    u.onend = () => {
-      if (!synth.speaking && !synth.pending) setState((s) => (s === "speaking" ? "idle" : s));
-    };
-    synth.speak(u);
-  }
+  const speak = (text) => speaker.say(text);
 
   function stopAll() {
-    window.speechSynthesis?.cancel();
+    speaker.stop();
     abortRef.current?.abort();
     try {
       recognitionRef.current?.abort();
@@ -135,9 +117,10 @@ export default function VoiceAssistant() {
   function openPanel() {
     setOpen(true);
     setError("");
+    speaker.unlock(); // inside the click, so the browser lets us play audio later
     if (messagesRef.current.length === 0) {
       setMessages([{ role: "model", text: GREETING }]);
-      speak(GREETING); // allowed: we're inside the click that opened the panel
+      speaker.playFile(GREETING_AUDIO, GREETING);
     }
   }
 
@@ -177,9 +160,13 @@ export default function VoiceAssistant() {
     abortRef.current = controller;
     let full = "";
     let spokenUpTo = 0;
+    // First sentence goes to speech on its own so the voice starts quickly; the rest is sent in larger pieces
+    // (about 2 speech requests per answer) to stay inside the free quota.
     const flushSentences = (final) => {
       const rest = full.slice(spokenUpTo);
-      const m = final ? rest : rest.match(/^[\s\S]*[.!?](?=\s)/)?.[0];
+      const firstSentence = spokenUpTo === 0 ? rest.match(/^[\s\S]*?[.!?](?=\s)/)?.[0] : null;
+      const bigPiece = rest.length > 350 ? rest.match(/^[\s\S]*[.!?](?=\s)/)?.[0] : null;
+      const m = final ? rest : firstSentence || bigPiece;
       if (m && m.trim()) {
         speak(m);
         spokenUpTo += m.length;
@@ -228,7 +215,7 @@ export default function VoiceAssistant() {
       }
       flushSentences(true);
       if (!full.trim()) throw new Error("empty");
-      if (!window.speechSynthesis?.speaking && !window.speechSynthesis?.pending) setState("idle");
+      if (!speaker.busy()) setState("idle");
     } catch (e) {
       if (e.name === "AbortError") return;
       const msg =
@@ -275,12 +262,14 @@ export default function VoiceAssistant() {
   }
 
   function onMic() {
+    speaker.unlock();
     if (state === "listening") recognitionRef.current?.stop();
     else startListening();
   }
 
   function onSubmitTyped(e) {
     e.preventDefault();
+    speaker.unlock();
     const q = typed;
     setTyped("");
     stopAll();

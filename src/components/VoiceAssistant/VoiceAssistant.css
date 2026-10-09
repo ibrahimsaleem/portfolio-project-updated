@@ -35,7 +35,7 @@
   position: fixed;
   left: 24px;
   bottom: 24px;
-  z-index: 9998;
+  z-index: 10001; /* above the chatbot bubble (9999), which otherwise covers the Ask button on phones */
   width: 380px;
   max-height: min(640px, calc(100vh - 48px));
   display: flex;
@@ -46,6 +46,7 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 212, 255, 0.15);
   color: #e6f0ff;
   font-family: "Rajdhani", "Segoe UI", -apple-system, sans-serif;
+  text-align: left; /* the site centers text globally */
   overflow: hidden;
   animation: va-in 0.22s ease-out;
 }
