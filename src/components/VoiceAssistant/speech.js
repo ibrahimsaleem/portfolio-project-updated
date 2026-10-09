@@ -140,5 +140,7 @@ export function createSpeaker({ apiKey, onSpeaking, onIdle }) {
       window.speechSynthesis?.cancel();
     },
     busy: () => pending > 0,
+    /** True once a user gesture has unlocked audio, so sound can play without another tap. */
+    canPlay: () => !!ctx && ctx.state === "running",
   };
 }

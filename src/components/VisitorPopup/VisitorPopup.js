@@ -108,6 +108,7 @@ export default function VisitorPopup() {
 
   function close() {
     setVisible(false);
+    window.dispatchEvent(new Event("visitor-popup-closed")); // the voice assistant opens after this
   }
 
   async function logSubmission(extra) {

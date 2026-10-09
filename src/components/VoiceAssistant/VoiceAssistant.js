@@ -18,10 +18,12 @@ const MAX_QUESTION_CHARS = 600;
 const HISTORY_TURNS = 6;
 const CONTACT_EMAIL = "ibrahimsaleem244@gmail.com";
 const HIDDEN_PATHS = ["/admin-leads", "/ibrahim-eb1-o1-dossier-private"];
+const AUTO_OPENED_FLAG = "ibrahim_voice_auto_opened_v1"; // sessionStorage: auto-open once per visit
+const POPUP_SHOWN_FLAG = "ibrahim_portfolio_popup_shown_v1"; // set by VisitorPopup
 
 const GREETING_AUDIO = "/voice-greeting.m4a"; // GREETING pre-recorded in the same Gemini voice: no API call
 const GREETING =
-  "Hi, I'm Ibrahim's AI assistant. I'm an AI, not Ibrahim himself, but I know his experience, projects and research. Ask me anything, or interview me about him.";
+  "Hey, welcome to Ibrahim's portfolio! I'm his AI assistant. I'm an AI, not Ibrahim himself, but I know his experience, projects and research. Ask me anything, or interview me about him.";
 
 const SYSTEM_PROMPT = `You are "Ibrahim's AI assistant", a voice assistant on Mohammad Ibrahim Saleem's portfolio website. Visitors talk to you out loud; many are recruiters or hiring managers screening him for a role.
 
@@ -66,6 +68,7 @@ export default function VoiceAssistant() {
     });
   }
   const speaker = speakerRef.current;
+  const greetingPendingRef = useRef(false); // auto-opened: greeting waits for the visitor's first tap
 
   const { pathname } = useLocation();
   const questionCount = messages.filter((m) => m.role === "user").length;
@@ -120,11 +123,65 @@ export default function VoiceAssistant() {
     speaker.unlock(); // inside the click, so the browser lets us play audio later
     if (messagesRef.current.length === 0) {
       setMessages([{ role: "model", text: GREETING }]);
+      greetingPendingRef.current = false;
       speaker.playFile(GREETING_AUDIO, GREETING);
     }
   }
 
+  // Open by itself once per visit: after the job-fit popup is dismissed, or shortly after load if that popup
+  // was already seen this visit. Browsers block sound until the visitor interacts, so the greeting shows as
+  // text and is spoken on their first tap anywhere (unless that tap closes the panel or starts the mic).
+  useEffect(() => {
+    if (HIDDEN_PATHS.includes(window.location.pathname)) return;
+    const seen = (key) => {
+      try {
+        return sessionStorage.getItem(key) === "1";
+      } catch (e) {
+        return false;
+      }
+    };
+    if (seen(AUTO_OPENED_FLAG)) return;
+
+    let timer = null;
+    const autoOpen = () => {
+      try {
+        sessionStorage.setItem(AUTO_OPENED_FLAG, "1");
+      } catch (e) {
+        // storage unavailable: it may auto-open again on the next page load
+      }
+      setOpen(true);
+      if (messagesRef.current.length > 0) return;
+      setMessages([{ role: "model", text: GREETING }]);
+      speaker.unlock();
+      if (speaker.canPlay()) speaker.playFile(GREETING_AUDIO, GREETING);
+      else greetingPendingRef.current = true;
+    };
+    const onPopupClosed = () => {
+      clearTimeout(timer);
+      timer = setTimeout(autoOpen, 600);
+    };
+    if (seen(POPUP_SHOWN_FLAG)) timer = setTimeout(autoOpen, 2500);
+    else window.addEventListener("visitor-popup-closed", onPopupClosed, { once: true });
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("visitor-popup-closed", onPopupClosed);
+    };
+  }, [speaker]);
+
+  useEffect(() => {
+    const onFirstGesture = (e) => {
+      if (!greetingPendingRef.current) return;
+      if (e.target.closest?.(".va-close, .va-mic, .va-type")) return; // closing or asking: skip the greeting
+      greetingPendingRef.current = false;
+      speaker.unlock();
+      speaker.playFile(GREETING_AUDIO, GREETING);
+    };
+    document.addEventListener("pointerdown", onFirstGesture, true);
+    return () => document.removeEventListener("pointerdown", onFirstGesture, true);
+  }, [speaker]);
+
   function closePanel() {
+    greetingPendingRef.current = false;
     stopAll();
     setState("idle");
     setInterim("");
@@ -262,6 +319,7 @@ export default function VoiceAssistant() {
   }
 
   function onMic() {
+    greetingPendingRef.current = false;
     speaker.unlock();
     if (state === "listening") recognitionRef.current?.stop();
     else startListening();
@@ -269,6 +327,7 @@ export default function VoiceAssistant() {
 
   function onSubmitTyped(e) {
     e.preventDefault();
+    greetingPendingRef.current = false;
     speaker.unlock();
     const q = typed;
     setTyped("");
