@@ -1,9 +1,11 @@
 import React from "react";
+import { Reveal } from "../Motion";
 import { Card, Button } from "react-bootstrap";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 function ExperienceCard(props) {
   return (
+    <Reveal style={{ height: "100%" }}>
     <Card className="experience-card-view">
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
@@ -23,6 +25,7 @@ function ExperienceCard(props) {
         )}
       </Card.Body>
     </Card>
+    </Reveal>
   );
 }
 

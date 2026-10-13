@@ -1,4 +1,5 @@
 import React from "react";
+import { Reveal } from "../Motion";
 import { Container, Row, Col, Card, Badge, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import blogPosts from "./blogData";
@@ -10,10 +11,11 @@ function Blog() {
         <h1 className="project-heading">Latest <span className="purple">Insights</span></h1>
         <p style={{ color: "white" }}>Curated posts and updates from my work in AI, security, and data science.</p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {[...blogPosts].sort((a, b) => b.date.localeCompare(a.date)).map((post) => (
+          {[...blogPosts].sort((a, b) => b.date.localeCompare(a.date)).map((post, i) => (
             <Col md={4} className="project-card" key={post.id}>
+              <Reveal delay={(i % 3) * 0.06} style={{ height: "100%" }}>
               <Card className="project-card-view">
-                <Card.Img variant="top" src={post.image} alt={post.title} />
+                <Card.Img variant="top" src={post.image} alt="" loading="lazy" decoding="async" />
                 <Card.Body>
                   <Card.Title>{post.title}</Card.Title>
                   <Card.Subtitle className="mb-2" style={{ color: "#9aa2b1" }}>{post.date}</Card.Subtitle>
@@ -30,6 +32,7 @@ function Blog() {
                   )}
                 </Card.Body>
               </Card>
+              </Reveal>
             </Col>
           ))}
         </Row>

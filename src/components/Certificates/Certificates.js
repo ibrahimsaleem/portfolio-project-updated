@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CertificateCard from "./CertificateCards";
-import Particle from "../Particle";
 
 import linkedinLogo from "../../Assets/1.jpeg"; // Import the LinkedIn logo
 import azureLogo from "../../Assets/2.jpeg"; // Import the Azure logo
@@ -17,7 +16,6 @@ import AILogo from "../../Assets/AI.png";
 function Certificates() {
   return (
     <Container fluid className="project-section">
-      <Particle />
       <Container>
         <h1 className="project-heading">
           My Recent <strong className="purple">Certificates</strong>

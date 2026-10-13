@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import homeLogo from "../../Assets/ibrahim-headshot.jpg";
-import Particle from "../Particle";
 import MatrixRain from "../MatrixRain";
 import Type from "./Type";
 import { AiFillGithub } from "react-icons/ai";
@@ -15,8 +14,6 @@ function Home() {
       {/* =================== CYBER HERO =================== */}
       <Container fluid className="home-section" id="home">
         <MatrixRain />
-        <Particle />
-
         <Container className="home-content">
           <Row className="align-items-center">
             <Col md={7} className="home-header">

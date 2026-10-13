@@ -1372,3 +1372,85 @@ a:focus-visible {
     font-size: 1.6em !important;
   }
 }
+
+/* ===================== MOTION & PERFORMANCE LAYER =====================
+   Fast, transform/opacity-only motion. Repeated elements drop backdrop blur: over the animated
+   backgrounds it was recomputed for every card on every frame, and the cards are ~90% opaque anyway. */
+html { scroll-behavior: smooth; }
+
+.project-card-view,
+.case-study-card-view,
+.experience-card-view,
+.tech-icons {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.project-card-view,
+.blog-card-view,
+.case-study-card-view,
+.experience-card-view {
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease, border-color 0.22s ease !important;
+  will-change: transform;
+}
+
+.project-card-view:hover,
+.blog-card-view:hover,
+.case-study-card-view:hover,
+.experience-card-view:hover {
+  transform: translateY(-4px) !important;
+}
+
+.project-card-view::before { transition: left 0.6s cubic-bezier(0.22, 1, 0.36, 1); }
+
+.project-card-view .card-img-top {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease !important;
+}
+.project-card-view:hover .card-img-top {
+  transform: scale(1.03);
+  opacity: 1 !important;
+}
+
+/* Buttons: quick lift on hover, a small press on click, never animate layout. */
+.btn,
+.btn-primary,
+.fork-btn-inner,
+.home-social-icons {
+  transition: transform 0.16s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease, filter 0.2s ease, background-color 0.2s ease, color 0.2s ease !important;
+}
+.btn:active,
+.btn-primary:active,
+.fork-btn-inner:active {
+  transform: translateY(0) scale(0.97) !important;
+  transition-duration: 0.08s !important;
+}
+
+/* Visible keyboard focus (the old rule removed it everywhere). Mouse clicks stay ring-free. */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--cyber-cyan, #00d4ff) !important;
+  outline-offset: 3px !important;
+  box-shadow: none !important;
+}
+
+/* Touch screens have no hover: don't leave cards "stuck" lifted after a tap. */
+@media (hover: none) {
+  .project-card-view:hover,
+  .blog-card-view:hover,
+  .case-study-card-view:hover,
+  .experience-card-view:hover { transform: none !important; }
+  .project-card-view:hover .card-img-top { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

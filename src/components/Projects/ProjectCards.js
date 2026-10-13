@@ -1,4 +1,5 @@
 import React from "react";
+import { Reveal } from "../Motion";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
@@ -9,8 +10,9 @@ function ProjectCards(props) {
   const isInternal = props.link && props.link.startsWith("/");
 
   return (
+    <Reveal style={{ height: "100%" }}>
     <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+      <Card.Img variant="top" src={props.imgPath} alt="" loading="lazy" decoding="async" />
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text style={{ textAlign: "justify" }}>
@@ -44,6 +46,7 @@ function ProjectCards(props) {
         )}
       </Card.Body>
     </Card>
+    </Reveal>
   );
 }
 export default ProjectCards;

@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
-import Particle from "../Particle";
 
 // Import all project images
 import aiResumeImg from "../../Assets/Projects/AI-resume.png";
@@ -40,7 +39,6 @@ import aplyeaseImg from "../../Assets/Projects/aplyease-logo.jpg";
 function Projects() {
   return (
     <Container fluid className="project-section">
-      <Particle />
       <Container>
         <h1 className="project-heading">
           Research <strong className="purple">Publications </strong> & Projects

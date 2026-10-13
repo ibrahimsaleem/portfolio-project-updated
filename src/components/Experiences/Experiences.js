@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import ExperienceCard from "./ExperiencesCards";
-import Particle from "../Particle";
 import "./Experiences.css";
 
 function Experiences() {
@@ -114,7 +113,6 @@ function Experiences() {
 
   return (
     <Container fluid className="experience-section" id="experiences">
-      <Particle />
       <Container>
         <div className="section-heading">
           <h1 className="experience-heading">

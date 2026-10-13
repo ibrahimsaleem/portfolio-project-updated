@@ -1,15 +1,14 @@
 import React from "react";
+import { Reveal } from "../Motion";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaSitemap } from "react-icons/fa";
-import Particle from "../Particle";
 import caseStudies from "./caseStudiesData";
 import "./CaseStudies.css";
 
 function CaseStudies() {
   return (
     <Container fluid className="project-section">
-      <Particle />
       <Container>
         <h1 className="project-heading">
           Case <span className="purple">Studies</span>
@@ -20,8 +19,9 @@ function CaseStudies() {
           than a project card.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          {caseStudies.map((study) => (
+          {caseStudies.map((study, i) => (
             <Col md={6} className="project-card" key={study.id}>
+              <Reveal delay={(i % 2) * 0.06} style={{ height: "100%" }}>
               <Card className="case-study-card-view">
                 <Card.Body>
                   <div style={{ marginBottom: 10 }}>
@@ -49,6 +49,7 @@ function CaseStudies() {
                   </Button>
                 </Card.Body>
               </Card>
+              </Reveal>
             </Col>
           ))}
         </Row>

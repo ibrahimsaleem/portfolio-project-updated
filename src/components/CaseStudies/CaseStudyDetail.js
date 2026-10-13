@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useParams, Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import Particle from "../Particle";
 import caseStudiesContent from "./caseStudiesContent";
 import FlowDiagram from "./FlowDiagram";
 import BlockDiagram from "./BlockDiagram";
@@ -27,7 +26,6 @@ function CaseStudyDetail() {
 
   return (
     <Container fluid className="project-section">
-      <Particle />
       <Container>
         <Row className="justify-content-center">
           <Col xs={12} md={11} lg={9} xl={8} className="case-study-content">

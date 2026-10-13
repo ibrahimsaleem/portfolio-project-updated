@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import homeLogo from "../../Assets/ibrahim.png";
-import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
 import Experiences from "../Experiences/Experiences";
@@ -42,7 +41,6 @@ function HomeDetailed() {
   return (
     <section>
       <Container fluid className="home-section" id="home">
-        <Particle />
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">

@@ -1,12 +1,14 @@
 import React from "react";
+import { Reveal } from "../Motion";
 import Card from "react-bootstrap/Card";
 import { FaShieldAlt } from "react-icons/fa";
 
 function CertificateCards(props) {
   return (
+    <Reveal style={{ height: "100%" }}>
     <Card className="project-card-view">
       {props.imgPath ? (
-        <Card.Img variant="top" src={props.imgPath} alt="card-img" />
+        <Card.Img variant="top" src={props.imgPath} alt="" loading="lazy" decoding="async" />
       ) : (
         <div
           style={{
@@ -28,6 +30,7 @@ function CertificateCards(props) {
        
       </Card.Body>
     </Card>
+    </Reveal>
   );
 }
 export default CertificateCards;
