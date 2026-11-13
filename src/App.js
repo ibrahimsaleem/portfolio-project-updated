@@ -54,7 +54,6 @@ function prefetchCommonPages() {
 }
 
 // Floating widgets appear after the page is usable, so they load separately too.
-const ChatBot = lazy(() => import("./components/ChatBot/ChatBot"));
 const VisitorPopup = lazy(() => import("./components/VisitorPopup/VisitorPopup"));
 const VoiceAssistant = lazy(() => import("./components/VoiceAssistant/VoiceAssistant"));
 
@@ -110,7 +109,6 @@ function App() {
         </AnimatedRoutes>
         <Footer />
         <Suspense fallback={null}>
-          <ChatBot />
           <VisitorPopup />
           <VoiceAssistant />
         </Suspense>

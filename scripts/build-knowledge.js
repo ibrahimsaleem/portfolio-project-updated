@@ -87,6 +87,14 @@ const cv = fs.readFileSync(path.join(__dirname, "cv.txt"), "utf8");
 cv.split(/\n(?=(?:Professional Summary|Education|Experience|Projects|Publications|Research|Skills|Technical Skills|Certifications|Awards|Leadership)\s*\n)/)
   .forEach((block) => add("CV", `CV: ${block.trim().split("\n")[0]}`, block, "/resume"));
 
+
+// Profile text (formerly the chat bot's prompt): split into blocks on blank lines so retrieval can pick the right part.
+const profile = fs.readFileSync(path.join(__dirname, "assistant-profile.txt"), "utf8");
+profile.split(/\n\s*\n/).forEach((block, i) => {
+  const first = block.trim().split("\n")[0].replace(/^=+\s*|\s*=+$/g, "").slice(0, 60);
+  add("Profile", `Profile: ${first}`, block, "/");
+});
+
 const outFile = path.join(root, "src/components/VoiceAssistant/knowledge.json");
 fs.mkdirSync(path.dirname(outFile), { recursive: true });
 fs.writeFileSync(outFile, JSON.stringify(chunks));
