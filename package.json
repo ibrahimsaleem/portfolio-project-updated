@@ -29,7 +29,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prebuild": "node scripts/build-knowledge.js"
+    "prebuild": "node scripts/build-knowledge.js",
+    "postbuild": "node scripts/seo.js"
   },
   "eslintConfig": {
     "extends": [
