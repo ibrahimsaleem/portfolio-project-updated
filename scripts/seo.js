@@ -4,7 +4,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const SITE = (process.env.SITE_URL || "https://ibrahim.si").replace(/\/$/, "");
+const SITE = (process.env.SITE_URL || "https://saleem.si").replace(/\/$/, "");
 const AUTHOR = "Mohammad Ibrahim Saleem";
 const root = path.join(__dirname, "..");
 const build = path.join(root, "build");
