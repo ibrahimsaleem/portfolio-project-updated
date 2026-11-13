@@ -379,7 +379,6 @@ export default function EB1O1Dossier() {
               </SourceLink>
               ). This is exactly the kind of &ldquo;frontier AI lab partnership for vulnerability discovery&rdquo; work Ibrahim describes. Important caveat: the article names no individual AT&amp;T employees or teams — it confirms AT&amp;T's AI-security function operates at this level, not that Ibrahim personally worked on Glasswing specifically. That link has to come from an internal AT&amp;T letter, not this article.
             </>,
-            "Founder & AI Product Engineer, HireEase (Nov 2024–present) — by definition a leading role; the venture itself has real traction (40,000+ applications processed, 300+ clients), which helps establish HireEase as a legitimate \"establishment,\" not just a side project.",
             "Founder & AI Engineer, WarmNodeAI (Apr 2026–present) — also a leading role, but pre-revenue/early-stage; weaker as \"distinguished reputation\" evidence until it has independent traction or press.",
           ]}
           gapNote={'This criterion lives or dies on a strong recommendation letter from an AT&T manager/director explicitly using language like "critical," "essential," or "leading" to describe the role and its impact, and explicitly naming which frontier-AI-lab partnership(s) (e.g. Project Glasswing) his work touched, if any — a letter that ties his day-to-day work to a named, publicly-verifiable program like Glasswing would be significantly stronger than generic language.'}
@@ -468,7 +467,7 @@ export default function EB1O1Dossier() {
         >
 {`You are researching public evidence for a potential EB-1A/O-1A extraordinary-ability
 petition for Mohammad Ibrahim Saleem — AI Security Engineer at AT&T, Houston TX,
-M.S. Cybersecurity (Univ. of Houston, GPA 3.98), founder of WarmNodeAI and HireEase.
+M.S. Cybersecurity (Univ. of Houston, GPA 3.98), founder of WarmNodeAI.
 
 Known publications (verify each still resolves and check for NEW citations):
 - "LIMA: Leveraging Large Language Models and MCP Servers for Initial Machine Access"
@@ -498,7 +497,7 @@ actually opening the source page — flag anything you could not directly confir
    similar curated lists.
 6. Scholarly articles — status of "Auto ARC" (IEEE SoutheastCon 2026) and
    "EncoderThinkingMCP" (IEEE Southwest) — published yet? Any new papers.
-7. Critical/leading role — any news about WarmNodeAI or HireEase traction, funding,
+7. Critical/leading role — any news about WarmNodeAI traction, funding,
    or press.
 8. High salary — do not fabricate; only report what's independently, publicly stated.
 

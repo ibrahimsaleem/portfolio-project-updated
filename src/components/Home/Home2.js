@@ -131,9 +131,7 @@ function Home2() {
                   <p>
                     Outside the day job, I'm the founder behind{" "}
                     <strong style={{ color: "#C770F0" }}>WarmNodeAI</strong>{" "}
-                    and{" "}
-                    <strong style={{ color: "#C770F0" }}>HireEase</strong>{" "}
-                    (40,000+ applications processed, 300+ clients) — because
+                    — because
                     I'd rather ship an AI system end-to-end than just talk
                     about it.
                   </p>

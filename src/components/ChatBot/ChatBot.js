@@ -32,20 +32,15 @@ Coursework: Data Structures & Algorithms, OOP, DBMS, Cloud Computing, Operating 
 
 WORK EXPERIENCE (full timeline, including founder roles)
 
-0. Founder & AI Engineer — WarmNodeAI (stealth AI startup), Houston TX (Part-time) | Apr 2026 – Present
-- Building WarmNodeAI, a privacy-focused AI platform that helps users understand, organize, and activate their professional relationships.
-- Owns product strategy, AI architecture, LLM integration, semantic search, backend development, and security end-to-end as founder.
-
-0. Founder & AI Product Engineer — HireEase, Houston TX (Part-time) | Nov 2024 – Present
-- Founded and built HireEase, an AI-powered career platform combining intelligent automation with trained human specialists.
-- Built AI resume tailoring, ATS optimization, job matching, application tracking, and workflow automation tools.
-- Platform has processed 40,000+ job applications and supported 300+ clients.
-
 1. AI Security & Governance Engineer — AT&T, Plano TX (Hybrid) | Jan 2026 – Present
 - Designed and secured enterprise AI governance and SOC-style detection-response review workflows for GenAI and agentic AI systems, reducing AI use-case review and permit-to-operate approval from 10-12 days to under 6 minutes via automated agentic security review pipelines.
 - Built SLA tracking, control pass/fail, and remediation dashboards for security/governance stakeholders.
 - Developed SOAR-style orchestration and API integrations (alert enrichment, analyst-style triage, evidence capture, ticket routing) using Python, REST APIs, Splunk/SPL-style queries, and Cortex XSOAR concepts.
 - Performed adversarial testing and behavioral risk assessments on enterprise LLMs against OWASP Top 10 for LLMs and Agents, NIST AI-RMF, ISO 42001, and zero-trust principles.
+- Main engineer on a first non-production customer security-notification MVP: privacy-preserving Python/Flask workflow (masked identifiers, taxonomy-first classification, SQLite review history) that drafts editable Word/Excel security notifications behind a mandatory analyst review gate; prepared Azure Container Apps deployment/rollback runbooks; 59 unit tests and 1,800 matching synthetic workflow-state checks with CodeQL/SonarCloud gates. Not yet a production or customer-accepted system.
+- Delivered a repeatable security-scan and reporting baseline across 10 repositories (SAST, SARIF, dashboard, per-repo drilldowns).
+- Directed an AI-agent-assisted expansion of a security-harness test plan from 36 to 60 cases, auto-assigned via the Jira API across 7 owners (planned, not yet executed).
+- Contributed a model-testing kit and MAP-Elites red-teaming method to a two-phase frontier-model security evaluation (134+ prompts across 11 use cases, then 259 prompts); built topology-preserving NetFlow masking with a reversible synthetic demo.
 
 2. GenAI & Data Science Intern — NOV Inc. (National Oilwell Varco), Houston TX (On-site) | June 2025 – Dec 2025
 - Architected an autonomous multi-agent system using Azure OpenAI (GPT-4o/5) that improved document-parsing throughput by 360x (8 minutes vs. 2 days) while maintaining 95%+ accuracy — published as a paper.

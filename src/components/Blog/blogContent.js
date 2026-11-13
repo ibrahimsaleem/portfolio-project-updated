@@ -1,4 +1,6 @@
 import React from "react";
+import AiSecurityLayers from "./AiSecurityLayers";
+import workLessonsContent from "./workLessonsContent";
 
 const ExternalLink = ({ href, children }) => (
   <a href={href} target="_blank" rel="noreferrer" className="purple">
@@ -7,6 +9,102 @@ const ExternalLink = ({ href, children }) => (
 );
 
 const blogContent = {
+  ...workLessonsContent,
+  "ai-security-layers-teams-cannot-skip": {
+    title: "The 17 Layers of AI Security: A Checklist for Teams Shipping LLMs",
+    date: "2026-11-06",
+    tags: ["AI Security", "LLM Security", "OWASP", "Agentic AI", "Red Teaming"],
+    heroImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&h=800&fit=crop",
+    Content: () => (
+      <>
+        <p>
+          Most AI security failures I look at are not one big hole. They are a missing layer. A team adds a prompt
+          filter and calls it done, while the model can still call a tool with too much access, the retrieval index
+          mixes tenants, and nobody is watching what the system does after launch.
+        </p>
+        <p>
+          So here is the checklist I use: 17 layers. For each one, what it guards, how it gets attacked, and the one
+          job it has to do. Where an attack has an OWASP Top 10 for LLM Applications (2025) ID, I have put it in
+          brackets. None of this is a product list. Pick the tools that fit your stack; the layer is what matters.
+        </p>
+
+        <figure style={{ margin: "26px 0" }}>
+          <img
+            src="/ai-security-layers.jpg"
+            alt="Chart of 17 AI security layers. Each row names a layer, what it guards, the attack against it, example tools, and its core job."
+            style={{ width: "100%", maxWidth: 640, display: "block", margin: 0, borderRadius: 12, border: "1px solid rgba(0,212,255,0.25)" }}
+            loading="lazy"
+          />
+          <figcaption style={{ textAlign: "left", fontSize: "0.9rem", color: "#9aa2b1", marginTop: 10 }}>
+            The one-page chart.{" "}
+            <a href="/ai-security-layers.pdf" className="purple" target="_blank" rel="noreferrer" download>
+              Download it as a PDF
+            </a>
+          </figcaption>
+        </figure>
+
+        <h3>Explore the 17 layers</h3>
+        <p>
+          Filter by group, tap a layer to see what it guards, how it gets attacked and its one job, and mark the ones
+          your team already covers. The five I would check first carry a star.
+        </p>
+        <AiSecurityLayers />
+
+        <h3>The five I would check first</h3>
+        <p>If you only have a week, start here. These are the layers where a single gap can turn a harmless-looking prompt into a real incident.</p>
+        <ol>
+          <li>
+            <strong>Prompt injection defense.</strong> Treat every input as hostile, including documents and web pages
+            the model reads on its own. I built{" "}
+            <a href="/blog/mdscanner-markdown-prompt-injection" className="purple">MDScanner</a> to scan Markdown for
+            injection, hidden HTML and leaked credentials before it is rendered or fed to an agent.
+          </li>
+          <li>
+            <strong>Agent and tool sandboxing.</strong> Give an agent the smallest toolset and the smallest folder it
+            can work with, and keep a human approval step for anything high-risk. The{" "}
+            <a href="/blog/hardening-ai-agent-web-portal" className="purple">hardened agent portal</a> write-up shows
+            how I applied that.
+          </li>
+          <li>
+            <strong>Model and agent supply chain.</strong> Know what is installed before you secure it. My{" "}
+            <a href="/blog/openclaw-fleet-detection" className="purple">fleet detection scripts</a> find AI agent
+            installs across a managed fleet and can flag known-malicious skills.
+          </li>
+          <li>
+            <strong>Runtime monitoring.</strong> Guardrails at launch do not catch drift or live abuse. You need to see
+            tool calls, outbound traffic and spend while the system runs.
+          </li>
+          <li>
+            <strong>Red teaming.</strong> Test the decision, not just the model. My{" "}
+            <a href="/blog/lima-accepted-pentestthinkingmcp-milestone" className="purple">LIMA and PentestThinkingMCP</a> 
+            work is about exactly that: letting an LLM attack on purpose so you find the gaps first.
+          </li>
+        </ol>
+
+        <h3>A quick self-test</h3>
+        <p>Ask your team these five questions. If you cannot answer one, that is your next layer.</p>
+        <ul>
+          <li>What can the model read that we do not control?</li>
+          <li>What is the most damaging thing an agent can do with the access it has today?</li>
+          <li>If one customer's documents were retrieved for another customer, would we know?</li>
+          <li>Can we tell, right now, which AI agents are installed on our machines?</li>
+          <li>When did we last attack our own system on purpose?</li>
+        </ul>
+        <p>
+          These layers are also the thread running through my{" "}
+          <a href="/blog/ai-threat-modeling-whole-system" className="purple">threat modeling write-up</a>: start with the
+          whole system, and ask what the surrounding system lets the model do if it gets one decision wrong.
+        </p>
+
+        <h3>Which layer is your team weakest on?</h3>
+        <p>
+          My guess is agent sandboxing or runtime monitoring, because both only matter once the system is live and
+          doing real work. If you want to compare notes, reach me on{" "}
+          <ExternalLink href="https://www.linkedin.com/in/ibrahimsaleem91/">LinkedIn</ExternalLink>.
+        </p>
+      </>
+    ),
+  },
   "switchlane-router-benchmark-jev-laya": {
     title: "I Tested the New “AI Traffic Cops” on 100 Prompts: Here's the Honest Result",
     date: "2026-10-02",
@@ -472,7 +570,7 @@ const blogContent = {
     Content: () => (
       <>
         <p>
-          As a solo founder building AplyEase, I constantly need to run code, check files and fix bugs, but I'm not
+          As a solo founder, I constantly need to run code, check files and fix bugs, but I'm not
           always at my desk. Opening a laptop just to run one command is friction I didn't want. So over a weekend I
           built <strong>Claude Portal</strong>: a personal AI dev assistant that runs on my laptop and talks to me from
           my phone, with no cloud subscription and no third-party app.

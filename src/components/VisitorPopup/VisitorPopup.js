@@ -340,8 +340,8 @@ export default function VisitorPopup() {
               version: Ibrahim is an AI Security Engineer at AT&T working on
               agentic AI systems, LLM security, and cloud security — with
               published research (IEEE FMLDS 2025, SPE 2026), open-source
-              projects (PentestThinkingMCP, ClawProtect, SwitchLane), and two
-              founder ventures (WarmNodeAI, HireEase). He's also a fast,
+              projects (PentestThinkingMCP, ClawProtect, SwitchLane), and a
+              founder venture (WarmNodeAI). He's also a fast,
               hands-on learner — he's already shipped multiple MCP servers and
               custom AI-agent harnesses on protocols that only became common
               practice in the last year.

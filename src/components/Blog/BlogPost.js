@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Container, Row, Col, Badge } from "react-bootstrap";
 import { useParams, Link } from "react-router-dom";
 import blogContent from "./blogContent";
+import ListenToPost from "./ListenToPost";
 
 function BlogPost() {
   const { id } = useParams();
+  const contentRef = useRef(null);
   const post = blogContent[id];
 
   if (!post) {
@@ -32,8 +34,8 @@ function BlogPost() {
               style={{ width: "100%", borderRadius: 12, marginBottom: 20, maxHeight: 340, objectFit: "cover" }}
             />
             <h1 className="project-heading" style={{ marginTop: 10, textAlign: "left" }}>{title}</h1>
-            <div style={{ color: "#9aa2b1", marginBottom: 10, fontFamily: "'Share Tech Mono', monospace", fontSize: "0.9rem" }}>{date}</div>
-            <div style={{ marginBottom: 20 }}>
+            <div style={{ color: "#9aa2b1", marginBottom: 10, fontFamily: "'Share Tech Mono', monospace", fontSize: "0.9rem", textAlign: "left" }}>{date}</div>
+            <div style={{ marginBottom: 20, textAlign: "left" }}>
               {tags.map((t) => (
                 <Badge bg="secondary" key={t} style={{ marginRight: 6, marginBottom: 4 }}>{t}</Badge>
               ))}
@@ -42,7 +44,8 @@ function BlogPost() {
         </Row>
         <Row>
           <Col xs={12} md={10} lg={8}>
-            <div style={{ color: "rgba(210,225,245,0.92)", lineHeight: 1.85, fontSize: "1.02rem" }}>
+            <ListenToPost contentRef={contentRef} title={title} />
+            <div ref={contentRef} style={{ color: "rgba(210,225,245,0.92)", lineHeight: 1.85, fontSize: "1.02rem", textAlign: "left" }}>
               <Content />
             </div>
             <div style={{ marginTop: 36, marginBottom: 20 }}>

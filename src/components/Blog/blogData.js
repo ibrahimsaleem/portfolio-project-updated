@@ -2,6 +2,136 @@
 
 const blogPosts = [
   {
+    id: "human-stays-the-ship-gate",
+    title: "The AI Drafts, the Human Ships: Designing GenAI Workflows With a Real Approval Gate",
+    date: "2026-11-12",
+    tags: ["Human-in-the-Loop", "GenAI", "AI Governance", "Workflow Design"],
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "The fastest way to get an AI workflow rejected is to let it send to customers on its own. Here is how a real human approval gate works, and why it makes GenAI adoption faster, not slower.",
+    link: "/blog/human-stays-the-ship-gate",
+  },
+  {
+    id: "let-code-count-let-ai-talk",
+    title: "Let Code Count, Let AI Talk: A Pattern for Trustworthy AI-Generated Reports",
+    date: "2026-11-12",
+    tags: ["GenAI", "LLM Engineering", "Reliability", "Design Patterns"],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Models are great at language and unreliable at bookkeeping. Let deterministic code own every number and category, and let the LLM write the words around them.",
+    link: "/blog/let-code-count-let-ai-talk",
+  },
+  {
+    id: "mask-before-the-model-sees",
+    title: "Mask Before the Model Sees It: Privacy by Design for LLM Pipelines",
+    date: "2026-11-12",
+    tags: ["Privacy", "Data Masking", "AI Security", "LLM Security"],
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Keeping customer data out of the prompt is not enough. Identifiers leak through logs, UIs, APIs, audits and reports. Mask at the first step, and keep the data useful with topology-preserving tokenization.",
+    link: "/blog/mask-before-the-model-sees",
+  },
+  {
+    id: "your-error-messages-leak",
+    title: "Your Error Messages Are Leaking Data: Constant Safe Errors and How to Test Them",
+    date: "2026-11-12",
+    tags: ["Application Security", "Secure Coding", "Testing", "Privacy"],
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Validation errors that echo user input or exception details are a quiet data leak. The fix is constant safe errors, plus non-reflection regression tests so the bug never comes back.",
+    link: "/blog/your-error-messages-leak",
+  },
+  {
+    id: "threat-modeling-ai-agent-harness",
+    title: "Threat Modeling an AI Agent Harness: Tools, Memory, and the Approval Loop",
+    date: "2026-11-12",
+    tags: ["Agentic AI", "Threat Modeling", "AI Security", "Agent Harness"],
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "An agent reads untrusted content, decides on its own, and acts through tools. Threat model the harness, not just the model: inputs, tools, credentials, memory, execution and the approval loop.",
+    link: "/blog/threat-modeling-ai-agent-harness",
+  },
+  {
+    id: "vendor-neutral-llm-red-team",
+    title: "How to Build a Vendor-Neutral LLM Red-Team Suite",
+    date: "2026-11-12",
+    tags: ["Red Teaming", "Prompt Injection", "LLM Evaluation", "OWASP"],
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "A red-team suite is only useful if you can rerun it against any model. Provider adapters, an OWASP-mapped prompt library, an LLM judge, canary checks and regression tests.",
+    link: "/blog/vendor-neutral-llm-red-team",
+  },
+  {
+    id: "map-elites-for-red-teaming",
+    title: "MAP-Elites for LLM Red Teaming: Finding More Kinds of Failures, Not Just More Failures",
+    date: "2026-11-12",
+    tags: ["Red Teaming", "MAP-Elites", "Quality Diversity", "AI Security"],
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Fixed prompt lists only find the failures you imagined. MAP-Elites keeps the best attack for each kind of attack, giving defenders a map of where a model is weak.",
+    link: "/blog/map-elites-for-red-teaming",
+  },
+  {
+    id: "saying-no-to-a-shiny-ai-tool",
+    title: "How to Say No to a Shiny AI Security Tool (and When You Should)",
+    date: "2026-11-12",
+    tags: ["Vendor Evaluation", "AI Security", "Decision Making", "Security Tools"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "How I evaluate preview-stage AI security products: availability, scope, auditability, data handling, cost and evidence. And why a documented no-go is a valid outcome.",
+    link: "/blog/saying-no-to-a-shiny-ai-tool",
+  },
+  {
+    id: "agents-planned-my-test-backlog",
+    title: "AI Agents Planned My Test Backlog: Jira Automation With a Human-Approved Pilot",
+    date: "2026-11-12",
+    tags: ["AI Agents", "Automation", "Jira", "Test Planning"],
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Using AI coding agents to revise a test plan and create, label and assign Jira tickets through the API, with a small human-approved pilot and read-back verification.",
+    link: "/blog/agents-planned-my-test-backlog",
+  },
+  {
+    id: "main-engineer-first-ai-mvp",
+    title: "What I Learned as Main Engineer on My First Enterprise AI MVP",
+    date: "2026-11-12",
+    tags: ["Career", "GenAI", "Engineering Leadership", "MVP"],
+    image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Five lessons from owning an enterprise AI MVP from discovery to release preparation: real discovery, written boundaries, fixed pipelines, runbooks and honest status.",
+    link: "/blog/main-engineer-first-ai-mvp",
+  },
+  {
+    id: "non-production-is-a-real-milestone",
+    title: "Demo, Non-Production, Pilot, Production: Honest Release Language for AI Projects",
+    date: "2026-11-12",
+    tags: ["Career", "Release Management", "GenAI", "Resume Tips"],
+    image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Demo, non-production, pilot and production mean different things. How to describe each one honestly, why non-production deserves credit, and how to put it on a resume.",
+    link: "/blog/non-production-is-a-real-milestone",
+  },
+  {
+    id: "spec-driven-development-fast-paced",
+    title: "Spec First, Ship Fast: Spec-Driven Development With AI Coding Agents",
+    date: "2026-11-12",
+    tags: ["Spec-Driven Development", "AI Coding Agents", "Productivity", "Engineering Practice"],
+    image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "AI coding agents write a lot of code fast, including the wrong code. Writing the spec and acceptance criteria first is what keeps fast-paced work fast.",
+    link: "/blog/spec-driven-development-fast-paced",
+  },
+  {
+    id: "ai-security-layers-teams-cannot-skip",
+    title: "The 17 Layers of AI Security: A Checklist for Teams Shipping LLMs",
+    date: "2026-11-06",
+    tags: ["AI Security", "LLM Security", "OWASP", "Agentic AI", "Red Teaming"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Most AI security failures are not one big hole. They are a missing layer. Here are 17 layers, grouped by where they sit, what attacks each one stops, the one job each has to do, and the five I would check first.",
+    link: "/blog/ai-security-layers-teams-cannot-skip",
+  },
+  {
     id: "switchlane-router-benchmark-jev-laya",
     title: "I Tested the New “AI Traffic Cops” on 100 Prompts: Here's the Honest Result",
     date: "2026-10-02",

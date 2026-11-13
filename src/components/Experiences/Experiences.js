@@ -30,20 +30,11 @@ function Experiences() {
   const experienceData = [
     {
       type: "experience",
-      title: "Founder & AI Engineer",
-      organization: "WarmNodeAI (Stealth AI Startup) — Houston, TX (Part-time)",
-      date: "Apr 2026 – Present",
-      description:
-        "Building WarmNodeAI, a privacy-focused AI platform that helps users understand, organize, and activate their professional relationships. Leading product strategy, AI architecture, LLM integration, semantic search, backend development, security, and early-stage validation end-to-end as founder.",
-      documentLink: "https://warmnode.me"
-    },
-    {
-      type: "experience",
       title: "AI Security & Governance Engineer",
       organization: "AT&T — Plano, TX (Hybrid)",
       date: "Jan 2026 – Present",
       description:
-        "Designing and securing enterprise AI governance and SOC-style detection-response review workflows for GenAI and agentic AI systems — reducing AI use-case review and permit-to-operate approval from 10–12 days to under 6 minutes through automated agentic security review pipelines, escalation paths, and process controls. Built SLA tracking, control pass/fail, and remediation dashboards for security and governance stakeholders. Developed SOAR-style orchestration and API integrations — alert enrichment, analyst-style triage, evidence capture, ticket routing — using Python, REST APIs, Splunk/SPL-style queries, and Cortex XSOAR concepts. Performed adversarial testing and behavioral risk assessments on enterprise LLMs against OWASP Top 10 for LLMs and Agents, NIST AI-RMF, ISO 42001, and zero-trust principles, translating findings into remediation tasks and detection-response runbooks.",
+        "Designing and securing enterprise AI governance and SOC-style detection-response review workflows for GenAI and agentic AI systems — reducing AI use-case review and permit-to-operate approval from 10–12 days to under 6 minutes through automated agentic security review pipelines, escalation paths, and process controls. Built SLA tracking, control pass/fail, and remediation dashboards for security and governance stakeholders. Developed SOAR-style orchestration and API integrations — alert enrichment, analyst-style triage, evidence capture, ticket routing — using Python, REST APIs, Splunk/SPL-style queries, and Cortex XSOAR concepts. Performed adversarial testing and behavioral risk assessments on enterprise LLMs against OWASP Top 10 for LLMs and Agents, NIST AI-RMF, ISO 42001, and zero-trust principles, translating findings into remediation tasks and detection-response runbooks. As main engineer, led a first non-production customer security-notification MVP — turning analyst requirements into a privacy-preserving Python/Flask workflow (masked customer/network identifiers, taxonomy-first classification, deterministic statistics, SQLite review history) that generates editable Word/Excel drafts behind a mandatory analyst review gate, with Azure Container Apps deployment, recovery, and rollback runbooks; hardened it against input and exception reflection (59 unit tests, 1,800 matching synthetic workflow-state checks, CodeQL and SonarCloud gates). Delivered a repeatable security-scan and reporting baseline across 10 repositories (SAST, SARIF, dashboard, per-repo drilldowns), and directed an AI-agent-assisted expansion of a security-harness test plan from 36 to 60 cases, auto-assigned via the Jira API across 7 owners. Contributed a model-testing kit and MAP-Elites quality-diversity red-teaming methodology to a two-phase frontier-model security evaluation (134+ prompts across 11 use cases, then 259), and built topology-preserving NetFlow masking with a reversible synthetic demo.",
       documentLink: "https://www.att.com/"
     },
     {
@@ -54,15 +45,6 @@ function Experiences() {
       description:
         "Built an AI assistant and workflow automation system for Contact Us email routing — using company content, user intent, and location context — eliminating 20+ hours of weekly manual forwarding at 95% routing accuracy across 50+ emails daily, with threat modeling and secure architecture validation. Architected a self-improving multi-agent GenAI workflow for MUD report parsing (Azure OpenAI GPT-4o/5) — 360x speed improvement (8 min vs 2 days), 89–100% accuracy, 0 security incidents, accepted as a published paper. Secured an MCP server converting natural language to Expression Language, mitigating command injection (RCE), weak authentication, rate-limit, and tool-poisoning risks across 5+ internal tools. Supported data scientists by testing AI solutions and recommending workflow controls for prompt injection, jailbreak, sensitive data exposure, and unbounded-consumption risks.",
       documentLink: "https://www.nov.com/"
-    },
-    {
-      type: "experience",
-      title: "Founder & AI Product Engineer",
-      organization: "HireEase — Houston, TX (Part-time)",
-      date: "Nov 2024 – Present",
-      description:
-        "Founded and built HireEase, an AI-powered career platform combining intelligent automation with trained human specialists. Developed AI resume tailoring, ATS optimization, job matching, application tracking, and workflow automation tools. The platform has processed 40,000+ job applications and supported 300+ clients.",
-      documentLink: "https://github.com/ibrahimsaleem/hireeaseemployee"
     },
     {
       type: "experience",
