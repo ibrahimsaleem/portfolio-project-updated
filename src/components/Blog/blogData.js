@@ -2,6 +2,16 @@
 
 const blogPosts = [
   {
+    id: "ai-for-security-vs-security-of-ai",
+    title: "AI for Security vs. Security of AI: Two Different Jobs",
+    date: "2026-11-16",
+    tags: ["AI Security", "Security Engineering", "LLM Security", "Careers"],
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&h=800&fit=crop",
+    excerpt:
+      "Using AI to do security work and securing AI systems are two different jobs with different skills and failure modes. Mixing them up is how teams trust the tool they should be testing.",
+    link: "/blog/ai-for-security-vs-security-of-ai",
+  },
+  {
     id: "human-stays-the-ship-gate",
     title: "The AI Drafts, the Human Ships: Designing GenAI Workflows With a Real Approval Gate",
     date: "2026-11-12",

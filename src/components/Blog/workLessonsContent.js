@@ -265,6 +265,64 @@ const workLessonsContent = {
     ),
   },
 
+  "ai-for-security-vs-security-of-ai": {
+    title: "AI for Security vs. Security of AI: Two Different Jobs",
+    date: "2026-11-16",
+    tags: ["AI Security", "Security Engineering", "LLM Security", "Careers"],
+    heroImage: IMG("1550751827-4bd374c3f58b"),
+    Content: () => (
+      <>
+        <p>
+          "AI security" gets used for two very different jobs. One is using AI to do security work faster. The other
+          is securing the AI systems themselves. They need different skills, fail in different ways, and a team that
+          mixes them up usually ends up doing neither well.
+        </p>
+        <Flow caption="Same words, opposite direction." steps={["AI for security: the model is your tool", "Security of AI: the model is your target"]} />
+
+        <h3>AI for security: the model is a tool</h3>
+        <p>
+          Here the model works for the defender. Triage alerts, summarize logs, draft detections, review code,
+          explain a scanner finding to an engineer, write the first version of a report. The value is speed and
+          coverage on work that people do not have enough hours for.
+        </p>
+        <ul>
+          <li><strong>Where it shines:</strong> reading a lot of text and turning it into a short, structured summary.</li>
+          <li><strong>Where it fails:</strong> confident wrong answers. A scanner alert is not a confirmed vulnerability, and a model that says it is has just added noise.</li>
+          <li><strong>The control:</strong> keep deterministic code in charge of facts and numbers, and keep a human in charge of decisions.</li>
+        </ul>
+
+        <h3>Security of AI: the model is the target</h3>
+        <p>
+          Here the AI system is the thing being attacked. Prompt injection, data leakage, poisoned memory, over-powered
+          tools, stolen credentials, and an agent doing something destructive because a document told it to.
+        </p>
+        <ul>
+          <li><strong>Where it shines:</strong> nowhere, by default. Nothing is secure until someone threat-models it.</li>
+          <li><strong>Where it fails:</strong> the harness around the model: tools, credentials, memory, sandboxing and the approval loop.</li>
+          <li><strong>The control:</strong> least privilege, guards on tool calls, scoped short-lived keys, and a repeatable injection test suite.</li>
+        </ul>
+
+        <h3>Why mixing them up hurts</h3>
+        <ol>
+          <li><strong>You trust the tool you should be testing.</strong> A team that uses AI to review code may skip red-teaming its own AI pipeline because "AI is on our side".</li>
+          <li><strong>You give the helper too much power.</strong> An AI assistant that triages email and can also send it is a security-of-AI problem hiding inside an AI-for-security win.</li>
+          <li><strong>You hire the wrong skills.</strong> Writing great detections with a model is not the same as threat-modeling an agent harness.</li>
+        </ol>
+
+        <h3>The two jobs meet in one place</h3>
+        <p>
+          Every time you point an AI tool at your own security work, you create a new system that needs securing.
+          Use AI for security, then threat-model that tool like any other agent: what does it read, what can it do,
+          whose credentials does it use, and who approves the risky step?
+        </p>
+        <p>
+          My rule of thumb: AI can speed up the work, but it should never be the last check on its own work. For
+          anything external, irreversible or high-impact, a human says yes first.
+        </p>
+      </>
+    ),
+  },
+
   "vendor-neutral-llm-red-team": {
     title: "How to Build a Vendor-Neutral LLM Red-Team Suite",
     date: "2026-11-12",
