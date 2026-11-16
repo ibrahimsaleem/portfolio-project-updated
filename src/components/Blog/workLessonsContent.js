@@ -5,6 +5,21 @@ import React from "react";
 const IMG = (id) => `https://images.unsplash.com/photo-${id}?q=80&w=1200&h=800&fit=crop`;
 
 
+// Two-column comparison card for contrasting ideas.
+const Compare = ({ left, right }) => (
+  <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", margin: "1.5rem 0" }}>
+    {[left, right].map((c, i) => (
+      <div key={c.title} style={{ flex: "1 1 240px", padding: "1rem", borderRadius: 12,
+        background: i ? "rgba(0,212,255,0.08)" : "rgba(199,112,240,0.12)",
+        border: `1px solid ${i ? "rgba(0,212,255,0.5)" : "rgba(199,112,240,0.5)"}` }}>
+        <div style={{ fontWeight: 700, fontSize: "1.1rem" }}>{c.title}</div>
+        <div style={{ opacity: 0.8, marginBottom: "0.5rem" }}>{c.sub}</div>
+        <ul style={{ margin: 0, paddingLeft: "1.2rem" }}>{c.points.map((x) => <li key={x}>{x}</li>)}</ul>
+      </div>
+    ))}
+  </div>
+);
+
 // Simple step diagram so each idea is visual at a glance (and still readable by the "Listen" player).
 const Flow = ({ caption, steps }) => (
   <figure style={{ margin: "1.5rem 0" }} aria-label={caption}>
@@ -268,56 +283,116 @@ const workLessonsContent = {
   "ai-for-security-vs-security-of-ai": {
     title: "AI for Security vs. Security of AI: Two Different Jobs",
     date: "2026-11-16",
-    tags: ["AI Security", "Security Engineering", "LLM Security", "Careers"],
+    tags: ["AI Security", "Security Engineering", "LLM Security", "Agentic AI", "Open Source"],
     heroImage: IMG("1550751827-4bd374c3f58b"),
     Content: () => (
       <>
         <p>
-          "AI security" gets used for two very different jobs. One is using AI to do security work faster. The other
-          is securing the AI systems themselves. They need different skills, fail in different ways, and a team that
-          mixes them up usually ends up doing neither well.
+          Picture a Tuesday morning. A security team's new assistant has just read 400 alerts overnight, grouped them
+          into nine incidents, and drafted a summary before anyone had coffee. The team is thrilled. Then someone asks
+          a quiet question: <em>"Who is checking the assistant?"</em> Nobody has an answer, because nobody thought of the
+          assistant as something that could be attacked.
         </p>
-        <Flow caption="Same words, opposite direction." steps={["AI for security: the model is your tool", "Security of AI: the model is your target"]} />
-
-        <h3>AI for security: the model is a tool</h3>
         <p>
-          Here the model works for the defender. Triage alerts, summarize logs, draft detections, review code,
-          explain a scanner finding to an engineer, write the first version of a report. The value is speed and
-          coverage on work that people do not have enough hours for.
+          That gap is the whole story of this post. "AI security" is used for two very different jobs, and teams that
+          blur them end up trusting the tool they should be testing. (The scene above is an illustration, not a real
+          incident.)
         </p>
+        <PostVideo src="/videos/ai-for-security-vs-security-of-ai.mp4" poster="/videos/ai-for-security-vs-security-of-ai.jpg" title="AI for security vs. security of AI, explained with voice-over" />
+
+        <Compare
+          left={{ title: "AI for security", sub: "The model is your tool", points: ["Triage alerts", "Summarize logs", "Review code", "Draft reports", "Plan attack paths"] }}
+          right={{ title: "Security of AI", sub: "The model is your target", points: ["Prompt injection", "Data leakage", "Poisoned memory", "Over-powered tools", "Stolen credentials"] }}
+        />
+
+        <h3>Job 1: AI for security, the model as your tool</h3>
+        <p>
+          Here the model works for the defender. It is very good at reading a mountain of text and turning it into
+          something a person can act on. It is also very good at sounding certain when it is wrong, which is the part
+          that bites.
+        </p>
+        <Flow caption="A healthy AI-for-security pipeline: the model suggests, code verifies, a human decides." steps={["Raw alerts and logs", "Model summarizes", "Code checks the facts", "Human decides", "Action taken"]} />
+        <h4>Use case: a forensic investigator that must show its evidence</h4>
+        <p>
+          I built <a href="https://github.com/ibrahimsaleem/Evil-Trace" target="_blank" rel="noreferrer">EvilTrace AI</a> for a
+          DFIR hackathon. It reads real forensic evidence (Sysmon, Zeek and auth logs) through a pipeline of seven
+          agents: collector, tool runner, hypothesis, verification, self-correction, IOC enrichment and report. The
+          rule that makes it trustworthy is the <strong>zero-hallucination gate</strong>: if the model claims credential
+          dumping or exfiltration, the claim is rejected unless exact artifacts back it up, such as a Mimikatz command,
+          a Procdump of LSASS, or real outbound byte counts. The model proposes, the logs decide, and every step lands
+          in an audit trail.
+        </p>
+        <h4>Use case: an attack-path planner for authorized testing</h4>
+        <p>
+          <a href="https://github.com/ibrahimsaleem/PentestThinkingMCP" target="_blank" rel="noreferrer">PentestThinkingMCP</a> is
+          an open-source MCP server (38 GitHub stars) that gives a model a systematic way to plan penetration tests:
+          beam search and Monte Carlo tree search over attack steps, step scoring, and tool recommendations. It grew out
+          of my University of Houston research on LIMA, where a model-driven approach completed low-complexity
+          practice targets autonomously, with a mean completion time of 13 minutes and a full run costing about five
+          cents. The lesson was not "AI replaces testers". It was that structure around the model beats a bigger prompt.
+        </p>
+        <h4>The rule for this job</h4>
         <ul>
-          <li><strong>Where it shines:</strong> reading a lot of text and turning it into a short, structured summary.</li>
-          <li><strong>Where it fails:</strong> confident wrong answers. A scanner alert is not a confirmed vulnerability, and a model that says it is has just added noise.</li>
-          <li><strong>The control:</strong> keep deterministic code in charge of facts and numbers, and keep a human in charge of decisions.</li>
+          <li><strong>Let code count, let the model talk.</strong> Numbers, severities and verdicts come from deterministic code. The model writes the explanation.</li>
+          <li><strong>A scanner alert is not a vulnerability.</strong> A model that upgrades alerts into findings just adds noise at higher speed.</li>
+          <li><strong>A human owns the decision.</strong> Especially for anything external, irreversible or high-impact.</li>
         </ul>
 
-        <h3>Security of AI: the model is the target</h3>
+        <h3>Job 2: security of AI, the model as your target</h3>
         <p>
-          Here the AI system is the thing being attacked. Prompt injection, data leakage, poisoned memory, over-powered
-          tools, stolen credentials, and an agent doing something destructive because a document told it to.
+          Now flip the arrow. The AI system is the thing being attacked, and the attacker does not need to break the
+          model at all. They only need to put text where the agent will read it: a web page, a ticket, an email, a
+          tool description.
         </p>
+        <Flow caption="Every arrow is a place an attacker can push." steps={["Untrusted input", "Agent decides", "Tool call guard", "Sandbox and scoped keys", "Human approves risky actions"]} />
+        <h4>Use case: seeing the vulnerabilities work, not just reading about them</h4>
+        <p>
+          <a href="https://github.com/ibrahimsaleem/mcp-security-lab" target="_blank" rel="noreferrer">MCP Security Lab</a> is
+          a small, runnable Model Context Protocol setup with seven deliberate vulnerabilities and their fixes, mapped to the
+          OWASP MCP Top 10. You can watch command injection through a diagnostics tool, a poisoned tool description
+          that leaks a secret config, a hijacked state handle, a token-passthrough confused deputy, missing auth with no
+          audit trail, privilege escalation through scope creep, and a client launch injection that becomes remote code
+          execution. Everything runs locally. The point is simple: people fix what they have seen break.
+        </p>
+        <h4>Use case: a gateway that inspects every request and response</h4>
+        <p>
+          <a href="https://github.com/ibrahimsaleem/ClawProtect" target="_blank" rel="noreferrer">ClawProtect</a> is a
+          defense-in-depth stack I built for AI agent gateways. A Go security proxy sits in front of the gateway and
+          inspects traffic in both directions for prompt injection, PII, secrets and malware, with a YAML policy
+          engine. Behind it sit an eBPF monitor for syscall-level anomalies, a network egress firewall, and a dashboard.
+          The idea is that no single layer has to be perfect: if the prompt filter misses something, the egress
+          firewall still stops the data from leaving.
+        </p>
+        <h4>The rule for this job</h4>
         <ul>
-          <li><strong>Where it shines:</strong> nowhere, by default. Nothing is secure until someone threat-models it.</li>
-          <li><strong>Where it fails:</strong> the harness around the model: tools, credentials, memory, sandboxing and the approval loop.</li>
-          <li><strong>The control:</strong> least privilege, guards on tool calls, scoped short-lived keys, and a repeatable injection test suite.</li>
+          <li><strong>Least privilege.</strong> Scoped, short-lived credentials, never the user's full token.</li>
+          <li><strong>Guards before execution.</strong> Check tool calls before they run, not after in a log.</li>
+          <li><strong>Sandbox and egress allow-list.</strong> Exfiltration needs a way out. Close it.</li>
+          <li><strong>Trace everything.</strong> Every tool call, argument and result, per session.</li>
+          <li><strong>Test continuously.</strong> A repeatable injection suite on every harness change.</li>
         </ul>
 
         <h3>Why mixing them up hurts</h3>
         <ol>
-          <li><strong>You trust the tool you should be testing.</strong> A team that uses AI to review code may skip red-teaming its own AI pipeline because "AI is on our side".</li>
-          <li><strong>You give the helper too much power.</strong> An AI assistant that triages email and can also send it is a security-of-AI problem hiding inside an AI-for-security win.</li>
-          <li><strong>You hire the wrong skills.</strong> Writing great detections with a model is not the same as threat-modeling an agent harness.</li>
+          <li><strong>You trust the tool you should be testing.</strong> A team that uses AI to review code may skip red-teaming its own pipeline because "AI is on our side".</li>
+          <li><strong>You give the helper too much power.</strong> An assistant that triages email and can also send it is a security-of-AI problem hiding inside an AI-for-security win.</li>
+          <li><strong>You hire the wrong skills.</strong> Writing great detections with a model is not the same craft as threat-modeling an agent harness.</li>
         </ol>
 
-        <h3>The two jobs meet in one place</h3>
+        <h3>Where the two jobs meet</h3>
         <p>
-          Every time you point an AI tool at your own security work, you create a new system that needs securing.
-          Use AI for security, then threat-model that tool like any other agent: what does it read, what can it do,
-          whose credentials does it use, and who approves the risky step?
+          Every time you point an AI tool at your own security work, you create a new system that needs securing. So
+          the loop closes: use AI for security, then threat-model that tool like any other agent.
+        </p>
+        <Flow caption="The loop that keeps both jobs honest." steps={["Use AI to speed up defense", "That tool becomes a target", "Threat model the harness", "Add controls and tests", "Use it more safely"]} />
+        <p>
+          For each tool, ask one question: <em>"If a malicious document convinced the agent to call this with the worst
+          possible arguments, what happens?"</em> If the answer scares you, fix the harness, not the prompt.
         </p>
         <p>
-          My rule of thumb: AI can speed up the work, but it should never be the last check on its own work. For
-          anything external, irreversible or high-impact, a human says yes first.
+          My rule of thumb, learned the slow way: AI can speed up the work, but it should never be the last check on
+          its own work. For anything external, irreversible or high-impact, a human says yes first. If you want the
+          deeper version of the second job, read my post on threat modeling an AI agent harness.
         </p>
       </>
     ),
