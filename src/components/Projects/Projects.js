@@ -72,7 +72,7 @@ function Projects() {
               imgPath="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&h=600&fit=crop"
               isBlog={false}
               title="LIMA: LLM-MCP Penetration Testing (IEEE FMLDS 2025)"
-              description="🏆 PUBLISHED — First author. Autonomous penetration testing framework using LLMs and MCP servers for initial machine access. 95% success rate, reduced testing from 8+ hours to 15 minutes. Claude 3.5 outperformed expert pentesters on 12/15 HTB boxes at $0.05/run."
+              description="🏆 PUBLISHED — First author. Autonomous penetration testing framework using LLMs and MCP servers for initial machine access. 95% success rate, reduced testing from 8+ hours to 15 minutes. Claude 3.5 outperformed expert pentesters on 12/15 HTB boxes at $0.05/run. Cited by 1 (Google Scholar)."
               link="/case-studies/lima-pentestthinkingmcp"
             />
           </Col>
@@ -81,8 +81,8 @@ function Projects() {
             <ProjectCard
               imgPath="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&h=600&fit=crop"
               isBlog={false}
-              title="Self-Improving GenAI Agent for Report Parsing (SPE 2025)"
-              description="🏆 PUBLISHED — Second author. Autonomous 3-agent GenAI system (vendor detection, prompt optimization, extraction) using Azure OpenAI GPT-4o/5. 360x speed improvement (8 min vs 2 days), 89–100% accuracy, 0 security incidents. Applied OWASP LLM Top 10 & NIST AI-RMF."
+              title="Self-Improving GenAI Agent for Report Parsing (IADC/SPE 2026)"
+              description="🏆 PUBLISHED — Second author. Autonomous 3-agent GenAI system (vendor detection, prompt optimization, extraction) using Azure OpenAI GPT-4o/5. 360x speed improvement (8 min vs 2 days), 89–100% accuracy, 0 security incidents. Applied OWASP LLM Top 10 & NIST AI-RMF. Cited by 1 (Google Scholar)."
               link="/case-studies/nov-mud-report-automation"
             />
           </Col>

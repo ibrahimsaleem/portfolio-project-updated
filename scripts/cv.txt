@@ -15,7 +15,7 @@ Houston, TX
 
 Master of Science in Cybersecurity
 Expected: May 2026
-– GPA: 3.98/4.0; (Awarded 16k USD in Scholarship) Coursework: Network Security, Secure Enterprise Computing, Cryptography,
+– GPA: 3.9/4.0; (Awarded 16k USD in Scholarship) Coursework: Network Security, Secure Enterprise Computing, Cryptography,
 Data Analysis for Cybersecurity, Cybersecurity Risk Management, Secure Software Design
 
 • Rajiv Gandhi Proudyogiki Vishwavidyalaya
@@ -43,7 +43,7 @@ AI deployment practices aligned with zero-trust principles, AI risk management, 
 
 • GenAI & Data Science Intern
 
-June 2025 – Dec 2025
+June 2025 – Jan 2026
 
 NOV Inc (National Oilwell Varco)
 Houston, TX (On-site)

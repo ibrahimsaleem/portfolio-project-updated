@@ -163,7 +163,7 @@ function Home() {
               { value: "AT&T", label: "Current Employer", color: "#00D4FF" },
               { value: "5.3K+", label: "LinkedIn Followers", color: "#00D4FF" },
               { value: "95%", label: "Pentest Success Rate", color: "#C770F0" },
-              { value: "3.98", label: "M.S. GPA / 4.0", color: "#00FF41" },
+              { value: "3.9", label: "M.S. GPA / 4.0", color: "#00FF41" },
             ].map((stat, i) => (
               <Col xs={6} md key={i} style={{ marginBottom: "10px" }}>
                 <div

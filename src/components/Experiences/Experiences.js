@@ -12,7 +12,7 @@ function Experiences() {
       organization: "University of Houston, Houston, TX",
       date: "May 2026",
       description:
-        "GPA: 3.98/4.0 | Awarded $16,000 Scholarship. Coursework: Network Security, Secure Enterprise Computing, Cryptography, Data Analysis for Cybersecurity, Cybersecurity Risk Management, Secure Software Design.",
+        "GPA: 3.9/4.0 | Awarded $16,000 Scholarship. Coursework: Network Security, Secure Enterprise Computing, Cryptography, Data Analysis for Cybersecurity, Cybersecurity Risk Management, Secure Software Design.",
       documentLink: "https://www.uh.edu/"
     },
     {
@@ -41,7 +41,7 @@ function Experiences() {
       type: "experience",
       title: "GenAI & Data Science Intern",
       organization: "NOV Inc. (National Oilwell Varco) — Houston, TX",
-      date: "June 2025 – Dec 2025",
+      date: "June 2025 – Jan 2026",
       description:
         "Built an AI assistant and workflow automation system for Contact Us email routing — using company content, user intent, and location context — eliminating 20+ hours of weekly manual forwarding at 95% routing accuracy across 50+ emails daily, with threat modeling and secure architecture validation. Architected a self-improving multi-agent GenAI workflow for MUD report parsing (Azure OpenAI GPT-4o/5) — 360x speed improvement (8 min vs 2 days), 89–100% accuracy, 0 security incidents, accepted as a published paper. Secured an MCP server converting natural language to Expression Language, mitigating command injection (RCE), weak authentication, rate-limit, and tool-poisoning risks across 5+ internal tools. Supported data scientists by testing AI solutions and recommending workflow controls for prompt injection, jailbreak, sensitive data exposure, and unbounded-consumption risks.",
       documentLink: "https://www.nov.com/"

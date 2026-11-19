@@ -247,7 +247,7 @@ export default function EB1O1Dossier() {
           regText="Documentation of receipt of nationally or internationally recognized prizes or awards for excellence in the field."
           level="Gap"
           evidence={[
-            "$16,000 merit scholarship, University of Houston M.S. Cybersecurity program (GPA 3.98/4.0) — a merit award, but program-level, not field-wide/national.",
+            "$16,000 merit scholarship, University of Houston M.S. Cybersecurity program (GPA 3.9/4.0) — a merit award, but program-level, not field-wide/national.",
             "No independently-judged national/international award identified in public search as of this assembly.",
           ]}
           gapNote="Confirm whether the FIND EVIL Hackathon (EvilTrace AI) resulted in any placement/award — if it did, that's real evidence here. Consider applying for recognized awards in the AI-security field (e.g., conference best-paper awards, CTF placements with public leaderboards, vendor bug-bounty recognitions)."
@@ -467,7 +467,7 @@ export default function EB1O1Dossier() {
         >
 {`You are researching public evidence for a potential EB-1A/O-1A extraordinary-ability
 petition for Mohammad Ibrahim Saleem — AI Security Engineer at AT&T, Houston TX,
-M.S. Cybersecurity (Univ. of Houston, GPA 3.98), founder of WarmNodeAI.
+M.S. Cybersecurity (Univ. of Houston, GPA 3.9), founder of WarmNodeAI.
 
 Known publications (verify each still resolves and check for NEW citations):
 - "LIMA: Leveraging Large Language Models and MCP Servers for Initial Machine Access"

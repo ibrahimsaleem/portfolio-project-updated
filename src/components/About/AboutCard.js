@@ -8,7 +8,7 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            I'm <span className="purple">Mohammad Ibrahim Saleem</span> — I <b className="purple">build agentic AI systems, and I secure them</b>, as an AI Security Engineer at <b className="purple">AT&T</b>, based in Houston, TX. I specialize in autonomous multi-agent systems, LLM red-teaming, and cloud security — from designing agentic governance pipelines to hardening them against real-world adversarial risk. I hold an M.S. in Cybersecurity from the University of Houston (GPA: 3.98/4.0, $16K scholarship) and have <b className="purple">4 research papers</b> in agentic AI and security, including 2 published at IEEE FMLDS 2025 and SPE 2025. I'm also the founder of WarmNodeAI.
+            I'm <span className="purple">Mohammad Ibrahim Saleem</span> — I <b className="purple">build agentic AI systems, and I secure them</b>, as an AI Security Engineer at <b className="purple">AT&T</b>, based in Houston, TX. I specialize in autonomous multi-agent systems, LLM red-teaming, and cloud security — from designing agentic governance pipelines to hardening them against real-world adversarial risk. I hold an M.S. in Cybersecurity from the University of Houston (GPA: 3.9/4.0, $16K scholarship) and have <b className="purple">4 research papers</b> in agentic AI and security, including 2 published at IEEE FMLDS 2025 and SPE 2025. I'm also the founder of WarmNodeAI.
           </p>
           <ul>
             <li className="about-activity"><ImPointRight /> Agentic AI systems: multi-agent orchestration, LangGraph, MCP, autonomous reasoning (Beam Search, MCTS)</li>

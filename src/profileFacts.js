@@ -17,7 +17,7 @@ CURRENT ROLE: AI Security & Governance Engineer, AT&T (Jan 2026–present, Plano
 - Built topology-preserving telemetry masking/tokenization and demonstrated a reversible synthetic NetFlow workflow to stakeholders (demo, not a user rollout).
 - Works within OWASP Top 10 for LLMs & Agents, NIST AI-RMF, ISO 42001, zero-trust principles.
 
-PRIOR ROLE: GenAI & Data Science Intern, NOV Inc. (June 2025-Dec 2025, Houston TX)
+PRIOR ROLE: GenAI & Data Science Intern, NOV Inc. (June 2025-Jan 2026, Houston TX; employed through the University of Houston HPE Data Science Institute)
 - Architected an autonomous multi-agent GenAI system (Azure OpenAI GPT-4o/5) for document parsing; 360x throughput improvement, 95%+ accuracy.
 - Built hybrid-search (BM25 + dense embeddings) vector-DB retrieval for agentic workflows.
 - Fine-tuned Code-Llama 8B for a secure MCP server (natural language -> Expression Language).
@@ -26,6 +26,7 @@ PRIOR ROLE: GenAI & Data Science Intern, NOV Inc. (June 2025-Dec 2025, Houston T
 
 PRIOR ROLE: Research Assistant - AI & Cybersecurity, University of Houston (Sep 2024-May 2025)
 - First author on published paper: "LIMA: Leveraging Large Language Models and MCP Servers for Initial Machine Access" - IEEE FMLDS 2025. DOI 10.1109/fmlds67896.2025.00135 (verified via Crossref).
+- Google Scholar (as of Nov 19, 2026): 2 citations, h-index 1. LIMA (IEEE FMLDS 2025) cited by 1; Self-Improving Generative AI Agents for Automated Daily Mud Report Parsing (SPE/IADC Drilling Conference 2026) cited by 1.
 - LIMA's actual published results: Claude 3.5 completed HackTheBox/custom-VM targets with a mean completion time of 13 minutes, up to 2x faster than an expert human tester, 90-100% autonomous completion on low-complexity targets, full run cost <= $0.05.
 - Built PentestThinkingMCP, an open-source MCP server using Beam Search and Monte Carlo Tree Search (MCTS) for autonomous attack-path planning. 38 GitHub stars, 8 forks (verified). Listed on Smithery.ai, Glama.ai, MCP Toplist.
 
@@ -33,7 +34,7 @@ PRIOR ROLE: Associate Software Engineer, Nagarro Software Pvt. Ltd. (Mar 2023-Fe
 - Built C#/.NET Core backend + SQL Server across 25+ enterprise APIs, 30% query performance improvement.
 - Delivered REST APIs at 99.9% uptime handling 1,000+ daily requests, with JWT/RBAC security.
 
-EDUCATION: M.S. Cybersecurity, University of Houston (Graduated May 2026, GPA 3.98/4.0, $16,000 scholarship). B.Tech Computer Science Engineering, Rajiv Gandhi Proudyogiki Vishwavidyalaya (July 2023).
+EDUCATION: M.S. Cybersecurity, University of Houston (Graduated May 2026, GPA 3.9/4.0, $16,000 scholarship). B.Tech Computer Science Engineering, Rajiv Gandhi Proudyogiki Vishwavidyalaya (July 2023).
 
 CERTIFICATIONS: Microsoft Certified Azure AI Engineer Associate, Microsoft Azure AI Fundamentals (AI-900), Microsoft Azure Fundamentals (AZ-900), OWASP Top 10 for LLMs, ISC2 Certified in Cybersecurity (CC), CompTIA Security+ (in progress), Fortinet NSE 1-3.
 

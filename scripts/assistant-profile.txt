@@ -14,7 +14,7 @@ Working at the intersection of artificial intelligence and cybersecurity, buildi
 
 EDUCATION
 M.S. Cybersecurity — University of Houston, Houston TX (Graduated May 2026)
-GPA: 3.98 / 4.0 | Awarded $16,000 scholarship
+GPA: 3.9 / 4.0 | Awarded $16,000 scholarship
 Coursework: Network Security, Secure Enterprise Computing, Cryptography, Data Analysis for Cybersecurity, Cybersecurity Risk Management, Secure Software Design
 B.Tech Computer Science Engineering — Rajiv Gandhi Proudyogiki Vishwavidyalaya (July 2023)
 Coursework: Data Structures & Algorithms, OOP, DBMS, Cloud Computing, Operating Systems, Computer Networks, Machine Learning
@@ -31,7 +31,7 @@ WORK EXPERIENCE (full timeline, including founder roles)
 - Directed an AI-agent-assisted expansion of a security-harness test plan from 36 to 60 cases, auto-assigned via the Jira API across 7 owners (planned, not yet executed).
 - Contributed a model-testing kit and MAP-Elites red-teaming method to a two-phase frontier-model security evaluation (134+ prompts across 11 use cases, then 259 prompts); built topology-preserving NetFlow masking with a reversible synthetic demo.
 
-2. GenAI & Data Science Intern — NOV Inc. (National Oilwell Varco), Houston TX (On-site) | June 2025 – Dec 2025
+2. GenAI & Data Science Intern — NOV Inc. (National Oilwell Varco), Houston TX (On-site) | June 2025 – Jan 2026
 - Architected an autonomous multi-agent system using Azure OpenAI (GPT-4o/5) that improved document-parsing throughput by 360x (8 minutes vs. 2 days) while maintaining 95%+ accuracy — published as a paper.
 - Integrated scalable vector databases with hybrid search (BM25 + dense embeddings) to reduce contextual hallucination in memory-intensive agentic workflows.
 - Automated email triage/routing via natural language intent recognition, reclaiming 20+ hours/week of manual work across 50+ emails daily at 95%+ accuracy.
